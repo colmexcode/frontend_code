@@ -11,9 +11,9 @@ export const colors = {
 
 // ------------------------------------ SPACING ------------------------------------//
 export const spacing = {
-  space1: '1em',
+  space1: '.6em',
   space2: '2em',
-  space3: '3em',
+  space3: '2.5em',
   space4: '4em',
 };
 
@@ -22,6 +22,12 @@ export const fonts = {
   family: "'Roboto', sans-serif",
   normal: '400',
   bold: '700',
+  bigTitle: '4em',
+  h1: '1.6em',
+  h2: '1.4em',
+  h3: '1.1em',
+  p: '1em',
+  small: '.8em',
 };
 
 // ------------------------------------ SHADOWS ------------------------------------//
@@ -42,4 +48,5 @@ export const shadows = {
   innerShadow: `inset 4px 4px 10px rgba(0, 0, 0, 0.25), 
                 inset -4px -4px 10px 1px #F6F6F6, 
                 inset 3px 3px 2px 1px rgba(0, 0, 0, 0.25)`,
+  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
 };
