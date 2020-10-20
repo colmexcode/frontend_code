@@ -2,7 +2,7 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { Header } from '../../components/Header';
+import { Hero } from '../../components/Hero';
 
 // ------------------------------ import styles and images
 
@@ -11,5 +11,5 @@ import { Header } from '../../components/Header';
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
 export const LandingPage = () => {
-  return <Header />;
+  return <Hero />;
 };
