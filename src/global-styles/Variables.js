@@ -12,9 +12,9 @@ export const colors = {
 // ------------------------------------ SPACING ------------------------------------//
 export const spacing = {
   space1: '.6em',
-  space2: '2em',
+  space2: '1.2em',
   space3: '2.5em',
-  space4: '4em',
+  space4: '5em',
 };
 
 // ------------------------------------ FONTS ------------------------------------//
@@ -48,5 +48,8 @@ export const shadows = {
   innerShadow: `inset 4px 4px 10px rgba(0, 0, 0, 0.25), 
                 inset -4px -4px 10px 1px #F6F6F6, 
                 inset 3px 3px 2px 1px rgba(0, 0, 0, 0.25)`,
+  innerSoftShadow: `inset 3px 3px 10px rgba(0, 0, 0, 0.25), 
+                    inset -4px -4px 10px #F6F6F6, 
+                    inset 5px 5px 8px rgba(0, 0, 0, 0.25)`,
   textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
 };

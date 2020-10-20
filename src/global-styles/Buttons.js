@@ -26,6 +26,12 @@ export const Button = styled.button`
     css`
       ${colors.mainBackgroundColor};
     `};
+  ${(props) =>
+    props.big &&
+    css`
+      padding: ${spacing.space2} ${spacing.space4};
+      ${colors.mainBackgroundColor};
+    `};
   &:active {
     box-shadow: ${shadows.innerShadow};
   }

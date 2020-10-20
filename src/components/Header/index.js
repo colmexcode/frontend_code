@@ -18,10 +18,10 @@ export const Header = () => {
         <Link to="/">destinations</Link>
       </Brand>
       <div>
+        <Button type="button">login</Button>
         <Button main type="button">
-          login
+          register
         </Button>
-        <Button type="button">register</Button>
       </div>
     </StyledHeader>
   );

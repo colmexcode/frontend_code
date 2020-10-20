@@ -23,7 +23,9 @@ export const StyledIcon = styled.img`
     css`
       width: 60px;
       height: 60px;
-      padding: 12px;
+      position: absolute;
+      right: 0;
+      padding: 15px;
       ${colors.mainBackgroundColor};
     `};
 
