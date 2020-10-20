@@ -8,7 +8,7 @@ import { LinkStyled as Link } from '../../global-styles/Links';
 import logo from '../../assets/images/logo.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// description of the component.
+// This is the header.
 export const Header = () => {
   return (
     <StyledHeader>

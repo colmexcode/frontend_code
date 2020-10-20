@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import styled, { css } from 'styled-components';
+
 // ------------------------------ import variables
 import { colors, spacing, shadows, border, fonts } from './Variables';
 
