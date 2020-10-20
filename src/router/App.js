@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // ------------------------------ import components
-import { Hola } from '../components/Hola';
+import { InterestForm } from '../components/InterestForm';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // This is the router.
@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Hola} />
+        <Route exact path="/" component={InterestForm} />
       </Switch>
     </BrowserRouter>
   );
