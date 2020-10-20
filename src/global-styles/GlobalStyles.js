@@ -18,6 +18,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+  padding: 0;
+  margin: 0;
   font-family: ${fonts.family};
   font-weight: ${fonts.normal};
   color: ${colors.textColor};
