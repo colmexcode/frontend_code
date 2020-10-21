@@ -4,6 +4,7 @@ import React from 'react';
 // ------------------------------ import components
 import { Hero } from '../../components/Hero';
 import { Footer } from '../../components/Footer';
+import { LocationCard } from '../../components/LocationCard';
 
 // ------------------------------ import styles and images
 
@@ -15,6 +16,7 @@ export const LandingPage = () => {
   return (
     <>
       <Hero />
+      <LocationCard />
       <Footer />
     </>
   );

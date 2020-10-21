@@ -10,7 +10,7 @@ import { Titule, StyledIntroduction, Description } from './styles';
 export const Introduction = () => {
   return (
     <StyledIntroduction>
-      <Titule>Cozi Place</Titule>
+      <Titule>Cozy Place</Titule>
       <Description>
         For decades travellers have reached for Lonely Planet books
         when looking to plan and execute their perfect trip, but now,
