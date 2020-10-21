@@ -26,6 +26,7 @@ export const Button = styled.button`
     css`
       ${colors.mainBackgroundColor};
     `};
+
   ${(props) =>
     props.big &&
     css`
