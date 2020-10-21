@@ -37,4 +37,15 @@ export const StyledIcon = styled.img`
       padding: 15px;
       ${colors.mainBackgroundColor};
     `};
+
+  ${(props) =>
+    props.alt === 'close' &&
+    css`
+      margin: 0;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 1;
+      padding: 8px;
+    `};
 `;

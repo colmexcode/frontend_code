@@ -51,5 +51,5 @@ export const shadows = {
   innerSoftShadow: `inset 3px 3px 10px rgba(0, 0, 0, 0.25), 
                     inset -4px -4px 10px #F6F6F6, 
                     inset 5px 5px 8px rgba(0, 0, 0, 0.25)`,
-  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
+  textShadow: '2px 2px 3px rgba(0, 0, 0, 0.4)',
 };

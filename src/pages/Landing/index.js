@@ -5,6 +5,7 @@ import React from 'react';
 import { Hero } from '../../components/Hero';
 import { Footer } from '../../components/Footer';
 import { LocationCard } from '../../components/LocationCard';
+import { TestimonialCard } from '../../components/TestimonialCard';
 
 // ------------------------------ import styles and images
 
@@ -16,6 +17,7 @@ export const LandingPage = () => {
   return (
     <>
       <Hero />
+      <TestimonialCard />
       <LocationCard />
       <Footer />
     </>
