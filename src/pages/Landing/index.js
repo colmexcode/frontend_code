@@ -3,6 +3,7 @@ import React from 'react';
 
 // ------------------------------ import components
 import { Hero } from '../../components/Hero';
+import { Footer } from '../../components/Footer';
 
 // ------------------------------ import styles and images
 
@@ -11,5 +12,10 @@ import { Hero } from '../../components/Hero';
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
 export const LandingPage = () => {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <Footer />
+    </>
+  );
 };

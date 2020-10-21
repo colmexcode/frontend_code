@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
+
 // ------------------------------ import variables
 import {
   colors,

@@ -8,7 +8,10 @@ import { LinkStyled as Link } from '../../global-styles/Links';
 import logo from '../../assets/images/logo.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// This is the header.
+// This is the header. It change if the user is logged.
+// In the landing page it shows the login and sign up buttons.
+// When the user is logged it shows the user picture and a link to home page.
+
 export const Header = () => {
   return (
     <StyledHeader>
@@ -20,7 +23,7 @@ export const Header = () => {
       <div>
         <Button type="button">login</Button>
         <Button main type="button">
-          register
+          Sign up
         </Button>
       </div>
     </StyledHeader>
