@@ -2,14 +2,14 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { ImportedComponent } from '../components/ImportedComponent ';
+// import { ImportedComponent } from '../components/ImportedComponent ';
 
 // ------------------------------ import styles and images
-import image from './assets/image.jpg';
-import { StyledComponents } from './styled/NewComponent/';
+// import image from './assets/image.jpg';
+// import { StyledComponents } from './styled/NewComponent/';
 
 // -------- import redux actions
-import { actions } from '../actions/actions';
+// import { actions } from '../actions/actions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
