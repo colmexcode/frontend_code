@@ -11,7 +11,10 @@ import { StyledHero, HeroImage } from './styles';
 import heroPicture from '../../assets/images/heroPicture.jpg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// this component has the header and the searchbar
+// the Hero is the first component in each page. It have the header and the seachbar.
+// It change if user is logged.
+// In landing it show and extra component, Intrduction. It shows the name and a short description of the app.
+
 export const Hero = () => {
   return (
     <StyledHero>

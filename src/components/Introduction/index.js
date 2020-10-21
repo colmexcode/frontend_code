@@ -16,7 +16,7 @@ export const Introduction = () => {
         when looking to plan and execute their perfect trip, but now,
         they can also let Lonely Planet Experiences lead the way.
       </Description>
-      <Button big>register</Button>
+      <Button big>Sign up</Button>
     </StyledIntroduction>
   );
 };
