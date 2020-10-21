@@ -6,7 +6,10 @@ import { shadows } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledHero = styled.section`
-  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   background: linear-gradient(
     180deg,

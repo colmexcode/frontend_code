@@ -5,19 +5,23 @@ import React from 'react';
 import { Icon } from '../Icons';
 
 // ------------------------------ import styles and images
+import {
+  SearchBarStyled,
+  SearchContainer,
+  SearchInput,
+  Title,
+} from './styles';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// this component search the experiences
+// this component is the search bar to get the experiences
 export const SearchBar = () => {
   return (
-    <>
-      <p> explore and travel </p>
-      <section>
-        <div>
-          <input type="text" name="" placeholder="Location" />
-          <Icon type="search" />
-        </div>
-      </section>
-    </>
+    <SearchBarStyled>
+      <Title> explore and travel </Title>
+      <SearchContainer>
+        <SearchInput type="text" name="" placeholder="Location" />
+        <Icon type="search" />
+      </SearchContainer>
+    </SearchBarStyled>
   );
 };
