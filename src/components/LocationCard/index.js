@@ -9,6 +9,7 @@ import mockupPicture from '../../assets/images/mockupPicture.jpg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this card display a ditail of the location in the section feature destinations at landing page
+// It is hidden and is shown when user hover the location mark in the map.
 
 export const LocationCard = () => {
   let left = '20px';
