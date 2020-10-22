@@ -3,8 +3,8 @@ import React from 'react';
 
 // ------------------------------ import components
 import { Hero } from '../../components/Hero';
+import { Map } from '../../components/Map';
 import { Footer } from '../../components/Footer';
-import { LocationCard } from '../../components/LocationCard';
 import { TestimonialSection } from '../../components/TestimonialSection';
 
 // ------------------------------ import styles and images
@@ -19,8 +19,8 @@ export const LandingPage = () => {
   return (
     <>
       <Hero />
+      <Map />
       <TestimonialSection />
-      <LocationCard />
       <Footer />
     </>
   );

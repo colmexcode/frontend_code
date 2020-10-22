@@ -22,12 +22,12 @@ export const TestimonialSection = () => {
   return (
     <StyledSection>
       <h1>Testimonials</h1>
-      <Testimonial left={5} top={15} handleClick={showTestimonial} />
-      <Testimonial left={70} top={20} handleClick={showTestimonial} />
-      <Testimonial left={30} top={25} handleClick={showTestimonial} />
-      <Testimonial left={50} top={60} handleClick={showTestimonial} />
-      <Testimonial left={20} top={60} handleClick={showTestimonial} />
-      <Testimonial left={90} top={60} handleClick={showTestimonial} />
+      <Testimonial left={0} top={15} handleClick={showTestimonial} />
+      <Testimonial left={75} top={10} handleClick={showTestimonial} />
+      <Testimonial left={30} top={20} handleClick={showTestimonial} />
+      <Testimonial left={55} top={55} handleClick={showTestimonial} />
+      <Testimonial left={15} top={60} handleClick={showTestimonial} />
+      <Testimonial left={85} top={65} handleClick={showTestimonial} />
       <TestimonialCard show={show} handleClick={closeTestimonial} />
     </StyledSection>
   );
