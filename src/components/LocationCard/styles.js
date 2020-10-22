@@ -12,6 +12,7 @@ import {
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Card = styled.section`
   position: relative;
+  display: block;
   left: ${(props) => props.left || '0'};
   top: ${(props) => props.top || '0'};
   width: 200px;

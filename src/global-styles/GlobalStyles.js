@@ -25,4 +25,27 @@ export const GlobalStyles = createGlobalStyle`
   color: ${colors.textColor};
   background-color: ${colors.backgroundColor};
   }
+
+  h1 {
+    font-size: ${fonts.h1};
+    color: ${colors.titleColor};
+  }
+
+  h2 {
+    font-size: ${fonts.h2};
+    color: ${colors.titleColor};
+  }
+
+  h3 {
+    font-size: ${fonts.h3};
+    color: ${colors.titleColor};
+  }
+
+  p {
+    font-size: ${fonts.p};
+  }
+
+  small {
+    font-size: ${fonts.small};
+  }
 `;

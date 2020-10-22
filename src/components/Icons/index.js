@@ -29,6 +29,6 @@ const icons = {
 };
 
 // to use the icons set the prop type with one of the keys of icons object
-export const Icon = ({ type }) => {
-  return <StyledIcon src={icons[type]} alt={type} />;
+export const Icon = ({ type, click }) => {
+  return <StyledIcon src={icons[type]} alt={type} onClick={click} />;
 };
