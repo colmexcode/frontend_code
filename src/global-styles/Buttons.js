@@ -36,4 +36,13 @@ export const Button = styled.button`
       padding: ${spacing.space2} ${spacing.space4};
       ${colors.mainBackgroundColor};
     `};
+
+  ${(props) =>
+    props.submit &&
+    css`
+      align-self: center;
+      width: 80%;
+      margin: 0;
+      margin-top: ${spacing.space3};
+    `};
 `;
