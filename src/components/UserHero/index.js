@@ -2,7 +2,7 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { Header } from '../Header';
+import { UserHeader } from '../UserHeader';
 import { SearchBar } from '../SearchBar';
 import { Introduction } from '../Introduction';
 
@@ -15,16 +15,16 @@ import heroPicture from '../../assets/images/heroPicture.jpg';
 // It change if user is logged.
 // In landing it show and extra component, Intrduction. It shows the name and a short description of the app.
 
-export const Hero = () => {
+export const UserHero = () => {
   return (
     <StyledHero>
       <HeroImage
         src={heroPicture}
         alt="A woman is pointing to a map in a road trip"
       />
-      <Header />
+      <UserHeader />
       <Introduction />
-      <SearchBar />
+      {/* <SearchBar /> */}
     </StyledHero>
   );
 };

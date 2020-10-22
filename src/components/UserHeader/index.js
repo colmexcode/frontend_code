@@ -12,7 +12,7 @@ import logo from '../../assets/images/logo.svg';
 // In the landing page it shows the login and sign up buttons.
 // When the user is logged it shows the user picture and a link to home page.
 
-export const Header = () => {
+export const UserHeader = () => {
   return (
     <StyledHeader>
       <Brand>
@@ -21,7 +21,6 @@ export const Header = () => {
         <Link to="/">destinations</Link>
       </Brand>
       <div>
-        <Button type="button">login</Button>
         <Button main type="button">
           Sign up
         </Button>

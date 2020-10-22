@@ -12,9 +12,9 @@ export const colors = {
 // ------------------------------------ SPACING ------------------------------------//
 export const spacing = {
   space1: '.6em',
-  space2: '2em',
+  space2: '1.2em',
   space3: '2.5em',
-  space4: '4em',
+  space4: '5em',
 };
 
 // ------------------------------------ FONTS ------------------------------------//
@@ -48,12 +48,12 @@ export const shadows = {
   innerShadow: `inset 4px 4px 10px rgba(0, 0, 0, 0.25), 
                 inset -4px -4px 10px 1px #F6F6F6, 
                 inset 3px 3px 2px 1px rgba(0, 0, 0, 0.25)`,
-  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
-
+  innerSoftShadow: `inset 3px 3px 10px rgba(0, 0, 0, 0.25), 
+                    inset -4px -4px 10px #F6F6F6, 
+                    inset 5px 5px 8px rgba(0, 0, 0, 0.25)`,
+  textShadow: '2px 2px 3px rgba(0, 0, 0, 0.4)',
   cardShadow: `10px 10px 20px 1px rgba(0, 0, 0, 0.25),
   -4px -4px 10px 1px rgba(255, 255, 255, 0.26)`,
-
   filter: `drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5)), 
   drop-shadow(5px 5px 25px rgba(0, 0, 0, 0.5));`,
-
 };

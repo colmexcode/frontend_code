@@ -19,6 +19,9 @@ export const Button = styled.button`
   outline: none;
   background: ${colors.secondaryBackgroundColor};
 
+  &:active {
+    box-shadow: ${shadows.innerShadow};
+  }
   /* this validate the color of background */
   /* if has the prop main display background orange */
   ${(props) =>
@@ -26,7 +29,11 @@ export const Button = styled.button`
     css`
       ${colors.mainBackgroundColor};
     `};
-  &:active {
-    box-shadow: ${shadows.innerShadow};
-  }
+
+  ${(props) =>
+    props.big &&
+    css`
+      padding: ${spacing.space2} ${spacing.space4};
+      ${colors.mainBackgroundColor};
+    `};
 `;

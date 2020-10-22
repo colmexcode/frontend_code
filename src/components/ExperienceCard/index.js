@@ -7,7 +7,7 @@ import homeImg1 from '../../assets/images/homeImg1.jpg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
-export const Cards = ({ position }) => {
+export const ExperienceCard = ({ position }) => {
 	return (
 		<CardStyled  position={`home${position}`} >
 			<HomeImage 

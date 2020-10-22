@@ -2,22 +2,22 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { ExperienceCard } from '../../components/ExperienceCard';
-import { Hero } from '../../components/Hero';
-import { ExperiencesLayout } from '../../components/ExperiencesLayout';
+import { UserHero } from '../../components/UserHero';
+import { Footer } from '../../components/Footer';
+import { LocationCard } from '../../components/LocationCard';
 
 // ------------------------------ import styles and images
 
+// -------- import redux actions
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
-export const HomePage = () => {
+export const UserPage = () => {
   return (
     <>
-        <Hero />
-        <ExperiencesLayout>
-            <ExperienceCard />
-        </ExperiencesLayout>
+      <UserHero />
+      {/* <LocationCard /> */}
+      <Footer />
     </>
   );
 };
