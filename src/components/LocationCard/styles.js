@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 // ------------------------------ import variables
 import {
   colors,
@@ -11,16 +11,23 @@ import {
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Card = styled.section`
-  position: relative;
-  display: block;
-  left: ${(props) => props.left || '0'};
-  top: ${(props) => props.top || '0'};
+  position: absolute;
+  display: none;
+  left: ${(props) => props.left || '0px'};
+  top: ${(props) => props.top || '0px'};
+  z-index: 2;
   width: 200px;
   height: 350px;
   border: ${border.border};
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.outsideShadow};
   overflow: hidden;
+
+  ${(props) =>
+    props.show === true &&
+    css`
+      display: block;
+    `}
 
   img {
     position: absolute;

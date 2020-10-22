@@ -1,7 +1,6 @@
 // ------------------------------ import libraries
 import React from 'react';
-
-// ------------------------------ import components
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import styles and images
 import { Card, Description } from './styles';
@@ -11,12 +10,11 @@ import mockupPicture from '../../assets/images/mockupPicture.jpg';
 // this card display a ditail of the location in the section feature destinations at landing page
 // It is hidden and is shown when user hover the location mark in the map.
 
-export const LocationCard = () => {
-  let left = '20px';
-  let top = '20px';
+export const LocationCard = ({ left, top }) => {
+  const show = useSelector((state) => state.mapReducer.show);
 
   return (
-    <Card left={left} top={top}>
+    <Card show={show} left={`${left}px`} top={`${top}px`}>
       <img src={mockupPicture} alt="location" />
       <Description>
         <p>Raja Ampat</p>
