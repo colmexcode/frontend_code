@@ -2,25 +2,21 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { Hero } from '../../components/Hero';
+import { UserHero } from '../../components/UserHero';
 import { Footer } from '../../components/Footer';
 import { LocationCard } from '../../components/LocationCard';
-import { TestimonialSection } from '../../components/TestimonialSection';
 
 // ------------------------------ import styles and images
 
 // -------- import redux actions
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// this is the landing page.
-// This page has login or sign up buttons, the search bar, features location and testiomanials
-
-export const LandingPage = () => {
+// description of the component.
+export const UserPage = () => {
   return (
     <>
-      <Hero />
-      <TestimonialSection />
-      <LocationCard />
+      <UserHero />
+      {/* <LocationCard /> */}
       <Footer />
     </>
   );
