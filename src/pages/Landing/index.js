@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { useRef } from 'react';
 
 // ------------------------------ import components
 import { Hero } from '../../components/Hero';
@@ -8,6 +8,7 @@ import { LocationCard } from '../../components/LocationCard';
 import { Footer } from '../../components/Footer';
 import { TestimonialSection } from '../../components/TestimonialSection';
 import { useGetMousePosition } from '../../hooks/useGetMousePosition';
+import { LoginModal } from '../../components/LoginModal';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the landing page.
@@ -15,6 +16,8 @@ import { useGetMousePosition } from '../../hooks/useGetMousePosition';
 
 export const LandingPage = () => {
   const mousePosition = useGetMousePosition();
+  const modalRef = useRef();
+
   return (
     <>
       <Hero />
@@ -22,6 +25,7 @@ export const LandingPage = () => {
       <LocationCard top={mousePosition.y} left={mousePosition.x} />
       <TestimonialSection />
       <Footer />
+      <LoginModal ref={modalRef} />
     </>
   );
 };
