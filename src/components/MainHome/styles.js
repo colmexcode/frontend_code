@@ -16,3 +16,4 @@ export const MainStyled = styled.section`
     justify-content: center;
 
 `;
+

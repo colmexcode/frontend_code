@@ -6,18 +6,14 @@ import { Cards } from '../Cards';
 
 // ------------------------------ import styles and images
 import { MainStyled } from './styles';
-import homeImg1 from '../../assets/images/homeImg1.svg';
 
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
-export const Main = () => {
+export const MainHome = () => {
 	return (
 		<MainStyled>
-			<Cards position={1}
-				src={homeImg1}
-				alt="travel image # 1"
-			/>
+			<Cards  position={1} />
 			<Cards  position={2} />
 			<Cards  position={3} />
 			<Cards  position={4} />
@@ -30,3 +26,4 @@ export const Main = () => {
 		</MainStyled>
 	);
 };
+
