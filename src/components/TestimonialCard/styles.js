@@ -51,7 +51,8 @@ export const Description = styled.div`
   color: ${colors.backgroundColor};
 
   h1 {
-    margin: 0;
+    margin: 0 0 5px 0;
+    color: ${colors.backgroundColor};
     text-shadow: ${shadows.textShadow};
   }
 `;
