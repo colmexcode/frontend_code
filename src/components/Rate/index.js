@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // ------------------------------ import styles and images
 import starIcon from '../../assets/images/Star.svg';
 import StarInactive from '../../assets/images/StarInactive.svg';
-import { Star, Input } from './styles';
+import { Star, Input, StyledRating } from './styles';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the rating component.
@@ -13,7 +13,7 @@ export const Rate = () => {
   const [rating, setrating] = useState(null);
 
   return (
-    <div>
+    <StyledRating>
       {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
 
@@ -33,6 +33,6 @@ export const Rate = () => {
           </Star>
         );
       })}
-    </div>
+    </StyledRating>
   );
 };
