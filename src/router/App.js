@@ -4,6 +4,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // ------------------------------ import components
 import { LandingPage } from '../pages/Landing';
+import { HomePage } from '../pages/Home';
+
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // This is the router.
@@ -13,7 +15,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/" component={HomePage} />
       </Switch>
     </BrowserRouter>
   );
