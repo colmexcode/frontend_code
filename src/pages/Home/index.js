@@ -8,16 +8,18 @@ import { ExperiencesLayout } from '../../components/ExperiencesLayout';
 
 // ------------------------------ import styles and images
 
-
 // ------------------------------------ COMPONENT ------------------------------------//
-// description of the component.
+// this pages is the home.
+// at first it has the top experiences according to the preferences of the user.
+// user can search and find experiences by destinations.
+
 export const HomePage = () => {
   return (
     <>
-        <Hero />
-        <ExperiencesLayout>
-            <ExperienceCard />
-        </ExperiencesLayout>
+      <Hero />
+      <ExperiencesLayout>
+        <ExperienceCard />
+      </ExperiencesLayout>
     </>
   );
 };
