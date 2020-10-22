@@ -2,20 +2,23 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { LocationCard } from '../LocationCard';
+import { Landmark } from '../Landmark';
 
 // ------------------------------ import styles and images
-import { StyledMap, MapImg } from './styles';
+import { StyledSection, StyledMap, MapImg } from './styles';
 import map from '../../assets/images/map.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
 export const Map = () => {
   return (
-    <StyledMap>
+    <StyledSection>
       <h1> Features Destinations </h1>
-      <MapImg src={map} alt="" />
-      <LocationCard />
-    </StyledMap>
+      <StyledMap>
+        <MapImg src={map} alt="" />
+        <Landmark left={330} top={380} />
+        <Landmark left={400} top={450} />
+      </StyledMap>
+    </StyledSection>
   );
 };
