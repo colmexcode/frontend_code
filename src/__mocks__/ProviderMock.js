@@ -10,7 +10,7 @@ import { generateStore } from '../store';
 const store = generateStore();
 const history = createBrowserHistory();
 
-export const ProviderMock = () => {
+export const ProviderMock = (props) => {
   <Provider store={store}>
     <Router history={history}>{props.children}</Router>
   </Provider>;
