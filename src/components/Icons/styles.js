@@ -10,7 +10,7 @@ import {
 } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
-export const StyledIcon = styled.img`
+export const StyledIcon = styled.input`
   width: 40px;
   height: 40px;
   margin: 0 ${spacing.space2};
@@ -19,9 +19,14 @@ export const StyledIcon = styled.img`
   border: ${border.border};
   box-shadow: ${shadows.outsideShadow};
   background: ${colors.secondaryBackgroundColor};
+  outline: none;
 
   /* this rule is the style to the click action  */
   &:active {
+    box-shadow: ${shadows.innerShadow};
+  }
+
+  &:focus {
     box-shadow: ${shadows.innerShadow};
   }
 

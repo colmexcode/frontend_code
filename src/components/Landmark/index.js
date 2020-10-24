@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 // ------------------------------ import styles and images
@@ -20,8 +20,9 @@ import {
 export const Landmark = ({ left, top }) => {
   const dispatch = useDispatch();
   const mousePosition = useGetMousePosition();
+  const section = useRef();
 
-  // this functions show the location card and the coordinatess
+  // this functions show the location card and the coordinates
   function showLocationCard() {
     dispatch(showLocation());
     dispatch(setMouseCoordinates(mousePosition));
@@ -31,10 +32,31 @@ export const Landmark = ({ left, top }) => {
     dispatch(setMouseCoordinates({ x: 0, y: 0 }));
   }
 
+  // this functions show the location card and the coordinates
+  // using the keybord
+  function focusShowLocationCard() {
+    dispatch(showLocation());
+    dispatch(
+      setMouseCoordinates({
+        x:
+          section.current.offsetParent.offsetLeft +
+          section.current.offsetLeft +
+          section.current.clientHeight,
+        y:
+          section.current.offsetParent.offsetTop +
+          section.current.offsetTop,
+      }),
+    );
+  }
+
   return (
     <LandmarkIcon
+      ref={section}
       onMouseEnter={showLocationCard}
       onMouseOut={hideLocationCard}
+      onFocus={focusShowLocationCard}
+      onBlur={hideLocationCard}
+      type="image"
       src={landmarkIcon}
       left={`${left}px`}
       top={`${top}px`}
