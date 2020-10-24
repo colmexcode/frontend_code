@@ -17,7 +17,7 @@ import { hideTestimonial } from '../../actions/testimonialActions';
 // this card show an user testimonial and the rating of the app
 // It is hidden and is shown when the user click the testimonial component.
 
-export const TestimonialCard = ({ show }) => {
+export const TestimonialCard = () => {
   const state = useSelector((state) => state.testimonialReducer.show);
   const dispatch = useDispatch();
 

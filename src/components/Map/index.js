@@ -17,7 +17,7 @@ export const Map = () => {
     <StyledSection>
       <h1> Features Destinations </h1>
       <StyledMap>
-        <MapImg src={map} alt="" />
+        <MapImg src={map} alt="map of the world" />
         <Landmark left={330} top={380} />
         <Landmark left={400} top={450} />
       </StyledMap>

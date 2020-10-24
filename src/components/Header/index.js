@@ -19,7 +19,7 @@ import { openLogin, openSign } from '../../actions/userActions';
 export const Header = () => {
   const dispatch = useDispatch();
 
-  // this functions open and close the modal
+  // this functions open the modal
   const openLoginModal = () => dispatch(openLogin());
   const openSignModal = () => dispatch(openSign());
 
