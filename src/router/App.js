@@ -7,6 +7,7 @@ import { LandingPage } from '../pages/Landing';
 import { UserPage } from '../pages/UserPage';
 import { ExperienceDetails } from '../pages/ExperienceDetails';
 import { ExperienceCreation } from '../pages/ExperienceCreation';
+import { HomePage } from '../pages/Home';
 // ------------------------------------ COMPONENT ------------------------------------//
 // This is the router.
 // This component has all the pages components
@@ -16,6 +17,7 @@ export const App = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/home" component={HomePage} />
         <Route exact path="/user" component={UserPage} />
         <Route
           exact

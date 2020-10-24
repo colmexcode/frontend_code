@@ -9,7 +9,9 @@ import { StyledSection, StyledMap, MapImg } from './styles';
 import map from '../../assets/images/map.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// description of the component.
+// this is the features destinations sections.
+// it has a map to show the top destinations and shows a card with details by hovering the landmarks.
+
 export const Map = () => {
   return (
     <StyledSection>
