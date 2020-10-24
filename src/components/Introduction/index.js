@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 // ------------------------------ import styles and images
 import { Button } from '../../global-styles/Buttons';
-import { Titule, StyledIntroduction, Description } from './styles';
+import { Title, StyledIntroduction, Description } from './styles';
 
 // -------- import redux actions
 import { openSign } from '../../actions/userActions';
@@ -20,7 +20,7 @@ export const Introduction = () => {
 
   return (
     <StyledIntroduction>
-      <Titule>Cozy Place</Titule>
+      <Title tabIndex="0">Cozy Place</Title>
       <Description>
         For decades travellers have reached for Lonely Planet books
         when looking to plan and execute their perfect trip, but now,

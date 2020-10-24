@@ -53,6 +53,7 @@ export const LoginModal = forwardRef(() => {
             <>
               <h1>Sign up</h1>
               <InputText
+                aria-label="username"
                 type="text"
                 placeholder="Username"
                 name="username"
@@ -61,12 +62,14 @@ export const LoginModal = forwardRef(() => {
             </>
           )}
           <InputText
+            aria-label="email"
             type="text"
             placeholder="Email"
             name="email"
             onChange={handleInput}
           />
           <InputText
+            aria-label="password"
             type="password"
             placeholder="Password"
             name="password"
@@ -74,6 +77,7 @@ export const LoginModal = forwardRef(() => {
           />
           {displayModal.sign && (
             <InputText
+              aria-label="confirmPassword"
               type="password"
               placeholder="Confirm Password"
               name="confirmPassword"

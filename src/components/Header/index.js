@@ -1,9 +1,10 @@
 // ------------------------------ import libraries
 import React from 'react';
+// import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 // ------------------------------ import styles and images
-import { StyledHeader, Brand, Logo } from './styles';
+import { StyledHeader, Brand, Logo, LinkedLogo } from './styles';
 import { Button } from '../../global-styles/Buttons';
 import { LinkStyled as Link } from '../../global-styles/Links';
 import logo from '../../assets/images/logo.svg';
@@ -26,7 +27,9 @@ export const Header = () => {
   return (
     <StyledHeader>
       <Brand>
-        <Logo src={logo} alt="Cozy place logo" />
+        <LinkedLogo to="/">
+          <Logo src={logo} alt="Cozy place logo" />
+        </LinkedLogo>
         <Link to="/">about us</Link>
         <Link to="/">destinations</Link>
       </Brand>

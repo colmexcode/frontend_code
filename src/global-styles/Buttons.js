@@ -14,10 +14,13 @@ export const Button = styled.button`
   font-weight: ${fonts.bold};
   color: ${colors.titleColor};
   box-shadow: ${shadows.outsideShadow};
-  text-shadow: ${shadows.textShadow};
   cursor: pointer;
   outline: none;
   background: ${colors.secondaryBackgroundColor};
+
+  &:focus {
+    box-shadow: ${shadows.innerShadow};
+  }
 
   &:active {
     box-shadow: ${shadows.innerShadow};
