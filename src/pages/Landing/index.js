@@ -7,7 +7,6 @@ import { Map } from '../../components/Map';
 import { LocationCard } from '../../components/LocationCard';
 import { Footer } from '../../components/Footer';
 import { TestimonialSection } from '../../components/TestimonialSection';
-import { useGetMousePosition } from '../../hooks/useGetMousePosition';
 import { LoginModal } from '../../components/LoginModal';
 import { TrendingSection } from '../../components/TrendingSection';
 
@@ -16,14 +15,13 @@ import { TrendingSection } from '../../components/TrendingSection';
 // This page has login or sign up buttons, the search bar, features location and testiomanials
 
 export const LandingPage = () => {
-  const mousePosition = useGetMousePosition();
   const modalRef = useRef();
 
   return (
     <>
       <Hero />
       <Map />
-      <LocationCard top={mousePosition.y} left={mousePosition.x} />
+      <LocationCard />
       <TrendingSection />
       <TestimonialSection />
       <Footer />
