@@ -3,11 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: {
+    bundle: path.resolve(__dirname, 'src/index.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: "/"
+    filename: 'js/bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js'],
@@ -27,7 +29,9 @@ module.exports = {
       },
       {
         test: /\.jpg|jpeg|png|svg$/,
-        use: 'file-loader',
+        use: {
+          loader: 'file-loader',
+        },
       },
       {
         test: /\.js$/,
@@ -39,7 +43,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: './index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],

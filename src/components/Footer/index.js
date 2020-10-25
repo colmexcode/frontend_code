@@ -12,7 +12,6 @@ import {
   Rights,
   ListsGroup,
   List,
-  SocialGarden,
 } from './styles';
 
 // ------------------------------------ COMPONENT ------------------------------------//

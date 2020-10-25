@@ -13,7 +13,10 @@ export const LinkStyled = styled(Link)`
   font-size: ${fonts.small};
   color: ${colors.titleColor};
   text-shadow: ${shadows.textShadow};
-  &:hover {
+  outline: none;
+
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 `;

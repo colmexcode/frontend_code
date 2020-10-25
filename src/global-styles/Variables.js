@@ -3,7 +3,7 @@ export const colors = {
   mainBackgroundColor: `background: linear-gradient(136.99deg, rgba(255, 255, 255, 0.4) 8.62%, rgba(0, 0, 0, 0.4) 91.32%), #FB8F1D;
                         background-blend-mode: soft-light, normal;`,
   secondaryBackgroundColor:
-    'linear-gradient(114.7deg, rgba(255, 255, 255, 0.15) 11.77%, rgba(0, 0, 0, 0.15) 110.69%), #F8F8F8',
+    'linear-gradient(114.7deg, rgba(255, 255, 255, 0.10) 11.77%, rgba(0, 0, 0, 0.15) 110.69%), #F8F8F8',
   backgroundColor: ' #F8F8F8',
   titleColor: '#202336',
   textColor: '#4A4C53',
@@ -52,4 +52,8 @@ export const shadows = {
                     inset -4px -4px 10px #F6F6F6, 
                     inset 5px 5px 8px rgba(0, 0, 0, 0.25)`,
   textShadow: '2px 2px 3px rgba(0, 0, 0, 0.4)',
+  cardShadow: `10px 10px 20px 1px rgba(0, 0, 0, 0.25),
+  -4px -4px 10px 1px rgba(255, 255, 255, 0.26)`,
+  filter: `drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5)), 
+  drop-shadow(5px 5px 25px rgba(0, 0, 0, 0.5));`,
 };

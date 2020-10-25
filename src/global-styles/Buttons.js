@@ -14,10 +14,13 @@ export const Button = styled.button`
   font-weight: ${fonts.bold};
   color: ${colors.titleColor};
   box-shadow: ${shadows.outsideShadow};
-  text-shadow: ${shadows.textShadow};
   cursor: pointer;
   outline: none;
   background: ${colors.secondaryBackgroundColor};
+
+  &:focus {
+    box-shadow: ${shadows.innerShadow};
+  }
 
   &:active {
     box-shadow: ${shadows.innerShadow};
@@ -35,5 +38,14 @@ export const Button = styled.button`
     css`
       padding: ${spacing.space2} ${spacing.space4};
       ${colors.mainBackgroundColor};
+    `};
+
+  ${(props) =>
+    props.submit &&
+    css`
+      align-self: center;
+      width: 80%;
+      margin: 0;
+      margin-top: ${spacing.space3};
     `};
 `;

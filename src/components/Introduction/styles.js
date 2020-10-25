@@ -16,12 +16,12 @@ export const StyledIntroduction = styled.section`
   text-shadow: ${shadows.textShadow};
 `;
 
-export const Titule = styled.h1`
+export const Title = styled.h1`
   font-size: ${fonts.bigTitle};
   margin: ${spacing.space1} 0;
 `;
 
-export const Description = styled.h3`
+export const Description = styled.h2`
   width: 80%;
   margin: ${spacing.space2} auto;
   color: ${colors.titleColor};
