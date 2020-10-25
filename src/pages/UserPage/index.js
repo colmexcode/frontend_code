@@ -2,21 +2,22 @@
 import React from 'react';
 
 // ------------------------------ import components
-// import { ImportedComponent } from '../components/ImportedComponent ';
+import { UserHero } from '../../components/UserHero';
+import { Footer } from '../../components/Footer';
+import { LocationCard } from '../../components/LocationCard';
 
 // ------------------------------ import styles and images
-// import image from './assets/image.jpg';
-// import { StyledComponents } from './styled/NewComponent/';
 
 // -------- import redux actions
-// import { actions } from '../actions/actions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
-export const NotFound = () => {
+export const UserPage = () => {
   return (
-    <section>
-      <div> This is an component structure </div>
-    </section>
+    <>
+      <UserHero />
+      {/* <LocationCard /> */}
+      <Footer />
+    </>
   );
 };
