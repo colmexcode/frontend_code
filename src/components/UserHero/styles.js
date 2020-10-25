@@ -6,6 +6,7 @@ import { shadows } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledHero = styled.section`
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

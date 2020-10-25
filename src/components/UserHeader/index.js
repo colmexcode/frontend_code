@@ -18,12 +18,13 @@ export const UserHeader = () => {
       <Brand>
         <Logo src={logo} alt="Cozy place logo" />
         <Link to="/">about us</Link>
-        <Link to="/">destinations</Link>
+        {/* <Link to="/">destinations</Link> */}
       </Brand>
       <div>
-        <Button main type="button">
+        <Link to="/">Home</Link>
+        {/* <Button main type="button">
           Sign up
-        </Button>
+        </Button> */}
       </div>
     </StyledHeader>
   );
