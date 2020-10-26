@@ -4,7 +4,8 @@ import React from 'react';
 // ------------------------------ import components
 import { UserHeader } from '../UserHeader';
 // import { SearchBar } from '../SearchBar';
-import { Introduction } from '../Introduction';
+// import { UserProfile } from '../UserProfile';
+// import { Introduction } from '../Introduction';
 
 // ------------------------------ import styles and images
 import { StyledHero, HeroImage } from './styles';
@@ -23,7 +24,7 @@ export const UserHero = () => {
         alt="A woman is pointing to a map in a road trip"
       />
       <UserHeader />
-      <Introduction />
+      {/* <UserProfile /> */}
       {/* <SearchBar /> */}
     </StyledHero>
   );
