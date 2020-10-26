@@ -64,7 +64,6 @@ module.exports = {
       name: 'commons',
       minSize: 0,
       chunks: 'all',
-      publicPath: 'https://cozy-place-mah652wia.vercel.app/',
     },
   },
 };
