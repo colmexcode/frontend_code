@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // ------------------------------ import components
 import { LandingPage } from '../pages/Landing';
+import { InterestForm } from '../pages/InterestForm';
 import { UserPage } from '../pages/UserPage';
 import { HomePage } from '../pages/Home';
 import { NotFound } from '../pages/NotFound';
@@ -16,6 +17,7 @@ export const App = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/form" component={InterestForm} />
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/user" component={UserPage} />
         <Route component={NotFound} />
