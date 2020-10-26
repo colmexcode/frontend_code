@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
     chunkFilename: 'js/[id].[chunkhash].js',
-    publicPath: 'https://cozy-place.vercel.app/dist',
+    publicPath: 'https://cozy-place.vercel.app/',
   },
   resolve: {
     extensions: ['.js'],
