@@ -2,15 +2,16 @@
 import React from 'react';
 
 // ------------------------------ import components
+import { Button } from '../../global-styles/Buttons';
 
 // ------------------------------ import styles and images
 import {
+  Container,
   Title,
   DescriptText,
-  Category,
+  CategorySection,
+  SelectionSection,
   TextChoice,
-  ButtonAction,
-  SpecialSection,
 } from './styles';
 
 // -------- import redux actions
@@ -19,29 +20,27 @@ import {
 // description of the component.
 export const InterestForm = () => {
   return (
-    <>
-      <section>
-        <Title>WHAT ARE YOU UP TO?</Title>
-        <DescriptText>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Aliquid, veritatis maxime sed blanditiis ab, similique
-          magnam aperiam vero eius et dolores quidem velit voluptas
-          cupiditate.
-        </DescriptText>
-      </section>
-      <SpecialSection>
-        <Category>Adventure Travel</Category>
-        <Category>Art And Culture</Category>
-        <Category>Wildlife And Nature</Category>
-        <Category className="particular">Family Holidays</Category>
-        <Category className="particular">Food And Drink</Category>
-      </SpecialSection>
-      <section>
+    <Container>
+      <Title>WHAT ARE YOU UP TO?</Title>
+      <DescriptText>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Aliquid, veritatis maxime sed blanditiis ab, similique
+        magnam aperiam vero eius et dolores quidem velit voluptas
+        cupiditate.
+      </DescriptText>
+      <CategorySection>
+        <Button>Adventure Travel</Button>
+        <Button>Art And Culture</Button>
+        <Button>Wildlife And Nature</Button>
+        <Button>Family Holidays</Button>
+        <Button>Food And Drink</Button>
+      </CategorySection>
+      <SelectionSection>
         <TextChoice>
           Awesome Choice: category1, category2, category3
         </TextChoice>
-        <ButtonAction>GO</ButtonAction>
-      </section>
-    </>
+        <Button main>GO</Button>
+      </SelectionSection>
+    </Container>
   );
 };

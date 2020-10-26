@@ -1,91 +1,74 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
 // ------------------------------ import variables
-import { colors, fonts, shadows } from '../../global-styles/Variables';
+import {
+  colors,
+  fonts,
+  shadows,
+  spacing,
+} from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
+
+export const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+  ${media.tablet}{
+    flex-direction: column;
+  }
+`;
+
 export const Title = styled.h1`
-  height: 70px;
-  margin: 0 auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 92px;
+  margin-top: 0;
+  padding-top: 1em;
   font-weight: ${fonts.normal};
-  font-size: 60px;
+  font-size: ${fonts.bigTitle};
   line-height: 70px;
   text-align: center;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
+  text-shadow: ${shadows.textShadow};
   color: ${colors.titleColor};
+  ${media.tablet} {
+    font-size: 3em;
+  }
 `;
 
 export const DescriptText = styled.p`
-  width: 447px;
-  height: 57px;
-  margin: 0 auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 242px;
+  margin: 1em auto;
+  width: 35%;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
+  ${media.tablet}{
+    width: 50%;
+  }
 `;
 
-export const SpecialSection = styled.section`
+export const CategorySection = styled.section`
+  margin: 2em auto;
+  height: 40%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 870px;
-  height: 200px;
-  margin: 0 auto;
-  position: absolute;
-  top: 462px;
-  left: 0;
-  right: 0;
+  align-items: center;
 `;
 
-export const Category = styled.button`
-  width: 253px;
-  height: 48px;
-  font-size: 26px;
-  line-height: 30px;
-  text-align: center;
-  color: ${colors.titleColor};
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  background: ${colors.secondaryBackgroundColor};
-  box-shadow: ${shadows.outsideShadow};
-  border-radius: 10px;
-  border: none;
-  &.particular{
-    align-self: flex-end;
+export const SelectionSection = styled.section`
+  display: flex;
+  justify-content: space-around;
+  ${media.tablet} {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: ${spacing.space2};
   }
 `;
 
 export const TextChoice = styled.p`
-  width: 646px;
-  height: 57px;
-  margin: 0 auto;
-  position: absolute;
-  left: 163px;
-  top: 850px;
-  font-weight: ${fonts.normal};
-  font-size: 28px;
+  width: 50%;
   text-align: center;
+  ${media.tablet} {
+    margin-bottom: ${spacing.space3};
+  }
 `;
 
-export const ButtonAction = styled.button`
-  width: 150px;
-  height: 40px;
-  position: absolute;
-  left: 1028px;
-  top: 850px;
-  font-size: 26px;
-  line-height: 30px;
-  ${colors.mainBackgroundColor};
-  box-shadow: ${shadows.outsideShadow};
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  color: #f7f7f7;
-  border: none;
-  border-radius: 10px;
-`;

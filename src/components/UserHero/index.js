@@ -3,7 +3,7 @@ import React from 'react';
 
 // ------------------------------ import components
 import { UserHeader } from '../UserHeader';
-import { SearchBar } from '../SearchBar';
+// import { SearchBar } from '../SearchBar';
 import { Introduction } from '../Introduction';
 
 // ------------------------------ import styles and images
