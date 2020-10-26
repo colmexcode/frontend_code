@@ -6,6 +6,8 @@ import clock from '../../assets/images/clockIcon.svg';
 import close from '../../assets/images/closeIcon.svg';
 import search from '../../assets/images/searchIcon.svg';
 import location from '../../assets/images/locationIcon.svg';
+import Star from '../../assets/images/Star.svg';
+import plus from '../../assets/images/plusIcon.svg';
 import facebook from '../../assets/images/facebookIcon.svg';
 import twitter from '../../assets/images/twitterIcon.svg';
 import instagram from '../../assets/images/instagramIcon.svg';
@@ -26,6 +28,8 @@ const icons = {
   twitter,
   instagram,
   youtube,
+  star: Star,
+  plus,
 };
 
 // to use the icons set the prop type with one of the keys of icons object

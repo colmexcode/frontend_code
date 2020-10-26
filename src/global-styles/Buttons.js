@@ -19,7 +19,7 @@ export const Button = styled.button`
   background: ${colors.secondaryBackgroundColor};
 
   &:focus {
-    box-shadow: ${shadows.innerShadow};
+    box-shadow: none;
   }
 
   &:active {

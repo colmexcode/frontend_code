@@ -1,46 +1,32 @@
 // ------------------------------ import libraries
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import components
-import { UserExperienceCard } from '../UserExperienceCard';
-import { UserProfile } from '../UserProfile';
+import { ExperienceCard } from '../ExperienceCard';
+import { AddExperienceCard } from '../AddExperienceCard';
 
 // ------------------------------ import styles and images
-import {
-  ExperienceSelector,
-  Selector,
-  ExperienceGrid,
-} from './styles';
-import { LinkStyled as Link } from '../../global-styles/Links';
-// import map from '../../assets/images/map.svg';
+import { ExperienceGrid } from './styles';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
 export const UserExperiences = () => {
+  const selection = useSelector(
+    (state) => state.userReducer.selection,
+  );
+
   return (
-    <ExperienceSelector>
-      <UserProfile />
-      <Selector>
-        <ul>
-          <li>
-            <Link>My experiences</Link>
-          </li>
-          <li>
-            <Link>Favorites</Link>
-          </li>
-        </ul>
-      </Selector>
-      <ExperienceGrid>
-        <UserExperienceCard />
-        <UserExperienceCard />
-        <UserExperienceCard />
-        <UserExperienceCard />
-        <UserExperienceCard />
-        <UserExperienceCard />
-        <UserExperienceCard />
-        <UserExperienceCard />
-        <UserExperienceCard />
-      </ExperienceGrid>
-    </ExperienceSelector>
+    <ExperienceGrid>
+      <ExperienceCard />
+      <ExperienceCard />
+      <ExperienceCard />
+      <ExperienceCard />
+      <ExperienceCard />
+      <ExperienceCard />
+      <ExperienceCard />
+      <ExperienceCard />
+      <AddExperienceCard />
+    </ExperienceGrid>
   );
 };
