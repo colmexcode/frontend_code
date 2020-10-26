@@ -12,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
     chunkFilename: 'js/[id].[chunkhash].js',
-    publicPath: 'https://cozy-place.vercel.app/',
+    publicPath: 'https://cozy-place-mah652wia.vercel.app/',
   },
   resolve: {
     extensions: ['.js'],
@@ -53,7 +53,7 @@ module.exports = {
     new AddAssetHtmlWebpackPlugin({
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
-      publicPath: 'https://cozy-place.vercel.app/js',
+      publicPath: 'https://cozy-place-mah652wia.vercel.app/',
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/*'],
@@ -64,6 +64,7 @@ module.exports = {
       name: 'commons',
       minSize: 0,
       chunks: 'all',
+      publicPath: 'https://cozy-place-mah652wia.vercel.app/',
     },
   },
 };
