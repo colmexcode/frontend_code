@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> Footer Snapshot 1`] = `
+<footer
+  className="styles__StyledFooter-sc-1569jkl-0 HUCwy"
+>
+  <div
+    className="styles__Description-sc-1569jkl-1 buvuhc"
+  >
+    <div
+      className="styles__Rights-sc-1569jkl-2 kEMJNf"
+    >
+      <img
+        alt="logo cozy place"
+        src={Object {}}
+      />
+      <p>
+        For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect trip, but now, they can also let Lonely Planet Experiences lead the way.
+      </p>
+      <p>
+        L©2020 Thousand Sunny. All rights reserved.
+      </p>
+    </div>
+    <div
+      className="styles__ListsGroup-sc-1569jkl-3 fnnvem"
+    >
+      <ul
+        className="styles__List-sc-1569jkl-4 GKeZH"
+      >
+        <li>
+          destinations
+        </li>
+        <li>
+          Mexico
+        </li>
+        <li>
+          Colombia
+        </li>
+      </ul>
+      <ul
+        className="styles__List-sc-1569jkl-4 GKeZH"
+      >
+        <li>
+          interests
+        </li>
+        <li>
+          Adventure Travel
+        </li>
+        <li>
+          Art and Culture
+        </li>
+        <li>
+          Wildlife and Nature
+        </li>
+        <li>
+          Family Holidays
+        </li>
+        <li>
+          Food and Drinks
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <input
+      alt="facebook"
+      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      src={Object {}}
+      type="image"
+    />
+    <input
+      alt="instagram"
+      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      src={Object {}}
+      type="image"
+    />
+    <input
+      alt="youtube"
+      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      src={Object {}}
+      type="image"
+    />
+    <input
+      alt="twitter"
+      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      src={Object {}}
+      type="image"
+    />
+  </div>
+</footer>
+`;

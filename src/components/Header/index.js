@@ -1,9 +1,10 @@
 // ------------------------------ import libraries
 import React from 'react';
+// import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 // ------------------------------ import styles and images
-import { StyledHeader, Brand, Logo } from './styles';
+import { StyledHeader, Brand, Logo, LinkedLogo } from './styles';
 import { Button } from '../../global-styles/Buttons';
 import { LinkStyled as Link } from '../../global-styles/Links';
 import logo from '../../assets/images/logo.svg';
@@ -19,14 +20,16 @@ import { openLogin, openSign } from '../../actions/userActions';
 export const Header = () => {
   const dispatch = useDispatch();
 
-  // this functions open and close the modal
+  // this functions open the modal
   const openLoginModal = () => dispatch(openLogin());
   const openSignModal = () => dispatch(openSign());
 
   return (
     <StyledHeader>
       <Brand>
-        <Logo src={logo} alt="Cozy place logo" />
+        <LinkedLogo to="/">
+          <Logo src={logo} alt="Cozy place logo" />
+        </LinkedLogo>
         <Link to="/">about us</Link>
         <Link to="/">destinations</Link>
       </Brand>

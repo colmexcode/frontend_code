@@ -19,7 +19,12 @@ export const SearchBar = () => {
     <SearchBarStyled>
       <Title> explore and travel </Title>
       <SearchContainer>
-        <SearchInput type="text" name="" placeholder="Location" />
+        <SearchInput
+          aria-label="location"
+          type="text"
+          name="location"
+          placeholder="Location"
+        />
         <Icon type="search" />
       </SearchContainer>
     </SearchBarStyled>

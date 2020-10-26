@@ -14,7 +14,7 @@ import homeImg1 from '../../assets/images/homeImg1.jpg';
 
 export const ExperienceCard = ({ position, page }) => {
   return (
-    <CardStyled position={`${page}${position}`}>
+    <CardStyled to="/" position={`${page}${position}`}>
       <Rate />
       <div>
         <CardImg src={homeImg1} alt="travel image #1" />

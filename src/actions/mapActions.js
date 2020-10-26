@@ -7,3 +7,8 @@ export const hideLocation = (payload) => ({
   type: 'HIDE_LOCATION',
   payload: false,
 });
+
+export const setMouseCoordinates = (payload) => ({
+  type: 'SET_MOUSE',
+  payload,
+});

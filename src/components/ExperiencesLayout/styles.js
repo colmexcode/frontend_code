@@ -13,6 +13,7 @@ export const MainStyled = styled.section`
     height: 1000px;
     margin: 0 auto;
     margin-top: ${spacing.space4};
+    margin-bottom: -200px;
     justify-content: center;
 
 `;

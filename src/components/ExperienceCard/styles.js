@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // ------------------------------ import variables
 import {
@@ -11,12 +12,19 @@ import {
 } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
-export const CardStyled = styled.div`
+export const CardStyled = styled(Link)`
   position: relative;
   border: ${border.border};
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.outsideShadow};
   overflow: hidden;
+  outline: none;
+
+  &:focus {
+    transform: scale(0.95);
+    box-shadow: ${shadows.innerShadow};
+  }
+
   div {
     padding: ${spacing.space2};
     position: absolute;
@@ -92,6 +100,7 @@ export const CardStyled = styled.div`
       grid-column: 7 / span 1;
       grid-row: 5 / span 3;
     `}
+
       /* grid styles for the landing grid  */
       ${(props) =>
     props.position === 'landing1' &&

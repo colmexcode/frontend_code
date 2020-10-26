@@ -1,5 +1,7 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 // ------------------------------ import variables
 import { spacing } from '../../global-styles/Variables';
 
@@ -19,4 +21,12 @@ export const Brand = styled.div`
 
 export const Logo = styled.img`
   width: 80px;
+`;
+
+export const LinkedLogo = styled(Link)`
+  outline: none;
+
+  &:focus {
+    transform: scale(0.8);
+  }
 `;
