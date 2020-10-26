@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -51,9 +50,6 @@ module.exports = {
     new AddAssetHtmlWebpackPlugin({
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
-    }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/*'],
     }),
   ],
   optimization: {
