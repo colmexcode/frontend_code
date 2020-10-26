@@ -51,6 +51,7 @@ module.exports = {
     new AddAssetHtmlWebpackPlugin({
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
+      publicPath: 'https://cozy-place.vercel.app/js',
     }),
   ],
   optimization: {
