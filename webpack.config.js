@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -11,6 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
     chunkFilename: 'js/[id].[chunkhash].js',
+    publicPath: 'https://cozy-place.vercel.app/',
   },
   resolve: {
     extensions: ['.js'],
@@ -28,6 +30,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 1000,
+            name: '[name].[fullhash].[ext]',
             outputPath: 'assets/',
           },
         },
@@ -50,7 +53,10 @@ module.exports = {
     new AddAssetHtmlWebpackPlugin({
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
-      publicPath: 'js/',
+      publicPath: 'https://cozy-place.vercel.app/js',
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/*'],
     }),
   ],
   optimization: {
