@@ -29,7 +29,6 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 1000,
-            name: '[name].[fullhash].[ext]',
             outputPath: 'assets/',
           },
         },
