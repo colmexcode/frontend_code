@@ -1,7 +1,6 @@
 // ------------------------------ import libraries
 import React from 'react';
-
-// ------------------------------ import components
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import styles and images
 import { Card, Description } from './styles';
@@ -12,11 +11,17 @@ import mockupPicture from '../../assets/images/mockupPicture.jpg';
 // It is hidden and is shown when user hover the location mark in the map.
 
 export const LocationCard = () => {
-  let left = '20px';
-  let top = '20px';
+  const show = useSelector((state) => state.mapReducer.show);
+  const mouseCoordinates = useSelector(
+    (state) => state.mapReducer.mouseCoordinates,
+  );
 
   return (
-    <Card left={left} top={top}>
+    <Card
+      show={show}
+      left={`${mouseCoordinates.x}px`}
+      top={`${mouseCoordinates.y}px`}
+    >
       <img src={mockupPicture} alt="location" />
       <Description>
         <p>Raja Ampat</p>

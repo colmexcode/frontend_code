@@ -2,20 +2,25 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { LocationCard } from '../LocationCard';
+import { Landmark } from '../Landmark';
 
 // ------------------------------ import styles and images
-import { StyledMap, MapImg } from './styles';
+import { StyledSection, StyledMap, MapImg } from './styles';
 import map from '../../assets/images/map.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// description of the component.
+// this is the features destinations sections.
+// it has a map to show the top destinations and shows a card with details by hovering the landmarks.
+
 export const Map = () => {
   return (
-    <StyledMap>
+    <StyledSection>
       <h1> Features Destinations </h1>
-      <MapImg src={map} alt="" />
-      <LocationCard />
-    </StyledMap>
+      <StyledMap>
+        <MapImg src={map} alt="map of the world" />
+        <Landmark left={330} top={380} />
+        <Landmark left={400} top={450} />
+      </StyledMap>
+    </StyledSection>
   );
 };
