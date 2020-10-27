@@ -2,24 +2,20 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { ExperienceCard } from '../../components/ExperienceCard';
 import { Hero } from '../../components/Hero';
-import { ExperiencesLayout } from '../../components/ExperiencesLayout';
+import { ExperienceHost } from '../../components/ExperienceHost';
 import { Footer } from '../../components/Footer';
+
 // ------------------------------ import styles and images
+// -------- import redux actions
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// this pages is the home.
-// at first it has the top experiences according to the preferences of the user.
-// user can search and find experiences by destinations.
-
-export const HomePage = () => {
+// description of the component.
+export const ExperienceDetails = () => {
   return (
     <>
       <Hero />
-      <ExperiencesLayout>
-        <ExperienceCard />
-      </ExperiencesLayout>
+      <ExperienceHost />
       <Footer />
     </>
   );

@@ -7,13 +7,12 @@ import { spacing } from '../../global-styles/Variables';
 export const MainStyled = styled.section`
 
     display: grid;
-    grid-template-columns: 20% 2.6% 20% 2.6% 20% 2.6% 20%;
-    grid-template-rows: 15% 2.6% 15% 2.6% 15% 2.6% 15%;
+    grid-template-columns: 22% 2.6% 23.5% 2.6% 23.5% 2.6% 23.5%;
+    grid-template-rows: 23.1% 2.6% 23.1% 2.6% 23.1% 2.6% 23.1%;
     width: 80%;
-    height: 1000px;
+    height: 700px;
     margin: 0 auto;
     margin-top: ${spacing.space4};
-    justify-content: center;
 
 `;
 

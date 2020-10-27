@@ -3,17 +3,18 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 // ------------------------------ import components
-import { TrendingSection } from '../../components/TrendingSection';
+import { ExperiencesLayout } from '../../components/ExperiencesLayout';
 import { ProviderMock } from '../../__mocks__/ProviderMock';
 
 // ------------------------------------ TESTS ------------------------------------//
-describe('<TrendingSection />', () => {
-  const trendingSection = shallow(
+describe('<ExperiencesLayout />', () => {
+  const experiencesLayout = shallow(
     <ProviderMock>
-      <TrendingSection />
+      <ExperiencesLayout />
     </ProviderMock>,
   );
-  test('Render TrendingSection component', () => {
-    expect(trendingSection.length).toEqual(1);
+  test('Render ExperiencesLayout component', () => {
+    expect(experiencesLayout.length).toEqual(1);
   });
 });
+

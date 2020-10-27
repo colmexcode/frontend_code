@@ -3,8 +3,9 @@ import React from 'react';
 
 // ------------------------------ import components
 import { UserHeader } from '../UserHeader';
+// import { SearchBar } from '../SearchBar';
 // import { UserProfile } from '../UserProfile';
-import { Introduction } from '../Introduction';
+// import { Introduction } from '../Introduction';
 
 // ------------------------------ import styles and images
 import { StyledHero, HeroImage } from './styles';
