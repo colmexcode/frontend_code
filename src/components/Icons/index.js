@@ -28,6 +28,9 @@ const icons = {
   twitter,
   instagram,
   youtube,
+  addPicture,
+  arrowLeft,
+  arrowRight,
   star: Star,
   plus,
 };
