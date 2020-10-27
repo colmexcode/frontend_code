@@ -9,7 +9,6 @@ import {
   SearchBarStyled,
   SearchContainer,
   SearchInput,
-  Title,
 } from './styles';
 
 // ------------------------------------ COMPONENT ------------------------------------//
@@ -18,7 +17,10 @@ export const SearchReview = () => {
   return (
     <SearchBarStyled>
       <SearchContainer>
-        <SearchInput type="text" name="" placeholder="205 Reviews" />
+        <SearchInput>
+          <Icon type="star" />
+          <p>205 reviews</p>
+        </SearchInput>
       </SearchContainer>
     </SearchBarStyled>
   );

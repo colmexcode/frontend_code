@@ -1,28 +1,42 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------ import variables
 import {
-  colors,
   spacing,
   shadows,
-  fonts,
   border,
 } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Card = styled.article`
-  width: 350px;
-  height: 185px;
-  padding: 20px 25px;
-  border: none;
-  border-radius: ${border.borderRadiusBig};
-  box-shadow: ${shadows.outsideSoftShadow};
-  overflow: hidden;
+  padding: ${spacing.space2};
+  border: ${border.border};
+  border-radius: ${border.borderRadiusSmall};
+  box-shadow: ${shadows.outsideShadow};
+
+  ${media.mobile} {
+    margin-bottom: ${spacing.space2};
+  }
+
+  article {
+    display: flex;
+    margin-bottom: ${spacing.space1};
+  }
+
+  div {
+    flex-direction: column;
+    margin-left: ${spacing.space2};
+
+    div {
+      margin: 0;
+    }
+  }
 
   h3 {
     margin: 0;
-    font-size: ${fonts.h2};
+    margin-bottom: 10px;
     align-self: flex-start;
     justify-self: center;
     position: relative;
@@ -38,23 +52,15 @@ export const Card = styled.article`
     bottom: -2px;
   }
 
-  article {
-    display: grid;
-    grid-template-columns: 65px 1fr;
-    grid-template-rows: 33px 33px;
-  }
-
-  div {
-    grid-column: 2 / span 1;
-    justify-self: center;
-    display: flex;
+  p {
+    margin: 0;
   }
 `;
+
 export const Image = styled.img`
-  width: 63px;
-  height: 63px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  overflow: hidden;
   box-shadow: ${shadows.outsideShadow};
 `;

@@ -3,7 +3,7 @@ import React from 'react';
 
 // ------------------------------ import components
 import { Rate } from '../Rate';
-import { Icon } from '../Icons'
+import { Icon } from '../Icons';
 // ------------------------------ import styles and images
 import {
   ExpCreationContainer,
@@ -12,13 +12,11 @@ import {
   Map,
   Pics,
   CancelButton,
-  SubmitButton
+  SubmitButton,
 } from './styles';
 // -------- import redux actions
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// this card show an user testimonial and the rating of the app
-// It is hidden and is shown when the user click the testimonial component.
 
 export const ExperienceForm = () => {
   return (
@@ -39,11 +37,14 @@ export const ExperienceForm = () => {
         </Rating>
         <Map />
         <Pics>
-          <Icon src='arrowLeft'/>
-          <Icon src='addPicture' />
-          <Icon src='arrowRight' />
+          <Icon src="arrowLeft" />
+          <Icon src="addPicture" />
+          <Icon src="arrowRight" />
         </Pics>
-        <textarea maxLength='400' placeholder="Create you description that does not exceed more than 400 characters"></textarea>
+        <textarea
+          maxLength="400"
+          placeholder="Create you description that does not exceed more than 400 characters"
+        />
         <CancelButton>Cancelar</CancelButton>
         <SubmitButton>Crear</SubmitButton>
       </ExpForm>

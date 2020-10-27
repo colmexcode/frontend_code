@@ -1,6 +1,9 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
 
+// ------------------------------ import variables
+import { media } from '../../global-styles/MediaQueries';
+
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledRating = styled.div`
   position: relative;
@@ -9,6 +12,12 @@ export const StyledRating = styled.div`
 
 export const Star = styled.label`
   margin-right: 3px;
+
+  img {
+    ${media.mobile} {
+      width: 20px;
+    }
+  }
 `;
 
 export const Input = styled.input`

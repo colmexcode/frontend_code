@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------ import variables
 import {
@@ -7,31 +8,23 @@ import {
   border,
   spacing,
   shadows,
+  fonts,
 } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Card = styled.section`
-  width: 350px;
-  height: 133px;
-  /* position: relative; */
-  /* left: 50%; */
+  max-width: 350px;
   display: flex;
   align-items: center;
-  /* transform: translateX(-50%); */
-  padding: ${spacing.space3} ${spacing.space2};
+  padding: ${spacing.space2};
   border: ${border.border};
   border-radius: ${border.borderRadiusBig};
-  box-shadow: ${shadows.outsideShadow};
+  box-shadow: ${shadows.innerShadow};
   ${colors.mainBackgroundColor};
-  /* opacity: 0; */
-  pointer-events: none;
 
-  /* ${(props) =>
-    props.show === true &&
-    css`
-      opacity: 1;
-      pointer-events: all;
-    `} */
+  ${media.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
@@ -43,31 +36,12 @@ export const Image = styled.img`
 `;
 
 export const HostName = styled.div`
-  height: 100%;
-  display: flex;
-  padding: 0 0 ${spacing.space2} ${spacing.space3};
-  flex-direction: column;
-  justify-content: space-between;
+  margin-left: ${spacing.space3};
 
-  h3 {
+  h2 {
     margin: 0;
-    font-size: 28px;
-    font-weight: 200;
-    color: ${colors.backgroundColor};
-    text-shadow: ${shadows.textShadow};
-  }
-`;
-
-export const Description = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: ${spacing.space2} 0 ${spacing.space2} ${spacing.space3};
-  color: ${colors.backgroundColor};
-
-  h1 {
-    margin: 0 0 5px 0;
+    margin-bottom: ${spacing.space1};
+    font-weight: ${fonts.bold};
     color: ${colors.backgroundColor};
     text-shadow: ${shadows.textShadow};
   }
