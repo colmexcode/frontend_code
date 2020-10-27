@@ -22,7 +22,6 @@ export const App = () => {
         <Route exact path="/form" component={InterestForm} />
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/user" component={UserPage} />
-<<<<<<< HEAD
         <Route
           exact
           path="/experience"
@@ -33,9 +32,7 @@ export const App = () => {
           path="/create-experience"
           component={ExperienceCreation}
         />
-=======
         <Route component={NotFound} />
->>>>>>> efcef8ca3f9078cb5e33a0cf7eac70ceff39d4b1
       </Switch>
     </BrowserRouter>
   );
