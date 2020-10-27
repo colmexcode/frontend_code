@@ -2,6 +2,7 @@
 import React, { forwardRef, useState } from 'react';
 import ReactDom from 'react-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 // ------------------------------ import components
 import { Icon } from '../Icons';
@@ -13,7 +14,7 @@ import { Button } from '../../global-styles/Buttons';
 import lightLogo from '../../assets/images/logo-light.svg';
 
 // -------- import redux actions
-import { closeModal, getFormData } from '../../actions/userActions';
+import { closeModal, getToken } from '../../actions/userActions';
 
 import createUser from '../../utils/Register';
 import loginUser from '../../utils/Login';
@@ -27,6 +28,7 @@ export const LoginModal = forwardRef(() => {
   const displayModal = useSelector(
     (state) => state.userReducer.displayModal,
   );
+  let history = useHistory();
   const dispatch = useDispatch();
 
   // this function close the modal
@@ -41,25 +43,37 @@ export const LoginModal = forwardRef(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
-    dispatch(getFormData(form));
 
-    /**Login */
-    const login = await loginUser(form);
-    console.log(login);
+    if (displayModal.login) {
+      /* Login */
+      const login = await loginUser(form);
+      console.log(login);
+      // if (state.code === 201) {
+      //   console.log(props);
+      //   console.log(history);
+      //   history.push('/Home/Login');
+      // }
+      console.log(login.data.token);
+      dispatch(getToken(login.data.token));
+      history.push('/home');
+    } else if (displayModal.sign) {
+      /* Register */
+      const register = await createUser(form);
+      console.log(register);
+      console.log(form.email);
+      // console.log(register.data.id);
+      // console.log(register.data.email === form.email);
+      // console.log();
+      if (register.data.email === form.email) {
+        dispatch(getToken(register.data.id));
+        history.push('/home');
+      } else {
+        return <Error message={register.error} />;
+      }
+    }
 
-    /**Register */
-    const register = await createUser(form);
-    log(register);
-
-    /**Validacion ejemplo */
+    /* Validacion ejemplo */
     // console.log(state);
-    // if (state.code === 201) {
-    //   console.log(props);
-    //   console.log(history);
-    // history.push('/Home/Login');
-    // }
-
-    closeModalCard();
   };
 
   // this validate if the display Modal state is true to display it.
@@ -74,9 +88,9 @@ export const LoginModal = forwardRef(() => {
             <>
               <h1>Sign up</h1>
               <InputText
-                aria-label="username"
+                aria-label="fullname"
                 type="text"
-                placeholder="Username"
+                placeholder="Name"
                 name="fullname"
                 onChange={handleInput}
               />
@@ -91,15 +105,15 @@ export const LoginModal = forwardRef(() => {
           />
           {displayModal.sign && (
             <InputText
-              aria-label="password"
-              type="password"
-              placeholder="username"
+              aria-label="username"
+              type="text"
+              placeholder="Username"
               name="username"
               onChange={handleInput}
             />
           )}
           <InputText
-            aria-label="confirmPassword"
+            aria-label="password"
             type="password"
             placeholder="Password"
             name="password"
