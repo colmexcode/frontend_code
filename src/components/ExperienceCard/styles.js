@@ -39,6 +39,12 @@ export const CardStyled = styled(Link)`
     );
   }
 
+  ${(props) =>
+    props.position === 'undefinedundefined' &&
+    css`
+      height: 400px;
+    `}
+
   /* grid styles for the home grid  */
   ${(props) =>
     props.position === 'home1' &&

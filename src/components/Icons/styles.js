@@ -53,4 +53,12 @@ export const StyledIcon = styled.input`
       z-index: 1;
       padding: 8px;
     `};
+
+  ${(props) =>
+    props.alt === 'plus' &&
+    css`
+      padding: ${spacing.space2};
+      width: 80px;
+      height: 80px;
+    `};
 `;
