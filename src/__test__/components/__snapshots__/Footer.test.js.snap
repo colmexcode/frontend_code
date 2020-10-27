@@ -64,25 +64,25 @@ exports[`<Footer /> Footer Snapshot 1`] = `
   <div>
     <input
       alt="facebook"
-      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      className="styles__StyledIcon-urxmhz-0 bfFAQb"
       src={Object {}}
       type="image"
     />
     <input
       alt="instagram"
-      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      className="styles__StyledIcon-urxmhz-0 bfFAQb"
       src={Object {}}
       type="image"
     />
     <input
       alt="youtube"
-      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      className="styles__StyledIcon-urxmhz-0 bfFAQb"
       src={Object {}}
       type="image"
     />
     <input
       alt="twitter"
-      className="styles__StyledIcon-urxmhz-0 cfdlqn"
+      className="styles__StyledIcon-urxmhz-0 bfFAQb"
       src={Object {}}
       type="image"
     />
