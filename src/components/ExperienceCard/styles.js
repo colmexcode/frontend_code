@@ -51,6 +51,9 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 3 / span 3;
       grid-row: 1 / span 1;
+      button {
+        left: 90%;
+      }
     `}
       ${(props) =>
     props.position === 'home3' &&
@@ -69,6 +72,9 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 1 / span 3;
       grid-row: 7 / span 1;
+      button {
+        left: 90%;
+      }
     `}
       ${(props) =>
     props.position === 'home6' &&
@@ -81,6 +87,9 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 5 / span 3;
       grid-row: 3 / span 1;
+      button {
+        left: 90%;
+      }
     `}
       ${(props) =>
     props.position === 'home8' &&
@@ -144,7 +153,26 @@ export const TitleCard = styled.p`
   z-index: 1;
   bottom: ${spacing.space1};
   color: ${colors.backgroundColor};
-  font-size: ${fonts.h1};
+  font-size: ${fonts.h2};
   font-weight: ${fonts.bold};
   -webkit-text-stroke: 0.8px ${colors.titleColor};
+`;
+
+export const ButtonCard = styled.button`
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  left: 80%;
+  bottom: ${spacing.space2};
+  color: ${colors.textColor};
+  background: ${colors.backgroundColor};
+  border: none;
+  border-radius: ${border.borderRadiusSmall};
+  box-shadow: ${shadows.outsideShadow};
+
+  img {
+    width: 20px;
+    height: 20px;
+    
+  }
 `;
