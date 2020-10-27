@@ -11,7 +11,7 @@ import { Footer } from '../../components/Footer';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
-export const ExperienceDetails = () => {
+export default () => {
   return (
     <>
       <Hero />

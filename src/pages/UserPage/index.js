@@ -11,7 +11,7 @@ import { SectionSelector } from '../../components/SectionSelector';
 // ------------------------------------ COMPONENT ------------------------------------//
 // this page has the user data and the experiences created and favorites.
 
-export const UserPage = () => {
+export default () => {
   return (
     <>
       <UserHero />
