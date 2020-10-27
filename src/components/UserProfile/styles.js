@@ -89,6 +89,19 @@ export const LocationReviews = styled.div`
     color: ${colors.backgroundColor};
     text-shadow: ${shadows.textShadow};
   }
+  ul {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  li {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    list-style: none;
+    margin: 0 2.5em;
+    border-bottom: 1px solid black;
+  }
 `;
 
 export const Description = styled.p`
