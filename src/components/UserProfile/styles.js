@@ -85,6 +85,19 @@ export const UserFom = styled.form`
     right: 0;
     top: 15%;
   }
+  ul {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  li {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    list-style: none;
+    margin: 0 2.5em;
+    border-bottom: 1px solid black;
+  }
 `;
 
 export const UserInputs = styled.div`

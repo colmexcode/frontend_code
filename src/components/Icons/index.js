@@ -12,6 +12,10 @@ import facebook from '../../assets/images/facebookIcon.svg';
 import twitter from '../../assets/images/twitterIcon.svg';
 import instagram from '../../assets/images/instagramIcon.svg';
 import youtube from '../../assets/images/youtubeIcon.svg';
+import addPicture from '../../assets/images/Add-picture.svg';
+import arrowLeft from '../../assets/images/Arrow-left.svg';
+import arrowRight from '../../assets/images/Arrow-right.svg';
+
 
 import { StyledIcon } from './styles';
 
@@ -28,6 +32,9 @@ const icons = {
   twitter,
   instagram,
   youtube,
+  addPicture,
+  arrowLeft,
+  arrowRight,
   star: Star,
   plus,
 };

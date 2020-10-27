@@ -21,6 +21,7 @@ import { InputText } from '../../global-styles/Inputs';
 import mockupPortrait from '../../assets/images/mockupPortrait.jpg';
 import userIcon from '../../assets/images/userIcon.svg';
 
+
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the user data section.
 // user can see and edit his information

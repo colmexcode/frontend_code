@@ -15,6 +15,9 @@ import lightLogo from '../../assets/images/logo-light.svg';
 // -------- import redux actions
 import { closeModal, getFormData } from '../../actions/userActions';
 
+import createUser from '../../utils/Register';
+import loginUser from '../../utils/Login';
+
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the modal to login or sign up. It change according to the displayModal state
 // if the state login is true, show the login modal.
@@ -30,16 +33,34 @@ export const LoginModal = forwardRef(() => {
   const closeModalCard = () => dispatch(closeModal());
 
   // set the inputs in the form.
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState();
   function handleInput(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
   // submit the form to the store and close the modal.
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(form);
     dispatch(getFormData(form));
+
+    /**Login */
+    const login = await loginUser(form);
+    console.log(login);
+
+    /**Register */
+    const register = await createUser(form);
+    log(register);
+
+    /**Validacion ejemplo */
+    // console.log(state);
+    // if (state.code === 201) {
+    //   console.log(props);
+    //   console.log(history);
+    // history.push('/Home/Login');
+    // }
+
     closeModalCard();
-  }
+  };
 
   // this validate if the display Modal state is true to display it.
   if (displayModal.login || displayModal.sign) {
@@ -56,7 +77,7 @@ export const LoginModal = forwardRef(() => {
                 aria-label="username"
                 type="text"
                 placeholder="Username"
-                name="username"
+                name="fullname"
                 onChange={handleInput}
               />
             </>
@@ -64,26 +85,26 @@ export const LoginModal = forwardRef(() => {
           <InputText
             aria-label="email"
             type="text"
-            placeholder="Email"
+            placeholder="email"
             name="email"
             onChange={handleInput}
           />
+          {displayModal.sign && (
+            <InputText
+              aria-label="password"
+              type="password"
+              placeholder="username"
+              name="username"
+              onChange={handleInput}
+            />
+          )}
           <InputText
-            aria-label="password"
+            aria-label="confirmPassword"
             type="password"
             placeholder="Password"
             name="password"
             onChange={handleInput}
           />
-          {displayModal.sign && (
-            <InputText
-              aria-label="confirmPassword"
-              type="password"
-              placeholder="Confirm Password"
-              name="confirmPassword"
-              onChange={handleInput}
-            />
-          )}
           <Button type="submit" submit>
             {displayModal.login && 'Login'}
             {displayModal.sign && 'Sign up'}

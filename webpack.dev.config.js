@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const WebpackPwaManifestPlugin = require('webpack-pwa-manifest');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -8,8 +10,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js',
-    publicPath: '/',
+    filename: 'js/[name].[fullhash].js',
+    chunkFilename: 'js/[id].[chunkhash].js',
+    publicPath: 'http://localhost:3000/',
   },
   resolve: {
     extensions: ['.js'],
@@ -31,6 +34,9 @@ module.exports = {
         test: /\.jpg|jpeg|png|svg$/,
         use: {
           loader: 'file-loader',
+          options: {
+            outputPath: 'assets/',
+          },
         },
       },
       {
@@ -45,5 +51,38 @@ module.exports = {
       template: './public/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new WebpackPwaManifestPlugin({
+      name: 'Cozy Place - Explore and Travel',
+      shotname: 'Cozy Place',
+      description:
+        'For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect trip, but now, they can also let Lonely Planet Experiences lead the way.',
+      background_color: '#F8F8F8',
+      theme_color: '#b1a',
+      icons: [
+        {
+          src: path.resolve('src/assets/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+          purpose: 'any maskable',
+        },
+      ],
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('https://cozyplace.herokuapp.com/'),
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'images',
+          },
+        },
+        {
+          urlPattern: new RegExp('https://cozyplace.herokuapp.com/'),
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'api',
+          },
+        },
+      ],
+    }),
   ],
 };
