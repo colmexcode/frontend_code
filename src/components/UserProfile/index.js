@@ -16,6 +16,8 @@ import {
 } from './styles';
 import { Button } from '../../global-styles/Buttons';
 import mockupPortrait from '../../assets/images/mockupPortrait.jpg';
+import starIcon from '../../assets/images/Star.svg';
+import landmarkIcon from '../../assets/images/mapLandmark.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this card show an user testimonial and the rating of the app
@@ -39,8 +41,20 @@ export const UserProfile = ({ show, handleClick }) => {
           standard dummy text ever since the 1500s
         </Description>
         <LocationReviews>
-          <button> Location </button>
-          <button> Reviews</button>
+          <ul>
+            <li>
+              <div>
+                <img src={landmarkIcon} alt="" />
+                <span>Location</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src={starIcon} alt="" />
+                <span>205 Reviews</span>
+              </div>
+            </li>
+          </ul>
         </LocationReviews>
         {/* </Description> */}
       </ProfileGrid>
