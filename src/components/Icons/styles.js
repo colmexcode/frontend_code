@@ -8,6 +8,7 @@ import {
   border,
   spacing,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledIcon = styled.input`
@@ -20,6 +21,10 @@ export const StyledIcon = styled.input`
   box-shadow: ${shadows.outsideShadow};
   background: ${colors.secondaryBackgroundColor};
   outline: none;
+
+  ${media.mobile} {
+    margin: 0 ${spacing.space1};
+  }
 
   /* this rule is the style to the click action  */
   &:active {
