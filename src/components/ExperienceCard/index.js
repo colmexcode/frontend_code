@@ -22,7 +22,7 @@ export const ExperienceCard = ({ position, page }) => {
         <TitleCard>Bogotá</TitleCard>
         <ButtonCard>
           <a>
-            <img src={heartFavorite} alt="heartFavorite"/>
+            <img src={heartFavorite} alt="heartFavorite" />
           </a>
         </ButtonCard>
       </div>

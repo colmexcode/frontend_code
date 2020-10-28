@@ -25,6 +25,7 @@ export const Logo = styled.img`
 
 export const LinkedLogo = styled(Link)`
   outline: none;
+  transition: 0.3s;
 
   &:focus {
     transform: scale(0.8);

@@ -17,6 +17,7 @@ export const Button = styled.button`
   cursor: pointer;
   outline: none;
   background: ${colors.secondaryBackgroundColor};
+  transition: 0.3s;
 
   &:focus {
     box-shadow: none;

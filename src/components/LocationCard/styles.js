@@ -12,7 +12,6 @@ import {
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Card = styled.section`
   position: absolute;
-  display: none;
   left: ${(props) => props.left || '0px'};
   top: ${(props) => props.top || '0px'};
   z-index: 2;
@@ -22,11 +21,14 @@ export const Card = styled.section`
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.outsideShadow};
   overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s;
 
   ${(props) =>
     props.show === true &&
     css`
-      display: block;
+      opacity: 1;
     `}
 
   img {
