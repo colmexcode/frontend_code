@@ -3,7 +3,8 @@ import React from 'react';
 
 // ------------------------------ import components
 import { Testimonial } from '../Testimonial';
-import { TestimonialCard } from '../../components/TestimonialCard';
+import { TestimonialCard } from '../TestimonialCard';
+import mockupTestimonial from './testimonial.json';
 
 // ------------------------------ import styles and images
 import { StyledSection } from './styles';
@@ -13,17 +14,18 @@ import { StyledSection } from './styles';
 // When the user click any Testimonial appears the card with the comment of the person clicked.
 
 export const TestimonialSection = () => {
+  const { data } = mockupTestimonial;
   return (
     <StyledSection>
       <h1>Testimonials</h1>
-      <Testimonial left={0} top={15} />
-      <Testimonial left={65} top={10} />
-      <Testimonial left={10} top={60} />
-      <Testimonial left={55} top={50} />
+      <Testimonial data={data[0]} left={0} top={15} />
+      <Testimonial data={data[1]} left={75} top={10} />
+      <Testimonial data={data[2]} left={10} top={60} />
+      <Testimonial data={data[3]} left={55} top={50} />
       {window.innerWidth > 400 ? (
         <>
-          <Testimonial left={88} top={65} />
-          <Testimonial left={35} top={20} />
+          <Testimonial data={data[4]} left={88} top={65} />
+          <Testimonial data={data[5]} left={35} top={20} />
         </>
       ) : null}
       <TestimonialCard />

@@ -7,3 +7,8 @@ export const hideTestimonial = (payload) => ({
   type: 'HIDE_TESTIMONIAL',
   payload: false,
 });
+
+export const setTestimonial = (payload) => ({
+  type: 'SET_TESTIMONIAL',
+  payload,
+});
