@@ -6,7 +6,6 @@ import { ExperienceCard } from '../../components/ExperienceCard';
 import { Hero } from '../../components/Hero';
 import { ExperiencesLayout } from '../../components/ExperiencesLayout';
 import { Footer } from '../../components/Footer';
-// ------------------------------ import styles and images
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this pages is the home.

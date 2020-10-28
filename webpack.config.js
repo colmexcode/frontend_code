@@ -62,6 +62,7 @@ module.exports = {
         'For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect trip, but now, they can also let Lonely Planet Experiences lead the way.',
       background_color: '#F8F8F8',
       theme_color: '#b1a',
+      start_url: '.',
       icons: [
         {
           src: path.resolve('src/assets/icon.png'),
@@ -73,14 +74,14 @@ module.exports = {
     new WorkboxWebpackPlugin.GenerateSW({
       runtimeCaching: [
         {
-          urlPattern: new RegExp('https://cozyplace.herokuapp.com/'),
+          urlPattern: new RegExp('https://cozy-place.vercel.app/'),
           handler: 'CacheFirst',
           options: {
             cacheName: 'images',
           },
         },
         {
-          urlPattern: new RegExp('https://cozyplace.herokuapp.com/'),
+          urlPattern: new RegExp('https://cozy-place.vercel.app/'),
           handler: 'NetworkFirst',
           options: {
             cacheName: 'api',

@@ -12,12 +12,13 @@ import {
   showLocation,
   hideLocation,
   setMouseCoordinates,
+  setLocationData,
 } from '../../actions/mapActions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the landmark icon of the landing page map
 
-export const Landmark = ({ left, top }) => {
+export const Landmark = ({ left, top, data }) => {
   const dispatch = useDispatch();
   const mousePosition = useGetMousePosition();
   const section = useRef();
@@ -26,6 +27,7 @@ export const Landmark = ({ left, top }) => {
   function showLocationCard() {
     dispatch(showLocation());
     dispatch(setMouseCoordinates(mousePosition));
+    dispatch(setLocationData(data));
   }
   function hideLocationCard() {
     dispatch(hideLocation());
@@ -47,6 +49,7 @@ export const Landmark = ({ left, top }) => {
           section.current.offsetTop,
       }),
     );
+    dispatch(setLocationData(data));
   }
 
   return (
@@ -56,6 +59,7 @@ export const Landmark = ({ left, top }) => {
       onMouseOut={hideLocationCard}
       onFocus={focusShowLocationCard}
       onBlur={hideLocationCard}
+      onClick={showLocationCard}
       type="image"
       src={landmarkIcon}
       left={`${left}px`}
