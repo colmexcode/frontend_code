@@ -12,7 +12,7 @@ import { Button } from '../../global-styles/Buttons';
 // ------------------------------------ COMPONENT ------------------------------------//
 // this page is rendered when the route does not exist.
 
-export const NotFound = () => {
+export default () => {
   return (
     <Styled404>
       <Header />

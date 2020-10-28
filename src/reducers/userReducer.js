@@ -1,6 +1,7 @@
 const initialState = {
   displayModal: { sign: false, login: false },
   userData: {},
+  selection: '',
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -25,6 +26,11 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
         userData: payload,
+      };
+    case 'SET_SELECTION':
+      return {
+        ...state,
+        selection: payload,
       };
 
     default:

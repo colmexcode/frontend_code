@@ -1,6 +1,5 @@
 // ------------------------------ import libraries
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 // ------------------------------ import styles and images
@@ -30,16 +29,20 @@ export const Header = () => {
         <LinkedLogo to="/">
           <Logo src={logo} alt="Cozy place logo" />
         </LinkedLogo>
-        <Link to="/">about us</Link>
-        <Link to="/">destinations</Link>
+        <Link nav="true" to="/">
+          about us
+        </Link>
+        <Link nav="true" to="/">
+          destinations
+        </Link>
       </Brand>
       <div>
-        <Button type="button" onClick={openLoginModal}>
-          login
-        </Button>
-        <Button main type="button" onClick={openSignModal}>
-          Sign up
-        </Button>
+        <Button onClick={openLoginModal}>login</Button>
+        {window.innerWidth <= 320 ? null : (
+          <Button main onClick={openSignModal}>
+            Sign up
+          </Button>
+        )}
       </div>
     </StyledHeader>
   );

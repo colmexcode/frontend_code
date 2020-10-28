@@ -1,49 +1,95 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { useState } from 'react';
 
 // ------------------------------ import components
 import { Icon } from '../Icons';
-import { Rate } from '../Rate';
 
 // ------------------------------ import styles and images
 import {
   ProfileContainer,
-  ProfileGrid,
   Image,
-  Description,
   UserName,
   LocationReviews,
+  Description,
+  TextArea,
+  UserFom,
+  ImageInput,
+  UserInputs,
 } from './styles';
 import { Button } from '../../global-styles/Buttons';
+import { InputText } from '../../global-styles/Inputs';
 import mockupPortrait from '../../assets/images/mockupPortrait.jpg';
+import userIcon from '../../assets/images/userIcon.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// this card show an user testimonial and the rating of the app
-// It is hidden and is shown when the user click the testimonial component.
+// this is the user data section.
+// user can see and edit his information
 
-export const UserProfile = ({ show, handleClick }) => {
+export const UserProfile = () => {
+  const [editing, setEditing] = useState(false);
+
   return (
-    <ProfileContainer show={show}>
-      <ProfileGrid>
-        {/* <Icon type="close" click={handleClick} /> */}
-        <Image src={mockupPortrait} alt="" />
-        {/* <Description> */}
-        <UserName>
-          <h1>UserName</h1>
-          {/* <Rate /> */}
-          <Button>Edit</Button>
-        </UserName>
-        <Description>
-          Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been he industry's
-          standard dummy text ever since the 1500s
-        </Description>
-        <LocationReviews>
-          <button> Location </button>
-          <button> Reviews</button>
-        </LocationReviews>
-        {/* </Description> */}
-      </ProfileGrid>
-    </ProfileContainer>
+    <>
+      <ProfileContainer>
+        {/* the button allow the user to edit his data. this is the validation to show the form when user wants to edit  */}
+        {editing ? (
+          <UserFom action="">
+            <ImageInput htmlFor="picture">
+              <img src={userIcon} alt="edit user data" />
+              <input type="file" name="userPicture" id="picture" />
+            </ImageInput>
+            <div>
+              <UserInputs>
+                <InputText
+                  type="text"
+                  name="userName"
+                  placeholder="User Name"
+                  id="userName"
+                />
+                <InputText
+                  type="text"
+                  name="location"
+                  placeholder="Location"
+                  id="location"
+                />
+              </UserInputs>
+              <TextArea
+                name="userDescription"
+                id="userDescription"
+                cols="30"
+                rows="10"
+                placeholder="Tell us about you"
+              />
+            </div>
+            <Button main onClick={() => setEditing(!editing)}>
+              done
+            </Button>
+          </UserFom>
+        ) : (
+          <>
+            <Image src={mockupPortrait} alt="" />
+            <Description>
+              <UserName>
+                <h1>UserName</h1>
+                <Button main onClick={() => setEditing(!editing)}>
+                  {editing ? 'done' : 'edit'}
+                </Button>
+              </UserName>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been he
+                industry's standard dummy text ever since the 1500s
+              </p>
+            </Description>
+          </>
+        )}
+      </ProfileContainer>
+      <LocationReviews>
+        <Icon type="location" />
+        <p> Location</p>
+        <Icon type="star" />
+        <p> Reviews</p>
+      </LocationReviews>
+    </>
   );
 };

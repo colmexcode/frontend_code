@@ -1,9 +1,10 @@
 // ------------------------------ import libraries
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // ------------------------------ import variables
 import { colors, spacing, shadows, fonts } from './Variables';
+import { media } from './MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const LinkStyled = styled(Link)`
@@ -19,4 +20,12 @@ export const LinkStyled = styled(Link)`
   &:focus {
     text-decoration: underline;
   }
+
+  ${(props) =>
+    props.nav &&
+    css`
+      ${media.mobile} {
+        display: none;
+      }
+    `};
 `;

@@ -17,3 +17,8 @@ export const getFormData = (payload) => ({
   type: 'GET_FORM',
   payload,
 });
+
+export const setSelection = (payload) => ({
+  type: 'SET_SELECTION',
+  payload,
+});

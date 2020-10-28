@@ -5,8 +5,9 @@ import React from 'react';
 import { Rate } from '../Rate';
 
 // ------------------------------ import styles and images
-import { CardStyled, CardImg, TitleCard } from './styles';
+import { CardStyled, CardImg, TitleCard, ButtonCard } from './styles';
 import homeImg1 from '../../assets/images/homeImg1.jpg';
+import heartFavorite from '../../assets/images/heartFavorite.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this card shows the experiences, their rating and name.
@@ -18,7 +19,12 @@ export const ExperienceCard = ({ position, page }) => {
       <Rate />
       <div>
         <CardImg src={homeImg1} alt="travel image #1" />
-        <TitleCard>Texto de prueba</TitleCard>
+        <TitleCard>Bogotá</TitleCard>
+        <ButtonCard>
+          <a>
+            <img src={heartFavorite} alt="heartFavorite" />
+          </a>
+        </ButtonCard>
       </div>
     </CardStyled>
   );

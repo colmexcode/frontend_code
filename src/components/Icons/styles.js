@@ -8,6 +8,7 @@ import {
   border,
   spacing,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledIcon = styled.input`
@@ -20,6 +21,10 @@ export const StyledIcon = styled.input`
   box-shadow: ${shadows.outsideShadow};
   background: ${colors.secondaryBackgroundColor};
   outline: none;
+
+  ${media.mobile} {
+    margin: 0 ${spacing.space1};
+  }
 
   /* this rule is the style to the click action  */
   &:active {
@@ -52,5 +57,13 @@ export const StyledIcon = styled.input`
       top: 5px;
       z-index: 1;
       padding: 8px;
+    `};
+
+  ${(props) =>
+    props.alt === 'plus' &&
+    css`
+      padding: ${spacing.space2};
+      width: 80px;
+      height: 80px;
     `};
 `;

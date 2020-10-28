@@ -9,6 +9,7 @@ import {
   border,
   fonts,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledFooter = styled.footer`
@@ -17,6 +18,11 @@ export const StyledFooter = styled.footer`
   border-radius: ${border.borderRadiusBig};
   text-align: center;
   box-shadow: ${shadows.innerShadow};
+
+  ${media.mobile} {
+    margin-top: ${spacing.space3};
+    padding: ${spacing.space2};
+  }
 `;
 
 export const Description = styled.div`
@@ -30,6 +36,10 @@ export const Rights = styled.div`
   width: 40%;
   text-align: left;
 
+  ${media.mobile} {
+    width: 100%;
+  }
+
   img {
     width: ${spacing.space4};
   }
@@ -37,11 +47,18 @@ export const Rights = styled.div`
 
 export const ListsGroup = styled.div`
   display: flex;
-  justify-content: center;
+  ${media.mobile} {
+    margin: 0 auto;
+  }
 `;
 
 export const List = styled.ul`
   list-style: none;
+
+  ${media.mobile} {
+    padding: 0;
+  }
+
   li {
     margin-bottom: ${spacing.space1};
   }

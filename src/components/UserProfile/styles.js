@@ -1,55 +1,27 @@
 // ------------------------------ import libraries
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 // ------------------------------ import variables
 import {
   colors,
-  border,
   spacing,
   shadows,
+  fonts,
+  border,
 } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const ProfileContainer = styled.section`
-  background-color: transparent;
-  color: ${colors.textColor};
-  /* padding: 32px 15px; */
-  display: grid;
-  grid-template-columns: minmax(auto, 1024px);
-  justify-content: center;
-
+  max-width: 1024px;
+  transform: translateY(-50%);
+  display: flex;
   position: relative;
-  /* left: 50%; */
   align-items: center;
-  /* transform: translateY(-50%); */
-  padding: ${spacing.space3} ${spacing.space2};
-  /* border: ${border.border}; */
-  border-radius: ${border.borderRadiusBig};
-  /* box-shadow: ${shadows.outsideShadow}; */
-  /* ${colors.mainBackgroundColor}; */
-  /* opacity: 0; */
-  pointer-events: none;
-
-  ${(props) =>
-    props.show === true &&
-    css`
-      opacity: 1;
-      pointer-events: all;
-    `}
-`;
-
-export const ProfileGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr 3fr;
-  grid-template-areas:
-    'img userName userName'
-    'img description description'
-    '. locationReviews locationReviews';
-  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
 `;
 
 export const Image = styled.img`
-  grid-area: img;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -57,46 +29,117 @@ export const Image = styled.img`
   box-shadow: ${shadows.outsideShadow};
 `;
 
+export const Description = styled.div`
+  margin-left: ${spacing.space3};
+
+  p {
+    margin: 0;
+    margin-top: ${spacing.space3};
+  }
+`;
+
 export const UserName = styled.div`
-  grid-area: userName;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
   color: ${colors.backgroundColor};
 
-
   h1 {
-    margin: 0 0 5px 0;
-    color: ${colors.backgroundColor};
+    font-size: ${fonts.bigTitle};
+    margin: 0;
     text-shadow: ${shadows.textShadow};
-    color: ${colors.titleColor};
   }
-  Button {
-    ${colors.mainBackgroundColor};
-  }
+
+  /* input {
+    height: 80px;
+  } */
 `;
 
 export const LocationReviews = styled.div`
-  grid-area: locationReviews;
+  position: relative;
+  transform: translateY(-100%);
+  max-width: 1024px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
-  color: ${colors.backgroundColor};
-  margin: 0 20px;
+  justify-content: flex-end;
+  align-items: center;
 
-  h1 {
-    margin: 0 0 5px 0;
-    color: ${colors.backgroundColor};
-    text-shadow: ${shadows.textShadow};
+  p {
+    margin: 0;
   }
 `;
 
-export const Description = styled.p`
-  grid-area: description;
-  height: 100%;
+export const UserFom = styled.form`
   display: flex;
-  margin: 20px;
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
-  /* padding: ${spacing.space2} 0 ${spacing.space2} ${spacing.space3}; */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  div {
+    position: relative;
+    width: 80%;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 15%;
+  }
+  ul {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  li {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    list-style: none;
+    margin: 0 2.5em;
+    border-bottom: 1px solid black;
+  }
+`;
+
+export const UserInputs = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    margin-right: ${spacing.space2};
+    flex-grow: 1;
+  }
+`;
+
+export const TextArea = styled.textarea`
+  height: 60px;
+  width: 100%;
+  margin-top: ${spacing.space3};
+  padding: ${spacing.space2};
+  border: ${border.border};
+  border-radius: ${border.borderRadiusSmall};
+  box-shadow: ${shadows.innerShadow};
+  outline: none;
+  font-family: ${fonts.family};
+`;
+
+export const ImageInput = styled.label`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: ${shadows.outsideShadow};
+  background: ${colors.backgroundColor};
+  cursor: pointer;
+  overflow: hidden;
+
+  img {
+    width: 120px;
+    position: relative;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+  }
+
+  input {
+    display: none;
+  }
 `;

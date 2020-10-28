@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import React, { useState } from 'react';
+import React from 'react';
 
 // ------------------------------ import styles and images
 import starIcon from '../../assets/images/Star.svg';
@@ -9,9 +9,7 @@ import { Star, Input, StyledRating } from './styles';
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the rating component.
 // This are the starts that rate places and experiences.
-export const Rate = () => {
-  const [rating, setrating] = useState(null);
-
+export const Rate = ({ rate }) => {
   return (
     <StyledRating>
       {[...Array(5)].map((star, i) => {
@@ -27,7 +25,7 @@ export const Rate = () => {
               onClick={() => setrating(ratingValue)}
             />
             <img
-              src={ratingValue <= rating ? starIcon : StarInactive}
+              src={ratingValue <= rate ? starIcon : StarInactive}
               alt={`rating star ${i}`}
             />
           </Star>
