@@ -4,6 +4,9 @@ import ReactDom from 'react-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import JwtDecode from 'jwt-decode';
+import { TOKEN, VERIFY } from '../../constants/itemsLocalStorage';
+
 // ------------------------------ import components
 import { Icon } from '../Icons';
 
@@ -48,14 +51,25 @@ export const LoginModal = forwardRef(() => {
       /* Login */
       const login = await loginUser(form);
       console.log(login);
-      // if (state.code === 201) {
-      //   console.log(props);
-      //   console.log(history);
-      //   history.push('/Home/Login');
-      // }
-      console.log(login.data.token);
-      dispatch(getToken(login.data.token));
-      history.push('/home');
+      if (login.data.Message === 'Auth success') {
+        // console.log(props);
+        // console.log(history);
+        // history.push('/Home/Login');
+        /*manejo del token*/
+        const { id, email, username, iat } = JwtDecode(
+          login.data.token,
+        );
+        localStorage.setItem(TOKEN, login.data.token);
+        localStorage.setItem(
+          VERIFY,
+          JSON.stringify({ id, email, username, iat }),
+        );
+
+        dispatch(getToken(login.data.token));
+        history.push('/home');
+      } else {
+        return <Error message={login.error} />;
+      }
     } else if (displayModal.sign) {
       /* Register */
       const register = await createUser(form);
@@ -63,9 +77,10 @@ export const LoginModal = forwardRef(() => {
       console.log(form.email);
       // console.log(register.data.id);
       // console.log(register.data.email === form.email);
-      // console.log();
+      // console.log(register.data.email);
       if (register.data.email === form.email) {
         dispatch(getToken(register.data.id));
+        // const login = await loginUser(form);
         history.push('/home');
       } else {
         return <Error message={register.error} />;
