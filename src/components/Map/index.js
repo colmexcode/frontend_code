@@ -5,7 +5,7 @@ import React from 'react';
 import { Landmark } from '../Landmark';
 
 // ------------------------------ import styles and images
-import { StyledSection, StyledMap, MapImg } from './styles';
+import { StyledSection, StyledMap, MapImg, Title } from './styles';
 import map from '../../assets/images/map.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
@@ -14,13 +14,15 @@ import map from '../../assets/images/map.svg';
 
 export const Map = () => {
   return (
-    <StyledSection>
-      <h1> Features Destinations </h1>
-      <StyledMap>
-        <MapImg src={map} alt="map of the world" />
-        <Landmark left={330} top={380} />
-        <Landmark left={400} top={450} />
-      </StyledMap>
-    </StyledSection>
+    <>
+      <Title> Features Destinations </Title>
+      <StyledSection>
+        <StyledMap>
+          <MapImg src={map} alt="map of the world" />
+          <Landmark left={330} top={380} />
+          <Landmark left={400} top={450} />
+        </StyledMap>
+      </StyledSection>
+    </>
   );
 };
