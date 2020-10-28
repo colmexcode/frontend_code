@@ -18,7 +18,9 @@ import { hideTestimonial } from '../../actions/testimonialActions';
 // It is hidden and is shown when the user click the testimonial component.
 
 export const TestimonialCard = () => {
-  const state = useSelector((state) => state.testimonialReducer.show);
+  const { show, data } = useSelector(
+    (state) => state.testimonialReducer,
+  );
   const dispatch = useDispatch();
 
   function hideTestimonialCard() {
@@ -26,19 +28,15 @@ export const TestimonialCard = () => {
   }
 
   return (
-    <Card show={state}>
+    <Card show={show}>
       <Icon type="close" click={hideTestimonialCard} />
-      <Image src={mockupPortrait} alt="" />
+      <Image src={data.image} alt="" />
       <Description>
         <div>
-          <h1>Fulana de tal</h1>
-          <Rate />
+          <h1>{data.name}</h1>
+          <Rate rate={data.rate} />
         </div>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been he industry's
-          standard dummy text ever since the 1500s
-        </p>
+        <p>{data.testimonial}</p>
       </Description>
     </Card>
   );
