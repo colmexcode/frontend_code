@@ -16,7 +16,6 @@ import addPicture from '../../assets/images/Add-picture.svg';
 import arrowLeft from '../../assets/images/Arrow-left.svg';
 import arrowRight from '../../assets/images/Arrow-right.svg';
 
-
 import { StyledIcon } from './styles';
 
 // ------------------------------------ COMPONENT ------------------------------------//

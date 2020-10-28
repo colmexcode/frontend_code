@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 // ------------------------------ import variables
 import {
@@ -9,36 +9,34 @@ import {
   shadows,
   fonts,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Card = styled.section`
-  width: 350px;
-  height: 225px;
-  padding: 25px 50px;
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  grid-template-rows: 50px 50px 35px;
-  gap: 20px;
-  font-size: ${fonts.h2};
-  font-weight: 200;
-  color: ${colors.backgroundColor};
+  padding: ${spacing.space2} ${spacing.space3};
   text-shadow: ${shadows.textShadow};
   border: ${border.border};
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.outsideShadow};
   ${colors.mainBackgroundColor};
-  pointer-events: none;
+
+  ${media.mobile} {
+    width: 320px;
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   p {
-      justify-self: end;
-      align-self: center;
+    font-size: ${fonts.h2};
+    color: ${colors.backgroundColor};
+  }
+
+  button {
+    margin: 0;
   }
 `;
-
-export const Button = styled.button`
-    width: 250px;
-    height: 35px;
-    border: none;
-    border-radius: ${border.borderRadiusSmall};
-    box-shadow: ${shadows.outsideShadow};
-`

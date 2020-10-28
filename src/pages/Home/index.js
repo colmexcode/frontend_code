@@ -13,7 +13,7 @@ import { Footer } from '../../components/Footer';
 // at first it has the top experiences according to the preferences of the user.
 // user can search and find experiences by destinations.
 
-export const HomePage = () => {
+export default () => {
   return (
     <>
       <Hero />

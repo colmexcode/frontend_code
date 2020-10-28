@@ -40,10 +40,11 @@ export const SearchContainer = styled.div`
   position: relative;
 `;
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.div`
   width: 100%;
-  height: 60px;
-  padding-left: ${spacing.space3};
+  /* height: 40px; */
+  display: flex;
+  align-items: center;
   font-size: ${fonts.h3};
   color: ${colors.titleColor};
   border-radius: ${border.borderRadiusSmall};

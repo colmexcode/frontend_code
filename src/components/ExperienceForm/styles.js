@@ -9,19 +9,32 @@ import {
   fonts,
 } from '../../global-styles/Variables';
 
+import { media } from '../../global-styles/MediaQueries';
+
+
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const ExpCreationContainer = styled.section`
   padding: ${spacing.space3} ${spacing.space4};
   
   h2 {
     font-size: ${fonts.h1};
+
+    ${media.mobile} {
+      text-align:center;
+      font-size: ${fonts.h2};
+    }
+
   }
+
+  ${media.mobile} {
+    padding: ${spacing.space1} ${spacing.space2};
+  }
+
 `;
 
 export const ExpForm = styled.form`
   display: grid;
   grid-template-columns: 48% 48%;
-  /* grid-template-rows: repeat(4, 150px) 100px 380px 50px; */
 
   gap: 40px;
 
@@ -35,6 +48,12 @@ export const ExpForm = styled.form`
     border-radius: ${border.borderRadiusSmall};
     box-shadow: ${shadows.innerSoftShadow};
     outline: none;
+
+    ${media.mobile} {
+      width: 230px;
+      padding: ${spacing.space2};
+      font-size: ${fonts.small};
+    }
   }
 
   [type='button'] {
@@ -42,14 +61,46 @@ export const ExpForm = styled.form`
     grid-row: 3 / span 1;
     width: 230px;
     height: 50px;
+    padding-left: 20px;
+    font-size: ${fonts.h3};
+    text-align: left;
     border: none;
     border-radius: ${border.borderRadiusSmall};
     box-shadow: ${shadows.outsideSoftShadow};
     outline: none;
+    position: relative;
+
+    ${media.mobile} {
+      font-size: ${fonts.p};
+    }
   }
 
-  [type='button'] ~ [type='button'] {
-    justify-self: end;
+  [type='button'] ~ div {
+    display: none;
+    width: 230px;
+    background: white;
+    text-align: center;
+    border-radius: ${border.borderRadiusSmall};
+    box-shadow: ${shadows.outsideSoftShadow};
+    position: absolute;
+  }
+
+  div:hover [type='button'] ~ div {
+    display: block;
+  }
+
+  /* div:hover ${CityButton} ~ div {
+    display: block;
+  } */
+
+  [type='button'] ~ div p:hover {
+    margin: 0;
+    padding: 8px 0;
+    color: white;
+    background-color: ${colors.titleColor};
+    border-radius: ${border.borderRadiusSmall};
+    box-shadow: ${shadows.outsideSoftShadow};
+    cursor: pointer;
   }
 
   textarea {
@@ -64,12 +115,30 @@ export const ExpForm = styled.form`
     border-radius: ${border.borderRadiusSmall};
     box-shadow: ${shadows.innerSoftShadow};
     outline: none;
+
+    ${media.tablet} {
+      height: 300px;
+    }
+
+    ${media.mobile} {
+      width: 230px;
+      height: 100px;
+      padding: ${spacing.space2};
+      font-size: ${fonts.p};
+      overflow-y: scroll;
+    }
+  }
+
+  ${media.tablet} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
 export const Rating = styled.div`
   grid-column: 1 / 2;
-  grid-row: 5 / 6;
+  grid-row: 6 / 7;
   width: 495px;
   height: 80px;
   padding: 0 25px;
@@ -79,23 +148,24 @@ export const Rating = styled.div`
   background-color: ${colors.titleColor};
   border-radius: ${border.borderRadiusSmall};
   box-shadow: ${shadows.outsideSoftShadow};
+  z-index: -1;
+
+  ${media.mobile} {
+    padding: 0 8px;
+    width: 230px;
+  }
   
   p {
     font-family: ${fonts.family};
     font-size: ${fonts.h1};
     color: #f6f6f6;
+
+    ${media.mobile} {
+      font-size: ${fonts.p};
+    }
   }
 `
 
-export const Map = styled.div`
-  grid-column: 1 / 2;
-  grid-row: 6 / 7;
-  width: 496px;
-  height: 375px;
-  background-color: gray;
-  border-radius: ${border.borderRadiusSmall};
-  box-shadow: ${shadows.outsideSoftShadow};
-`
 export const Pics = styled.div`
   grid-column: 2 / 3;
   grid-row: 1 / 5;
@@ -106,6 +176,11 @@ export const Pics = styled.div`
   justify-content:space-evenly;
   border-radius: ${border.borderRadiusSmall};
   box-shadow: ${shadows.innerSoftShadow};
+
+  ${media.mobile} {
+    width: 230px;
+    height:200px;
+  }
 `
 export const CancelButton = styled.button`
   justify-self: end;
@@ -141,4 +216,35 @@ export const SubmitButton = styled.button`
   border-radius: ${border.borderRadiusSmall};
   box-shadow: ${shadows.outsideSoftShadow};
   outline: none;
+`;
+
+export const CityButton = styled.input.attrs({
+  type: 'button',
+  value: 'City',
+})`
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  width: 230px;
+  height: 50px;
+  padding-left: 20px;
+  text-align: left;
+  border: none;
+  border-radius: ${border.borderRadiusSmall};
+  box-shadow: ${shadows.outsideSoftShadow};
+  outline: none;
+  position: relative;
+
+  div {
+    display: none;
+    width: 230px;
+    background: white;
+    text-align: center;
+    border-radius: ${border.borderRadiusSmall};
+    box-shadow: ${shadows.outsideSoftShadow};
+    position: absolute;
+  }
+
+  div:hover {
+    display: block;
+  }
 `;

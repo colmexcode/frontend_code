@@ -18,15 +18,14 @@ import {
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
-export const InterestForm = () => {
+export default () => {
   return (
     <Container>
       <Title>WHAT ARE YOU UP TO?</Title>
       <DescriptText>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Aliquid, veritatis maxime sed blanditiis ab, similique
-        magnam aperiam vero eius et dolores quidem velit voluptas
-        cupiditate.
+        Aliquid, veritatis maxime sed blanditiis ab, similique magnam
+        aperiam vero eius et dolores quidem velit voluptas cupiditate.
       </DescriptText>
       <CategorySection>
         <Button>Adventure Travel</Button>
