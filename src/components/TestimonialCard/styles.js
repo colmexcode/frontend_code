@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import styled, { css } from 'styled-components';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------ import variables
 import {
@@ -7,12 +8,12 @@ import {
   border,
   spacing,
   shadows,
+  fonts,
 } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Card = styled.section`
   width: 620px;
-  height: 300px;
   position: relative;
   left: 50%;
   display: flex;
@@ -25,6 +26,12 @@ export const Card = styled.section`
   ${colors.mainBackgroundColor};
   opacity: 0;
   pointer-events: none;
+  transition: 0.2s;
+
+  ${media.mobile} {
+    width: 100%;
+    flex-direction: column;
+  }
 
   ${(props) =>
     props.show === true &&
@@ -40,6 +47,11 @@ export const Image = styled.img`
   border-radius: 50%;
   object-fit: cover;
   box-shadow: ${shadows.outsideShadow};
+
+  ${media.mobile} {
+    width: 120px;
+    height: 120px;
+  }
 `;
 
 export const Description = styled.div`
@@ -50,9 +62,24 @@ export const Description = styled.div`
   padding: ${spacing.space2} 0 ${spacing.space2} ${spacing.space3};
   color: ${colors.backgroundColor};
 
+  ${media.mobile} {
+    padding: ${spacing.space2} 0 0 0;
+  }
+
+  p {
+    ${media.mobile} {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+
   h1 {
     margin: 0 0 5px 0;
     color: ${colors.backgroundColor};
     text-shadow: ${shadows.textShadow};
+
+    ${media.mobile} {
+      font-size: ${fonts.h2};
+    }
   }
 `;

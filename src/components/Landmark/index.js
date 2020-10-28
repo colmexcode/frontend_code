@@ -56,6 +56,7 @@ export const Landmark = ({ left, top }) => {
       onMouseOut={hideLocationCard}
       onFocus={focusShowLocationCard}
       onBlur={hideLocationCard}
+      onClick={showLocationCard}
       type="image"
       src={landmarkIcon}
       left={`${left}px`}

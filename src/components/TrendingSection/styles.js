@@ -8,6 +8,7 @@ import {
   border,
   shadows,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Container = styled.section`
@@ -16,6 +17,11 @@ export const Container = styled.section`
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.innerShadow};
   ${colors.mainBackgroundColor};
+
+  ${media.tablet} {
+    padding: ${spacing.space2};
+    overflow: auto;
+  }
 
   h1 {
     margin: 0;
@@ -26,9 +32,12 @@ export const Container = styled.section`
 `;
 
 export const Layout = styled.div`
-  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 300px);
   gap: ${spacing.space2};
+
+  ${media.tablet} {
+    display: flex;
+  }
 `;
