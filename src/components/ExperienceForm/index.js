@@ -10,6 +10,7 @@ import {
   ExpForm,
   Rating,
   Map,
+  CityButton,
   Pics,
   CancelButton,
   SubmitButton,
@@ -28,14 +29,26 @@ export const ExperienceForm = () => {
           placeholder="Create Name of the Experience"
         />
         <input type="text" placeholder="Create Location" />
-        <input type="button" value="Duration" />
-        <input type="button" value="Transport" />
+        <div>
+          <input type="button" value="Duration" />
+          <div>
+            <p>5 min</p>
+            <p>15 min</p>
+            <p>30 min</p>
+          </div>
+        </div>
         <input type="text" placeholder="Create Tag" />
+        <div>
+          <CityButton />
+          <div>
+            <p>México</p>
+            <p>Bogotá</p>
+          </div>
+        </div>
         <Rating>
           <p>Rating Stars</p>
           <Rate />
         </Rating>
-        <Map />
         <Pics>
           <Icon src="arrowLeft" />
           <Icon src="addPicture" />
