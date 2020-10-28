@@ -10,6 +10,7 @@ import {
   fonts,
   spacing,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const CardStyled = styled(Link)`
@@ -19,6 +20,15 @@ export const CardStyled = styled(Link)`
   box-shadow: ${shadows.outsideShadow};
   overflow: hidden;
   outline: none;
+
+  ${media.tablet} {
+    min-width: 250px;
+    height: 300px;
+  }
+  ${media.mobile} {
+    min-width: 200px;
+    height: 300px;
+  }
 
   &:focus {
     transform: scale(0.95);

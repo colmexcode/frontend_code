@@ -8,6 +8,7 @@ import {
   shadows,
   spacing,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Modal = styled.section`
@@ -32,6 +33,11 @@ export const Form = styled.form`
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.outsideShadow};
   ${colors.mainBackgroundColor};
+
+  ${media.mobile} {
+    width: 90%;
+    padding: ${spacing.space2};
+  }
 
   h1 {
     color: ${colors.backgroundColor};
