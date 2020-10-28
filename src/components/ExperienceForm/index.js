@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { useState } from 'react';
 
 // ------------------------------ import components
 import { Rate } from '../Rate';
@@ -19,16 +19,66 @@ import {
 
 // ------------------------------------ COMPONENT ------------------------------------//
 
+let data = {
+  inputTitle: '',
+  inputLocation: '',
+  inputTag: '',
+};
 export const ExperienceForm = () => {
+  // const [ data, setData ] = useState()
+  const handleChange = ({ target }) => {
+    data = {
+      ...data,
+      [target.name]: target.value,
+    };
+    return data;
+    // setData((prev) => ({
+    //   ...prev,
+    //   [target.name]: target.value,
+    // }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        'https://cozyplace.herokuapp.com/api/show/topLocations',
+        {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        },
+      );
+      console.log(response);
+      return response.json()
+    } catch (error) {
+      console.log(error + 'ocurrio un error');
+    }
+  };
+
   return (
     <ExpCreationContainer>
       <h2>Create your experience</h2>
-      <ExpForm>
+      <ExpForm onSubmit={handleSubmit}>
         <input
           type="text"
+          id="title"
+          name="inputTitle"
+          required="required"
           placeholder="Create Name of the Experience"
+          onChange={handleChange}
         />
-        <input type="text" placeholder="Create Location" />
+        <input
+          type="text"
+          id="location"
+          name="inputLocation"
+          required="required"
+          placeholder="Create Location"
+          onChange={handleChange}
+        />
         <div>
           <input type="button" value="Duration" />
           <div>
@@ -37,7 +87,14 @@ export const ExperienceForm = () => {
             <p>30 min</p>
           </div>
         </div>
-        <input type="text" placeholder="Create Tag" />
+        <input
+          type="text"
+          id="tag"
+          name="inputTag"
+          required="required"
+          placeholder="Create Tag"
+          onChange={handleChange}
+        />
         <div>
           <CityButton />
           <div>
@@ -59,7 +116,7 @@ export const ExperienceForm = () => {
           placeholder="Create you description that does not exceed more than 400 characters"
         />
         <CancelButton>Cancelar</CancelButton>
-        <SubmitButton>Crear</SubmitButton>
+        <SubmitButton type="submit">Crear</SubmitButton>
       </ExpForm>
     </ExpCreationContainer>
   );
