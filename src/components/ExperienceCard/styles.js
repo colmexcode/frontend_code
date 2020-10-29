@@ -28,7 +28,7 @@ export const CardStyled = styled(Link)`
   ${media.mobile} {
     min-width: 200px;
     height: 300px;
-  }
+    }
 
   &:focus {
     transform: scale(0.95);
@@ -47,6 +47,7 @@ export const CardStyled = styled(Link)`
       rgba(255, 255, 255, 0.4) 0%,
       rgba(255, 255, 255, 0) 100%
     );
+
   }
 
   ${(props) =>
@@ -61,14 +62,18 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 1 / span 1;
       grid-row: 1 / span 3;
+      figure {
+        left: 67%;
+        top: 80%;
+      }
     `}
   ${(props) =>
     props.position === 'home2' &&
     css`
       grid-column: 3 / span 3;
       grid-row: 1 / span 1;
-      button {
-        left: 90%;
+      figure {
+        right: 5%;
       }
     `}
       ${(props) =>
@@ -76,20 +81,26 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 7 / span 1;
       grid-row: 1 / span 1;
+      figure {
+        left: 68%;
+      }
     `}
       ${(props) =>
     props.position === 'home4' &&
     css`
       grid-column: 1 / span 1;
       grid-row: 5 / span 1;
+      figure {
+        left: 68%;
+      }
     `}
       ${(props) =>
     props.position === 'home5' &&
     css`
       grid-column: 1 / span 3;
       grid-row: 7 / span 1;
-      button {
-        left: 90%;
+      figure {
+        left: 85%;
       }
     `}
       ${(props) =>
@@ -97,14 +108,18 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 3 / span 1;
       grid-row: 3 / span 3;
+      figure {
+        left: 69%;
+        top: 81%;
+      }
     `}
       ${(props) =>
     props.position === 'home7' &&
     css`
       grid-column: 5 / span 3;
       grid-row: 3 / span 1;
-      button {
-        left: 90%;
+      figure {
+        left: 85%;
       }
     `}
       ${(props) =>
@@ -112,18 +127,28 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 5 / span 1;
       grid-row: 5 / span 1;
+      figure {
+        left: 70%;
+      }
     `}
       ${(props) =>
     props.position === 'home9' &&
     css`
       grid-column: 5 / span 1;
       grid-row: 7 / span 1;
+      figure {
+        left: 70%;
+      }
     `}
       ${(props) =>
     props.position === 'home10' &&
     css`
       grid-column: 7 / span 1;
       grid-row: 5 / span 3;
+      figure {
+        left: 68%;
+        top: 80%;
+      }
     `}
 
       /* grid styles for the landing grid  */
@@ -174,21 +199,11 @@ export const TitleCard = styled.p`
   -webkit-text-stroke: 0.8px ${colors.titleColor};
 `;
 
-export const ButtonCard = styled.button`
+export const ButtonCard = styled.figure`
+  width: 10%;
   position: absolute;
   margin: 0;
   z-index: 1;
-  left: 80%;
-  bottom: ${spacing.space2};
-  color: ${colors.textColor};
-  background: ${colors.backgroundColor};
-  border: none;
-  border-radius: ${border.borderRadiusSmall};
-  box-shadow: ${shadows.outsideShadow};
-
-  img {
-    width: 20px;
-    height: 20px;
-    
-  }
+  right: 2%;
+  top: 60%;
 `;
