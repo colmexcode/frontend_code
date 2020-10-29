@@ -47,7 +47,6 @@ export const CardStyled = styled(Link)`
       rgba(255, 255, 255, 0.4) 0%,
       rgba(255, 255, 255, 0) 100%
     );
-
   }
 
   ${(props) =>
@@ -65,6 +64,18 @@ export const CardStyled = styled(Link)`
       figure {
         left: 62%;
         top: 80%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 3;
       }
     `}
   ${(props) =>
@@ -74,6 +85,18 @@ export const CardStyled = styled(Link)`
       grid-row: 1 / span 1;
       figure {
         right: 7%;
+        ${media.mobile} {
+          left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 3 / span 1;
+      grid-row: 1 / span 1;
       }
     `}
       ${(props) =>
@@ -83,6 +106,18 @@ export const CardStyled = styled(Link)`
       grid-row: 1 / span 1;
       figure {
         left: 65%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
       }
     `}
       ${(props) =>
@@ -92,6 +127,18 @@ export const CardStyled = styled(Link)`
       grid-row: 5 / span 1;
       figure {
         left: 63%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1;
       }
     `}
       ${(props) =>
@@ -101,6 +148,18 @@ export const CardStyled = styled(Link)`
       grid-row: 7 / span 1;
       figure {
         left: 83%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
       }
     `}
       ${(props) =>
@@ -111,6 +170,18 @@ export const CardStyled = styled(Link)`
       figure {
         left: 65%;
         top: 81%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 3 / span 1;
+      grid-row: 3 / span 1;
       }
     `}
       ${(props) =>
@@ -120,6 +191,18 @@ export const CardStyled = styled(Link)`
       grid-row: 3 / span 1;
       figure {
         left: 83%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 7 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 1 / span 1;
+      grid-row: 4 / span 1;
       }
     `}
       ${(props) =>
@@ -129,6 +212,18 @@ export const CardStyled = styled(Link)`
       grid-row: 5 / span 1;
       figure {
         left: 65%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 8 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 1 / span 1;
+      grid-row: 5 / span 1;
       }
     `}
       ${(props) =>
@@ -138,6 +233,18 @@ export const CardStyled = styled(Link)`
       grid-row: 7 / span 1;
       figure {
         left: 65%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 9 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 3 / span 1;
+      grid-row: 4 / span 1;
       }
     `}
       ${(props) =>
@@ -148,6 +255,18 @@ export const CardStyled = styled(Link)`
       figure {
         left: 65%;
         top: 80%;
+        ${media.mobile} {
+        left: 72%;
+          top: 79%;
+        }
+      }
+      ${media.mobile} {
+        grid-column: 1 / span 1;
+        grid-row: 10 / span 1;
+      }
+      ${media.tablet} {
+      grid-column: 3 / span 1;
+      grid-row: 5 / span 1;
       }
     `}
 
