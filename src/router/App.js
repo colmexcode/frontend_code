@@ -31,7 +31,7 @@ export const App = () => {
           <Route exact path="/user" component={UserPage} />
           <Route
             exact
-            path="/experience"
+            path="/experience/:id"
             component={ExperienceDetails}
           />
           <Route

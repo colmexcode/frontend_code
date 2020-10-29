@@ -1,39 +1,51 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, {
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { ExperienceCard } from '../ExperienceCard';
-import { useFetchData } from '../../hooks/useFetchData';
-import { useSearchFetch } from '../../hooks/useSearchFetch';
 
 // ------------------------------ import styles and images
 import { Container, Layout } from './styles';
 
 // -------- import redux actions
+import { setTrending } from '../../actions/experiencesActions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this sections has the trendings experiences.
 // it also shows the results of the experiences search.
 // only shows 4 cards.
 
-export const TrendingSection = () => {
-  const data = useFetchData(
-    'https://cozyplace.herokuapp.com/api/post/',
+export const TrendingSection = forwardRef((props, ref) => {
+  const dispatch = useDispatch();
+  const trending = useSelector(
+    (state) => state.experiencesReducer.trending,
   );
-  // console.log(data);
 
-  const search = useSearchFetch('guadalajara');
-  console.log(search);
+  useEffect(() => {
+    dispatch(setTrending());
+  }, []);
 
   return (
-    <Container>
+    <Container tabIndex="0" ref={ref}>
       <h1> Trending stories </h1>
       <Layout>
-        <ExperienceCard position={1} page="landing" />
-        <ExperienceCard position={2} page="landing" />
-        <ExperienceCard position={3} page="landing" />
-        <ExperienceCard position={4} page="landing" />
+        {trending.map((experience, i = 0) => {
+          i++;
+          return (
+            <ExperienceCard
+              position={i}
+              page="landing"
+              key={experience._id}
+              {...experience}
+            />
+          );
+        })}
       </Layout>
     </Container>
   );
-};
+});

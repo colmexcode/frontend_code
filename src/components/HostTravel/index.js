@@ -10,18 +10,18 @@ import { Button } from '../../global-styles/Buttons';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 
-export const HostTravel = () => {
+export const HostTravel = ({ location, duration, tag }) => {
   return (
     <Card>
       <div>
         <Icon type="location" />
-        <p>Guadalajara</p>
+        <p>{location}</p>
       </div>
       <div>
         <Icon type="clock" />
-        <p>30 mins</p>
+        <p>{duration}</p>
       </div>
-      <Button>Adventure Travel</Button>
+      <Button>{tag}</Button>
     </Card>
   );
 };

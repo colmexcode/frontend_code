@@ -67,11 +67,35 @@ export const StyledIcon = styled.input`
       height: 80px;
     `};
 
-    ${(props) =>
-    props.alt === 'heartFavorite' &&
+  ${(props) =>
+    props.alt === 'emptyHeart' &&
     css`
-      padding: ${spacing.space2};
-      width: 50px;
-      height: 50px;
+      position: absolute;
+      margin: ${spacing.space2};
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      ${media.mobile} {
+        margin: 0;
+        right: 10px;
+        bottom: 10px;
+      }
+    `};
+
+  ${(props) =>
+    props.alt === 'favoriteHeart' &&
+    css`
+      position: absolute;
+      margin: ${spacing.space2};
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      ${media.mobile} {
+        margin: 0;
+        right: 10px;
+        bottom: 10px;
+      }
     `};
 `;

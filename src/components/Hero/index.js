@@ -15,7 +15,7 @@ import heroPicture from '../../assets/images/heroPicture.jpg';
 // It change if user is logged.
 // In landing it show and extra component, Intrduction. It shows the name and a short description of the app.
 
-export const Hero = () => {
+export const Hero = ({ focus }) => {
   return (
     <StyledHero>
       <HeroImage
@@ -24,7 +24,7 @@ export const Hero = () => {
       />
       <Header />
       <Introduction />
-      <SearchBar />
+      <SearchBar focus={focus} />
     </StyledHero>
   );
 };
