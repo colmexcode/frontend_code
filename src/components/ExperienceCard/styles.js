@@ -56,61 +56,181 @@ export const CardStyled = styled.div`
     props.position === 'home1' &&
     css`
       grid-column: 1 / span 1;
-      grid-row: 1 / span 3;
+      grid-row: 1 / span 2;
+
+      ${media.tablet} {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
   ${(props) =>
     props.position === 'home2' &&
     css`
-      grid-column: 3 / span 3;
+      grid-column: 2 / span 2;
       grid-row: 1 / span 1;
+
+      ${media.tablet} {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 1;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home3' &&
     css`
-      grid-column: 7 / span 1;
+      grid-column: 4 / span 1;
       grid-row: 1 / span 1;
+
+      ${media.tablet} {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home4' &&
     css`
-      grid-column: 1 / span 1;
-      grid-row: 5 / span 1;
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 2;
+
+      ${media.tablet} {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home5' &&
     css`
-      grid-column: 1 / span 3;
-      grid-row: 7 / span 1;
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 1;
+
+      ${media.tablet} {
+        grid-column: 1 / span 2;
+        grid-row: 4 / span 1;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home6' &&
     css`
-      grid-column: 3 / span 1;
-      grid-row: 3 / span 3;
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
+
+      ${media.tablet} {
+        grid-column: 3 / span 1;
+        grid-row: 3 / span 2;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home7' &&
     css`
-      grid-column: 5 / span 3;
+      grid-column: 3 / span 1;
       grid-row: 3 / span 1;
+
+      ${media.tablet} {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 2;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home8' &&
     css`
-      grid-column: 5 / span 1;
-      grid-row: 5 / span 1;
+      grid-column: 4 / span 1;
+      grid-row: 3 / span 2;
+
+      ${media.tablet} {
+        grid-column: 2 / span 2;
+        grid-row: 5 / span 1;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home9' &&
     css`
-      grid-column: 5 / span 1;
-      grid-row: 7 / span 1;
+      grid-column: 1 / span 2;
+      grid-row: 4 / span 1;
+
+      ${media.tablet} {
+        grid-column: 2 / span 2;
+        grid-row: 6 / span 1;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
       ${(props) =>
     props.position === 'home10' &&
     css`
-      grid-column: 7 / span 1;
-      grid-row: 5 / span 3;
+      grid-column: 3 / span 1;
+      grid-row: 4 / span 1;
+
+      ${media.tablet} {
+        grid-column: 1 / span 3;
+        grid-row: 7 / span 1;
+      }
+
+      ${media.mobile} {
+        width: 100%;
+        height: 100%;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+      }
     `}
 
       /* grid styles for the landing grid  */
