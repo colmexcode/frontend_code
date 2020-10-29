@@ -3,6 +3,8 @@ import React from 'react';
 
 // ------------------------------ import components
 import { ExperienceCard } from '../ExperienceCard';
+import { useFetchData } from '../../hooks/useFetchData';
+import { useSearchFetch } from '../../hooks/useSearchFetch';
 
 // ------------------------------ import styles and images
 import { Container, Layout } from './styles';
@@ -15,10 +17,24 @@ import { Container, Layout } from './styles';
 // only shows 4 cards.
 
 export const TrendingSection = () => {
+  const data = useFetchData(
+    'https://cozyplace.herokuapp.com/api/post/',
+  );
+  console.log(data);
+
+  const search = useSearchFetch(
+    'https://cozyplace.herokuapp.com/api/show/home',
+    'choco',
+  );
+  console.log(search);
+
   return (
     <Container>
       <h1> Trending stories </h1>
       <Layout>
+        {/* {data.map(() => {
+          <ExperienceCard position={1} page="landing" />;
+        })} */}
         <ExperienceCard position={1} page="landing" />
         <ExperienceCard position={2} page="landing" />
         <ExperienceCard position={3} page="landing" />
