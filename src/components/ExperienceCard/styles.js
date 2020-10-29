@@ -63,7 +63,7 @@ export const CardStyled = styled(Link)`
       grid-column: 1 / span 1;
       grid-row: 1 / span 3;
       figure {
-        left: 67%;
+        left: 62%;
         top: 80%;
       }
     `}
@@ -73,7 +73,7 @@ export const CardStyled = styled(Link)`
       grid-column: 3 / span 3;
       grid-row: 1 / span 1;
       figure {
-        right: 5%;
+        right: 7%;
       }
     `}
       ${(props) =>
@@ -82,7 +82,7 @@ export const CardStyled = styled(Link)`
       grid-column: 7 / span 1;
       grid-row: 1 / span 1;
       figure {
-        left: 68%;
+        left: 65%;
       }
     `}
       ${(props) =>
@@ -91,7 +91,7 @@ export const CardStyled = styled(Link)`
       grid-column: 1 / span 1;
       grid-row: 5 / span 1;
       figure {
-        left: 68%;
+        left: 63%;
       }
     `}
       ${(props) =>
@@ -100,7 +100,7 @@ export const CardStyled = styled(Link)`
       grid-column: 1 / span 3;
       grid-row: 7 / span 1;
       figure {
-        left: 85%;
+        left: 83%;
       }
     `}
       ${(props) =>
@@ -109,7 +109,7 @@ export const CardStyled = styled(Link)`
       grid-column: 3 / span 1;
       grid-row: 3 / span 3;
       figure {
-        left: 69%;
+        left: 65%;
         top: 81%;
       }
     `}
@@ -119,7 +119,7 @@ export const CardStyled = styled(Link)`
       grid-column: 5 / span 3;
       grid-row: 3 / span 1;
       figure {
-        left: 85%;
+        left: 83%;
       }
     `}
       ${(props) =>
@@ -128,7 +128,7 @@ export const CardStyled = styled(Link)`
       grid-column: 5 / span 1;
       grid-row: 5 / span 1;
       figure {
-        left: 70%;
+        left: 65%;
       }
     `}
       ${(props) =>
@@ -137,7 +137,7 @@ export const CardStyled = styled(Link)`
       grid-column: 5 / span 1;
       grid-row: 7 / span 1;
       figure {
-        left: 70%;
+        left: 65%;
       }
     `}
       ${(props) =>
@@ -146,7 +146,7 @@ export const CardStyled = styled(Link)`
       grid-column: 7 / span 1;
       grid-row: 5 / span 3;
       figure {
-        left: 68%;
+        left: 65%;
         top: 80%;
       }
     `}
