@@ -22,7 +22,7 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         displayModal: { sign: payload, login: payload },
       };
-    case 'GET_FORM':
+    case 'GET_TOKEN':
       return {
         ...state,
         userData: payload,
