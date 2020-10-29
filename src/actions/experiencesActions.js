@@ -41,3 +41,14 @@ export const setCurrentExperience = (id) => async (dispatch) => {
     payload: data.data,
   });
 };
+
+export const getAllExperiences = () => async (dispatch) => {
+  const response = await fetch(
+    'https://cozyplace.herokuapp.com/api/post/',
+  );
+  const data = await response.json();
+  return dispatch({
+    type: 'GET_ALL_EXPERIENCE',
+    payload: data.data.slice(0, 10),
+  });
+};

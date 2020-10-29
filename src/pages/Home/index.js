@@ -16,9 +16,7 @@ export default () => {
   return (
     <>
       <Hero />
-      <ExperiencesLayout>
-        <ExperienceCard />
-      </ExperiencesLayout>
+      <ExperiencesLayout />
       <Footer />
     </>
   );

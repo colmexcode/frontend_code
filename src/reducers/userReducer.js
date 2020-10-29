@@ -1,6 +1,8 @@
 const initialState = {
   displayModal: { sign: false, login: false },
-  userData: {},
+  userData: localStorage.getItem('TOKEN')
+    ? localStorage.getItem('TOKEN')
+    : {},
   selection: '',
 };
 
