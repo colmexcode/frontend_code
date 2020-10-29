@@ -13,8 +13,8 @@ export const closeModal = (payload) => ({
   payload: false,
 });
 
-export const getFormData = (payload) => ({
-  type: 'GET_FORM',
+export const getToken = (payload) => ({
+  type: 'GET_TOKEN',
   payload,
 });
 

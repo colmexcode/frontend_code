@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 // ------------------------------ import variables
 import { spacing } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 
 // ------------------------------------ COMPONENTS ------------------------------------//
@@ -15,5 +16,21 @@ export const MainStyled = styled.section`
     margin: 0 auto;
     margin-top: ${spacing.space4};
 
+    ${media.mobile} {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-row-gap: 10px;
+    height: 3100px;
+    }
+
+    ${media.tablet} {
+    display:grid;
+    grid-template-columns: 50% 2% 48%;
+    grid-template-rows: repeat(10, 1fr);
+    grid-row-gap: 5px;
+    height: 1500px;
+
+  }
 `;
 
