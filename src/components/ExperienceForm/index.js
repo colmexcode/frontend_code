@@ -108,9 +108,9 @@ export const ExperienceForm = () => {
           <Rate />
         </Rating>
         <Pics>
-          <Icon src="arrowLeft" />
-          <Icon src="plus" />
-          <Icon src="arrowRight" />
+          <Icon type="arrowLeft" />
+          <Icon type="plus" />
+          <Icon type="arrowRight" />
         </Pics>
         <textarea
           maxLength="400"
