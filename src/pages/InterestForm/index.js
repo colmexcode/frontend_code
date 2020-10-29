@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 // ------------------------------ import components
 import { Button } from '../../global-styles/Buttons';
@@ -19,6 +20,8 @@ import {
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
 export default () => {
+  const history = useHistory();
+
   return (
     <Container>
       <Title>WHAT ARE YOU UP TO?</Title>
@@ -38,7 +41,9 @@ export default () => {
         <TextChoice>
           Awesome Choice: category1, category2, category3
         </TextChoice>
-        <Button main>GO</Button>
+        <Button main onClick={() => history.push('/')}>
+          GO
+        </Button>
       </SelectionSection>
     </Container>
   );

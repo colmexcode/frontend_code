@@ -1,6 +1,7 @@
 const initialState = {
   trending: [],
   current: {},
+  allExperiences: [],
 };
 
 export const experiencesReducer = (state = initialState, action) => {
@@ -11,6 +12,9 @@ export const experiencesReducer = (state = initialState, action) => {
 
     case 'SET_CURRENT_EXPERIENCE':
       return { ...state, current: payload };
+
+    case 'GET_ALL_EXPERIENCE':
+      return { ...state, allExperiences: payload };
 
     default:
       return state;

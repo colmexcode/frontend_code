@@ -6,6 +6,8 @@ import { shadows } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledHero = styled.section`
+  min-height: 250px;
+  max-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

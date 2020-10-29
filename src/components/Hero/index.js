@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 // ------------------------------ import components
 import { Header } from '../Header';
@@ -16,6 +17,8 @@ import heroPicture from '../../assets/images/heroPicture.jpg';
 // In landing it show and extra component, Intrduction. It shows the name and a short description of the app.
 
 export const Hero = ({ focus }) => {
+  const history = useHistory();
+
   return (
     <StyledHero>
       <HeroImage
@@ -23,8 +26,12 @@ export const Hero = ({ focus }) => {
         alt="A woman is pointing to a map in a road trip"
       />
       <Header />
-      <Introduction />
-      <SearchBar focus={focus} />
+      {history.location.pathname === '/' ? (
+        <>
+          <Introduction />
+          <SearchBar focus={focus} />
+        </>
+      ) : null}
     </StyledHero>
   );
 };

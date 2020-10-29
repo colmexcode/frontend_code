@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { ExperienceCard } from '../ExperienceCard';
@@ -7,22 +8,35 @@ import { ExperienceCard } from '../ExperienceCard';
 // ------------------------------ import styles and images
 import { MainStyled } from './styles';
 
+// -------- import redux actions
+import { getAllExperiences } from '../../actions/experiencesActions';
+
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the layout to show the experiences in home page.
 
 export const ExperiencesLayout = () => {
+  const dispatch = useDispatch();
+  const experiences = useSelector(
+    (state) => state.experiencesReducer.allExperiences,
+  );
+
+  useLayoutEffect(() => {
+    dispatch(getAllExperiences());
+  }, []);
+
   return (
     <MainStyled>
-      <ExperienceCard position={1} page="home" />
-      <ExperienceCard position={2} page="home" />
-      <ExperienceCard position={3} page="home" />
-      <ExperienceCard position={4} page="home" />
-      <ExperienceCard position={5} page="home" />
-      <ExperienceCard position={6} page="home" />
-      <ExperienceCard position={7} page="home" />
-      <ExperienceCard position={8} page="home" />
-      <ExperienceCard position={9} page="home" />
-      <ExperienceCard position={10} page="home" />
+      {experiences.map((experience, i = 0) => {
+        i++;
+        return (
+          <ExperienceCard
+            position={i}
+            page="home"
+            key={experience._id}
+            {...experience}
+          />
+        );
+      })}
     </MainStyled>
   );
 };
