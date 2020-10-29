@@ -27,7 +27,6 @@ export default () => {
           </div>
         </Description>
       </Section>
-      {/* <Footer /> */}
     </Styled404>
   );
 };
