@@ -20,21 +20,15 @@ export const TrendingSection = () => {
   const data = useFetchData(
     'https://cozyplace.herokuapp.com/api/post/',
   );
-  console.log(data);
+  // console.log(data);
 
-  const search = useSearchFetch(
-    'https://cozyplace.herokuapp.com/api/show/home',
-    'choco',
-  );
+  const search = useSearchFetch('guadalajara');
   console.log(search);
 
   return (
     <Container>
       <h1> Trending stories </h1>
       <Layout>
-        {/* {data.map(() => {
-          <ExperienceCard position={1} page="landing" />;
-        })} */}
         <ExperienceCard position={1} page="landing" />
         <ExperienceCard position={2} page="landing" />
         <ExperienceCard position={3} page="landing" />
