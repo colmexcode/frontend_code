@@ -8,13 +8,13 @@ import { Rate } from '../Rate';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 
-export const HostCard = () => {
+export const HostCard = ({ name, rating }) => {
   return (
     <Card>
       <Image src={mockupPortrait} alt="Host picture" />
       <HostName>
-        <h2>Host Name</h2>
-        <Rate />
+        <h2>{name}</h2>
+        <Rate rate={rating} />
       </HostName>
     </Card>
   );

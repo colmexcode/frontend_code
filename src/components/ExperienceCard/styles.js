@@ -1,6 +1,5 @@
 // ------------------------------ import libraries
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // ------------------------------ import variables
 import {
@@ -13,7 +12,7 @@ import {
 import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
-export const CardStyled = styled(Link)`
+export const CardStyled = styled.div`
   position: relative;
   border: ${border.border};
   border-radius: ${border.borderRadiusBig};
@@ -22,17 +21,14 @@ export const CardStyled = styled(Link)`
   outline: none;
 
   ${media.tablet} {
-    min-width: 250px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
+    grid-column: auto / auto;
+    grid-row: auto / auto;
   }
-  ${media.mobile} {
-    min-width: 200px;
-    height: 300px;
-    }
 
-  &:focus {
-    transform: scale(0.95);
-    box-shadow: ${shadows.innerShadow};
+  &:focus-within {
+    box-shadow: none;
   }
 
   div {
@@ -61,213 +57,60 @@ export const CardStyled = styled(Link)`
     css`
       grid-column: 1 / span 1;
       grid-row: 1 / span 3;
-      figure {
-        left: 62%;
-        top: 80%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 3;
-      }
     `}
   ${(props) =>
     props.position === 'home2' &&
     css`
       grid-column: 3 / span 3;
       grid-row: 1 / span 1;
-      figure {
-        right: 7%;
-        ${media.mobile} {
-          left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 2 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 3 / span 1;
-      grid-row: 1 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home3' &&
     css`
       grid-column: 7 / span 1;
       grid-row: 1 / span 1;
-      figure {
-        left: 65%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 3 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 1 / span 1;
-      grid-row: 2 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home4' &&
     css`
       grid-column: 1 / span 1;
       grid-row: 5 / span 1;
-      figure {
-        left: 63%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 4 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 3 / span 1;
-      grid-row: 2 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home5' &&
     css`
       grid-column: 1 / span 3;
       grid-row: 7 / span 1;
-      figure {
-        left: 83%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 5 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 1 / span 1;
-      grid-row: 3 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home6' &&
     css`
       grid-column: 3 / span 1;
       grid-row: 3 / span 3;
-      figure {
-        left: 65%;
-        top: 81%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 2 / span 1;
-        grid-row: 3 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 3 / span 1;
-      grid-row: 3 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home7' &&
     css`
       grid-column: 5 / span 3;
       grid-row: 3 / span 1;
-      figure {
-        left: 83%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 7 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 1 / span 1;
-      grid-row: 4 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home8' &&
     css`
       grid-column: 5 / span 1;
       grid-row: 5 / span 1;
-      figure {
-        left: 65%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 8 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 1 / span 1;
-      grid-row: 5 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home9' &&
     css`
       grid-column: 5 / span 1;
       grid-row: 7 / span 1;
-      figure {
-        left: 65%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 9 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 3 / span 1;
-      grid-row: 4 / span 1;
-      }
     `}
       ${(props) =>
     props.position === 'home10' &&
     css`
       grid-column: 7 / span 1;
       grid-row: 5 / span 3;
-      figure {
-        left: 65%;
-        top: 80%;
-        ${media.mobile} {
-        left: 72%;
-          top: 79%;
-        }
-      }
-      ${media.mobile} {
-        grid-column: 1 / span 1;
-        grid-row: 10 / span 1;
-      }
-      ${media.tablet} {
-      grid-column: 3 / span 1;
-      grid-row: 5 / span 1;
-      }
     `}
 
       /* grid styles for the landing grid  */
@@ -310,19 +153,16 @@ export const CardImg = styled.img`
 export const TitleCard = styled.p`
   position: absolute;
   margin: 0;
+  margin-right: ${spacing.space3};
   z-index: 1;
   bottom: ${spacing.space1};
   color: ${colors.backgroundColor};
   font-size: ${fonts.h2};
   font-weight: ${fonts.bold};
   -webkit-text-stroke: 0.8px ${colors.titleColor};
-`;
 
-export const ButtonCard = styled.figure`
-  width: 10%;
-  position: absolute;
-  margin: 0;
-  z-index: 1;
-  right: 2%;
-  top: 60%;
+  ${media.tablet} {
+    font-size: ${fonts.p};
+    margin-right: ${spacing.space4};
+  }
 `;

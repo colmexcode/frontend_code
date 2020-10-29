@@ -4,11 +4,9 @@ import { userMock } from '../../__mocks__/userMock';
 
 // ------------------------------------ TESTS ------------------------------------//
 const initialState = {
-  displayModal: {
-    sign: false,
-    login: false,
-  },
+  displayModal: { sign: false, login: false },
   userData: {},
+  selection: '',
 };
 
 describe('Testing User Reducer', () => {

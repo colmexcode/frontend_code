@@ -1,11 +1,7 @@
 // ------------------------------ import libraries
 import React, { lazy, Suspense } from 'react';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { LandingPage } from '../pages/Landing';
@@ -21,50 +17,43 @@ const ExperienceCreation = lazy(() =>
 );
 const NotFound = lazy(() => import('../pages/NotFound'));
 
-/* Constants */
-import { TOKEN, VERIFY } from '../constants/itemsLocalStorage';
-
-/* hooks */
-import useGetItemFromLocalStorage from '../hooks/useGetItemFromLocalStorage';
-// import Home from '../pages/Home';
-
 // ------------------------------------ COMPONENT ------------------------------------//
 // This is the router.
 // This component has all the pages components
 
 export const App = () => {
-  // const token = useGetItemFromLocalStorage(TOKEN);
-  const token = localStorage.getItem(TOKEN);
-  const verdadero = true;
-  const { id, email, username, iat } = JSON.parse(
-    localStorage.getItem(VERIFY) || '{}',
-  );
-  console.log(token);
-
-  console.log({ id, email, username, iat });
+  const token = useSelector((state) => state.userReducer.userData);
+  const validToken = Object.keys(token).length > 0;
 
   return (
     <Suspense fallback={<div />}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
-            {token ? <HomePage /> : <LandingPage />}
-          </Route>
-          <Route exact path="/form">
-            {token ? <InterestForm /> : <LandingPage />}
-          </Route>
-          <Route exact path="/home">
-            {token ? <HomePage /> : <LandingPage />}
-          </Route>
-          <Route exact path="/user">
-            {token ? <UserPage /> : <LandingPage />}
-          </Route>
-          <Route exact path="/experience">
-            {token ? <ExperienceDetails /> : <LandingPage />}
-          </Route>
-          <Route exact path="/create-experience">
-            {token ? <ExperienceCreation /> : <LandingPage />}
-          </Route>
+          <Route
+            exact
+            path="/"
+            component={validToken ? HomePage : LandingPage}
+          />
+          <Route
+            exact
+            path="/form"
+            component={validToken ? InterestForm : NotFound}
+          />
+          <Route
+            exact
+            path="/user"
+            component={validToken ? UserPage : NotFound}
+          />
+          <Route
+            exact
+            path="/experience/:id"
+            component={ExperienceDetails}
+          />
+          <Route
+            exact
+            path="/create-experience"
+            component={validToken ? ExperienceCreation : NotFound}
+          />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

@@ -1,10 +1,11 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { lazy } from 'react';
 import { shallow } from 'enzyme';
 
 // ------------------------------ import components
-import { HomePage } from '../../pages/Home';
 import { ProviderMock } from '../../__mocks__/ProviderMock';
+
+const HomePage = lazy(() => import('../../pages/Home'));
 
 // ------------------------------------ TESTS ------------------------------------//
 describe('<HomePage />', () => {

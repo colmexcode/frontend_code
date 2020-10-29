@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 // ------------------------------ import components
 import { Hero } from '../../components/Hero';
@@ -16,13 +16,18 @@ import { TrendingSection } from '../../components/TrendingSection';
 
 export const LandingPage = () => {
   const modalRef = useRef();
+  const trendingRef = useRef();
+
+  function searchFocus() {
+    trendingRef.current.focus({ preventScroll: false });
+  }
 
   return (
     <>
-      <Hero />
+      <Hero focus={searchFocus} />
       <Map />
       <LocationCard />
-      <TrendingSection />
+      <TrendingSection ref={trendingRef} />
       <TestimonialSection />
       <Footer />
       <LoginModal ref={modalRef} />

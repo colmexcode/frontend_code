@@ -31,7 +31,7 @@ export const LoginModal = forwardRef(() => {
   const displayModal = useSelector(
     (state) => state.userReducer.displayModal,
   );
-  let history = useHistory();
+  const history = useHistory();
   const dispatch = useDispatch();
 
   // this function close the modal
@@ -45,16 +45,11 @@ export const LoginModal = forwardRef(() => {
   // submit the form to the store and close the modal.
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
 
     if (displayModal.login) {
       /* Login */
       const login = await loginUser(form);
-      console.log(login);
       if (login.data.Message === 'Auth success') {
-        // console.log(props);
-        // console.log(history);
-        // history.push('/user');
         /*manejo del token*/
         const { id, email, username, iat } = JwtDecode(
           login.data.token,
@@ -66,30 +61,16 @@ export const LoginModal = forwardRef(() => {
         );
         dispatch(getToken(login.data.token));
         closeModalCard();
-        history.push('/user');
-      } else {
-        return <Error message={login.error} />;
       }
     } else if (displayModal.sign) {
       /* Register */
       const register = await createUser(form);
-      console.log(register);
-      console.log(form.email);
-      // console.log(register.data.id);
-      // console.log(register.data.email === form.email);
-      // console.log(register.data.email);
       if (register.data.email === form.email) {
         dispatch(getToken(register.data.id));
-        // const login = await loginUser(form);
         closeModalCard();
-        history.push('/home');
-      } else {
-        return <Error message={register.error} />;
       }
     }
-
-    /* Validacion ejemplo */
-    // console.log(state);
+    history.push('/form');
   };
 
   // this validate if the display Modal state is true to display it.

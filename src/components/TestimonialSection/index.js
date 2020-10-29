@@ -19,9 +19,9 @@ export const TestimonialSection = () => {
     <StyledSection>
       <h1>Testimonials</h1>
       <Testimonial data={data[0]} left={0} top={15} />
-      <Testimonial data={data[1]} left={75} top={10} />
+      <Testimonial data={data[1]} left={65} top={10} />
       <Testimonial data={data[2]} left={10} top={60} />
-      <Testimonial data={data[3]} left={55} top={50} />
+      <Testimonial data={data[3]} left={55} top={65} />
       {window.innerWidth > 400 ? (
         <>
           <Testimonial data={data[4]} left={88} top={65} />

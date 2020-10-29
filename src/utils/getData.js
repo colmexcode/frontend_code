@@ -1,14 +1,9 @@
-const API = "https://rickandmortyapi.com/api/character/";
-
-const getData = async (id) => {
-  const apiURL = id ? `${API}${id}` : API;
+export const getData = async (api) => {
   try {
-    const response = await fetch(apiURL);
+    const response = await fetch(api);
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log("Fetch Error", error);
+    console.log('Fetch Error', error);
   }
 };
-
-export default getData;

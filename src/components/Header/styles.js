@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // ------------------------------ import variables
-import { spacing } from '../../global-styles/Variables';
+import { spacing, shadows } from '../../global-styles/Variables';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledHeader = styled.header`
@@ -30,4 +30,13 @@ export const LinkedLogo = styled(Link)`
   &:focus {
     transform: scale(0.8);
   }
+`;
+
+export const Image = styled.img`
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: ${shadows.outsideShadow};
+  cursor: pointer;
 `;

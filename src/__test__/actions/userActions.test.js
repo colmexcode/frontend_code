@@ -38,14 +38,4 @@ describe('Test the User Actions', () => {
 
     expect(closeModal(payload)).toEqual(expected);
   });
-
-  test('getFormData Action', () => {
-    const payload = userMock;
-    const expected = {
-      type: 'GET_FORM',
-      payload,
-    };
-
-    expect(getFormData(payload)).toEqual(expected);
-  });
 });
