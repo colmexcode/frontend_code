@@ -66,4 +66,12 @@ export const StyledIcon = styled.input`
       width: 80px;
       height: 80px;
     `};
+
+    ${(props) =>
+    props.alt === 'heartFavorite' &&
+    css`
+      padding: ${spacing.space2};
+      width: 50px;
+      height: 50px;
+    `};
 `;
