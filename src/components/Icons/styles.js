@@ -11,7 +11,7 @@ import {
 import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
-export const StyledIcon = styled.input`
+export const StyledIcon = styled.img`
   width: 40px;
   height: 40px;
   margin: 0 ${spacing.space2};

@@ -1,6 +1,7 @@
 // ------------------------------ import libraries
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 // ------------------------------ import components
 import { Rate } from '../Rate';
@@ -14,116 +15,105 @@ import {
   Rating,
   Dropdown,
   Pics,
+  Inputs,
+  MainInputs,
+  SubmitButtons,
 } from './styles';
+
 // -------- import redux actions
+import { createExperience } from '../../actions/experiencesActions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 
-let data = {
-  inputTitle: '',
-  inputLocation: '',
-  inputTag: '',
-};
 export const ExperienceForm = () => {
-  // const [ data, setData ] = useState()
-  const handleChange = ({ target }) => {
-    data = {
-      ...data,
-      [target.name]: target.value,
-    };
-    return data;
-    // setData((prev) => ({
-    //   ...prev,
-    //   [target.name]: target.value,
-    // }));
+  const [form, setForm] = useState({});
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleFile = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.files[0],
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(
-        'https://cozyplace.herokuapp.com/api/post/create',
-        {
-          method: 'POST',
-          mode: 'cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        },
-      );
-      console.log(response);
-      return response.json();
-    } catch (error) {
-      console.log(error + 'ocurrio un error');
-    }
+    dispatch(createExperience(form));
+    history.push('/user');
   };
 
   return (
     <ExpCreationContainer>
       <h2>Create your experience</h2>
       <ExpForm onSubmit={handleSubmit}>
-        <InputText
-          type="text"
-          id="title"
-          name="inputTitle"
-          required="required"
-          placeholder="Create Name of the Experience"
-          onChange={handleChange}
-        />
-        <InputText
-          type="text"
-          id="location"
-          name="inputLocation"
-          required="required"
-          placeholder="Create Location"
-          onChange={handleChange}
-        />
-        <InputText
-          type="text"
-          id="tag"
-          name="inputTag"
-          required="required"
-          placeholder="Create Tag"
-          onChange={handleChange}
-        />
-        <Dropdown>
-          <Button name="duration">Duration</Button>
-          <div>
-            <p>5 Min</p>
-            <p>15 Min</p>
-            <p>30 Min</p>
-          </div>
-        </Dropdown>
-        <Dropdown>
-          <Button name="city">City</Button>
-          <div>
-            <p>México</p>
-            <p>Bogotá</p>
-            <p>Medellín</p>
-          </div>
-        </Dropdown>
-        <Rating>
-          <p>Rating Stars</p>
-          <Rate />
-        </Rating>
-        <Pics>
-          <Icon src="arrowLeft" />
-          <Icon src="plus" />
-          <Icon src="arrowRight" />
-        </Pics>
+        <Inputs>
+          <MainInputs>
+            <InputText
+              type="text"
+              name="title"
+              required="required"
+              placeholder="Create Name of the Experience"
+              onChange={handleChange}
+            />
+            <Dropdown name="duration" onChange={handleChange}>
+              <option value="30 Min">30 Min</option>
+              <option value="1 Hour">1 Hour</option>
+              <option value="1.5 Hour">1.5 Hour</option>
+              <option value="2 Hour">2 Hour</option>
+              <option value="2.5 Hour">2.5 Hour</option>
+              <option value="3 Hour">3 Hour</option>
+              <option value="3.5 Hour">3.5 Hour</option>
+              <option value="4 Hour">4 Hour</option>
+              <option value="4.5 Hour">4.5 Hour</option>
+            </Dropdown>
+            <Dropdown name="location" onChange={handleChange}>
+              <option value="Mexico">Mexico</option>
+              <option value="Bogota">Bogota</option>
+              <option value="Medellin">Medellin</option>
+            </Dropdown>
+            <Dropdown name="tags" onChange={handleChange}>
+              <option value="City">City</option>
+              <option value="Adventure Travel">
+                Adventure Travel
+              </option>
+              <option value="Nature">Nature</option>
+            </Dropdown>
+            <Rating>
+              <p>Rating Stars</p>
+              <Rate />
+            </Rating>
+          </MainInputs>
+          <Pics>
+            <label htmlFor="image">
+              <Icon type="plus" />
+              <input
+                type="file"
+                name="image"
+                accept="image/png"
+                id="image"
+                onChange={handleFile}
+              />
+            </label>
+          </Pics>
+        </Inputs>
         <textarea
-          maxLength="400"
-          placeholder="Create you description that does not exceed more than 400 characters"
+          name="description"
+          maxLength="600"
+          placeholder="Create you description"
+          onChange={handleChange}
         />
-        <Link to="/">
-          <Button name="cancel">Cancelar</Button>
-        </Link>
-        <Link to="#">
-          <Button main={true} type="submit">
+        <SubmitButtons>
+          <Button name="cancel" onClick={() => history.push('/user')}>
+            Cancelar
+          </Button>
+          <Button main type="submit">
             Crear
           </Button>
-        </Link>
+        </SubmitButtons>
       </ExpForm>
     </ExpCreationContainer>
   );

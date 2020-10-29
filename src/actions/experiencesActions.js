@@ -52,3 +52,27 @@ export const getAllExperiences = () => async (dispatch) => {
     payload: data.data.slice(0, 10),
   });
 };
+
+export const createExperience = (form) => async (dispatch) => {
+  return dispatch({
+    type: 'CREATE_EXPERIENCE',
+    payload: form,
+  });
+};
+// try {
+//   const response = await fetch(
+//     'https://cozyplace.herokuapp.com/api/post/create',
+//     {
+//       method: 'POST',
+//       mode: 'cors',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(data),
+//     },
+//   );
+//   console.log(response);
+//   return response.json();
+// } catch (error) {
+//   console.log(error + 'ocurrio un error');
+// }

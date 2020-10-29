@@ -47,6 +47,7 @@ export const Icon = ({ type, click }) => {
   return (
     <StyledIcon
       type="image"
+      tabIndex="0"
       src={icons[type]}
       alt={type}
       onClick={click}
