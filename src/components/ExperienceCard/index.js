@@ -3,11 +3,10 @@ import React from 'react';
 
 // ------------------------------ import components
 import { Rate } from '../Rate';
-
+import { Icon } from '../Icons';
 // ------------------------------ import styles and images
 import { CardStyled, CardImg, TitleCard, ButtonCard } from './styles';
 import homeImg1 from '../../assets/images/homeImg1.jpg';
-import heartFavorite from '../../assets/images/heartFavorite.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this card shows the experiences, their rating and name.
@@ -21,9 +20,7 @@ export const ExperienceCard = ({ position, page }) => {
         <CardImg src={homeImg1} alt="travel image #1" />
         <TitleCard>Bogotá</TitleCard>
         <ButtonCard>
-          <a>
-            <img src={heartFavorite} alt="heartFavorite"/>
-          </a>
+          <Icon type="heartFavorite" />
         </ButtonCard>
       </div>
     </CardStyled>

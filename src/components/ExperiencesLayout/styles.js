@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // ------------------------------ import variables
 import { spacing } from '../../global-styles/Variables';
 
+
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const MainStyled = styled.section`
 
