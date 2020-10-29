@@ -2,7 +2,6 @@
 import React from 'react';
 
 // ------------------------------ import components
-import { ExperienceCard } from '../../components/ExperienceCard';
 import { Hero } from '../../components/Hero';
 import { ExperiencesLayout } from '../../components/ExperiencesLayout';
 import { Footer } from '../../components/Footer';
