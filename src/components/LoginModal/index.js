@@ -54,7 +54,7 @@ export const LoginModal = forwardRef(() => {
       if (login.data.Message === 'Auth success') {
         // console.log(props);
         // console.log(history);
-        // history.push('/Home/Login');
+        // history.push('/user');
         /*manejo del token*/
         const { id, email, username, iat } = JwtDecode(
           login.data.token,
@@ -64,9 +64,9 @@ export const LoginModal = forwardRef(() => {
           VERIFY,
           JSON.stringify({ id, email, username, iat }),
         );
-
         dispatch(getToken(login.data.token));
-        history.push('/home');
+        closeModalCard();
+        history.push('/user');
       } else {
         return <Error message={login.error} />;
       }
@@ -81,6 +81,7 @@ export const LoginModal = forwardRef(() => {
       if (register.data.email === form.email) {
         dispatch(getToken(register.data.id));
         // const login = await loginUser(form);
+        closeModalCard();
         history.push('/home');
       } else {
         return <Error message={register.error} />;

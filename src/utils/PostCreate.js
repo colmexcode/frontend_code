@@ -4,8 +4,8 @@ import { TOKEN } from '../constants/itemsLocalStorage';
 const API = 'https://cozyplace.herokuapp.com/';
 
 const loginUser = async (form) => {
-  const apiURL = `${API}${'api/user/login'}`;
-  // const apiURL = `${API}${'api/user/'}`;
+  const apiURL = `${API}${'api/post/create'}`;
+  // const apiURL = `${API}${'api/user/id'}`;
   console.log(apiURL);
   try {
     const response = await fetch(apiURL, {
@@ -15,10 +15,24 @@ const loginUser = async (form) => {
       // credentials: 'same-origin', // include, *same-origin, omit
       headers: new Headers({
         'Content-Type': 'application/json',
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOWEzMGZjYjAxNjNiMDAxN2VlN2FjMSIsImVtYWlsIjoiaGVyb2t1QGhlcm9rdS5jb20iLCJ1c2VybmFtZSI6Imhlcm9rdSIsImlhdCI6MTYwMzk0MTE5OX0.2jHMArmPKGeeMmGzbgjt4OFvH74oT1g9iqOwwetsblE',
+        //'Bearer TOKEN'
         // Authorization: `Bearer ${localStorage.TOKEN}`,
         // 'id': '5f9a24f27a7481001737fa62'
       }),
-      body: JSON.stringify(form), // body data type must match "Content-Type" header
+      body: JSON.stringify({
+        title: 'jsjsjssjsj',
+        user: '5f9a30fcb0163b0017ee7ac1',
+        date: '10/28/2020',
+        duration: '1 hora',
+        country: 'mexico',
+        location: 'guadalajara',
+        description: 'lorem lalalalalalalalala',
+        rating: '5',
+        tags: 'ciudad',
+        image: 'https://i.blogs.es/594843/chrome/450_1000.jpg',
+      }), // body data type must match "Content-Type" header
     });
     const data = await response.json();
     console.log(data);
