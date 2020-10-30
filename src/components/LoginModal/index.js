@@ -9,6 +9,7 @@ import { TOKEN, VERIFY } from '../../constants/itemsLocalStorage';
 
 // ------------------------------ import components
 import { Icon } from '../Icons';
+import { ErrorModal } from '../ErrorModal';
 
 // ------------------------------ import styles and images
 import { Modal, Form } from './styles';
@@ -17,7 +18,11 @@ import { Button } from '../../global-styles/Buttons';
 import lightLogo from '../../assets/images/logo-light.svg';
 
 // -------- import redux actions
-import { closeModal, getToken } from '../../actions/userActions';
+import {
+  closeModal,
+  getToken,
+  errorModal,
+} from '../../actions/userActions';
 
 import createUser from '../../utils/Register';
 import loginUser from '../../utils/Login';
@@ -37,6 +42,8 @@ export const LoginModal = forwardRef(() => {
   // this function close the modal
   const closeModalCard = () => dispatch(closeModal());
 
+  const errorModalCard = () => dispatch(errorModal());
+
   // set the inputs in the form.
   const [form, setForm] = useState();
   function handleInput(e) {
@@ -48,7 +55,14 @@ export const LoginModal = forwardRef(() => {
 
     if (displayModal.login) {
       /* Login */
-      const login = await loginUser(form);
+      // let login
+      try {
+        // const login = await loginUser(form);
+        this.login = await loginUser(form);
+      } catch {
+        errorModalCard();
+      }
+
       if (login.data.Message === 'Auth success') {
         /*manejo del token*/
         const { id, email, username, iat } = JwtDecode(
@@ -69,6 +83,8 @@ export const LoginModal = forwardRef(() => {
         dispatch(getToken(register.data.id));
         closeModalCard();
       }
+    } else if (displayModal.error) {
+      console.log('soy un error');
     }
     history.push('/');
   };
@@ -125,6 +141,8 @@ export const LoginModal = forwardRef(() => {
 
       document.getElementById('modal'),
     );
+  } else if (displayModal.error) {
+    return <ErrorModal />;
   }
   return null;
 });

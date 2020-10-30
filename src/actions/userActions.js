@@ -22,3 +22,8 @@ export const setSelection = (payload) => ({
   type: 'SET_SELECTION',
   payload,
 });
+
+export const errorModal = (payload) => ({
+  type: 'ERROR_MODAL',
+  payload: true,
+})

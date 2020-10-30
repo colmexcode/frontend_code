@@ -1,5 +1,5 @@
 const initialState = {
-  displayModal: { sign: false, login: false },
+  displayModal: { sign: false, login: false, error: false},
   userData: localStorage.getItem('TOKEN')
     ? localStorage.getItem('TOKEN')
     : {},
@@ -17,7 +17,7 @@ export const userReducer = (state = initialState, action) => {
     case 'OPEN_LOGIN':
       return {
         ...state,
-        displayModal: { ...state.displayModal, login: payload },
+        displayModal: { ...state.displayModal, login: payload, error: false },
       };
     case 'CLOSE_MODAL':
       return {
@@ -34,6 +34,11 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         selection: payload,
       };
+    case 'ERROR_MODAL':
+        return {
+          ...state,
+          displayModal: { ...state.displayModal, login: false, error: payload },
+        }
 
     default:
       return state;
