@@ -27,7 +27,7 @@ import { openLogin, openSign } from '../../actions/userActions';
 export const Header = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.userReducer.userData);
-  const validToken = Object.keys(token).length > 0;
+  const validToken = token ? Object.keys(token).length > 0 : null;
 
   // this functions open the modal
   const openLoginModal = () => dispatch(openLogin());
