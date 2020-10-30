@@ -55,26 +55,24 @@ export const LoginModal = forwardRef(() => {
 
     if (displayModal.login) {
       /* Login */
-      // let login
       try {
-        // const login = await loginUser(form);
-        this.login = await loginUser(form);
+        const login = await loginUser(form);
+
+        if (login.data.Message === 'Auth success') {
+          /*manejo del token*/
+          const { id, email, username, iat } = JwtDecode(
+            login.data.token,
+          );
+          localStorage.setItem(TOKEN, login.data.token);
+          localStorage.setItem(
+            VERIFY,
+            JSON.stringify({ id, email, username, iat }),
+          );
+          dispatch(getToken(login.data.token));
+          closeModalCard();
+        }
       } catch {
         errorModalCard();
-      }
-
-      if (login.data.Message === 'Auth success') {
-        /*manejo del token*/
-        const { id, email, username, iat } = JwtDecode(
-          login.data.token,
-        );
-        localStorage.setItem(TOKEN, login.data.token);
-        localStorage.setItem(
-          VERIFY,
-          JSON.stringify({ id, email, username, iat }),
-        );
-        dispatch(getToken(login.data.token));
-        closeModalCard();
       }
     } else if (displayModal.sign) {
       /* Register */
@@ -83,8 +81,6 @@ export const LoginModal = forwardRef(() => {
         dispatch(getToken(register.data.id));
         closeModalCard();
       }
-    } else if (displayModal.error) {
-      console.log('soy un error');
     }
     history.push('/');
   };
