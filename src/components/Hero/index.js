@@ -16,14 +16,14 @@ import heroPicture from '../../assets/images/heroPicture.jpg';
 // It change if user is logged.
 // In landing it show and extra component, Intrduction. It shows the name and a short description of the app.
 
-export const Hero = ({ focus }) => {
+export const Hero = ({ focus, image = heroPicture }) => {
   const history = useHistory();
 
   return (
     <StyledHero>
       <HeroImage
-        src={heroPicture}
-        alt="A woman is pointing to a map in a road trip"
+        src={image}
+        alt="A woman is pointing to a map planning a roadtrip"
       />
       <Header />
       {history.location.pathname === '/' ? (

@@ -46,6 +46,10 @@ export const StyledIcon = styled.img`
       right: 0;
       padding: 15px;
       ${colors.mainBackgroundColor};
+
+      ${media.mobile} {
+        margin: 0;
+      }
     `};
 
   ${(props) =>

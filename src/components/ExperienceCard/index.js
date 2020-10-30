@@ -1,6 +1,7 @@
 // ------------------------------ import libraries
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { Rate } from '../Rate';
@@ -22,6 +23,8 @@ export const ExperienceCard = ({
   image,
 }) => {
   const [liked, setLiked] = useState(false);
+  const token = useSelector((state) => state.userReducer.userData);
+  const validToken = token ? Object.keys(token).length > 0 : null;
 
   return (
     <CardStyled position={`${page}${position}`} key={_id}>
@@ -32,10 +35,12 @@ export const ExperienceCard = ({
           <TitleCard>{title}</TitleCard>
         </div>
       </Link>
-      <Icon
-        type={liked ? 'favoriteHeart' : 'emptyHeart'}
-        click={() => setLiked(!liked)}
-      />
+      {validToken ? (
+        <Icon
+          type={liked ? 'favoriteHeart' : 'emptyHeart'}
+          click={() => setLiked(!liked)}
+        />
+      ) : null}
     </CardStyled>
   );
 };

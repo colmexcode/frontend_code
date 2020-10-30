@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------ import variables
 import {
@@ -26,4 +27,8 @@ export const Description = styled.h2`
   margin: ${spacing.space2} auto;
   color: ${colors.titleColor};
   font-weight: ${fonts.normal};
+
+  ${media.mobile} {
+    font-size: ${fonts.p};
+  }
 `;

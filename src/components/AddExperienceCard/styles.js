@@ -1,6 +1,5 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // ------------------------------ import variables
 import {
@@ -8,6 +7,7 @@ import {
   shadows,
   spacing,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const CardStyled = styled.section`
@@ -22,7 +22,15 @@ export const CardStyled = styled.section`
   box-shadow: ${shadows.outsideShadow};
   outline: none;
 
+  ${media.mobile} {
+    height: 200px;
+  }
+
   h3 {
     margin-bottom: ${spacing.space3};
+
+    ${media.mobile} {
+      margin-bottom: ${spacing.space1};
+    }
   }
 `;

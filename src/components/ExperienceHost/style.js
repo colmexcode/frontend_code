@@ -22,6 +22,9 @@ export const BlockExp = styled.section`
 
   h2 {
     font-size: ${fonts.h1};
+    ${media.mobile} {
+      text-align: center;
+    }
   }
 `;
 

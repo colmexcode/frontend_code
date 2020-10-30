@@ -1,15 +1,11 @@
 // ------------------------------ import libraries
 import React, { useState } from 'react';
 
-// ------------------------------ import components
-import { Icon } from '../Icons';
-
 // ------------------------------ import styles and images
 import {
   ProfileContainer,
   Image,
   UserName,
-  LocationReviews,
   Description,
   TextArea,
   UserFom,
@@ -18,7 +14,6 @@ import {
 } from './styles';
 import { Button } from '../../global-styles/Buttons';
 import { InputText } from '../../global-styles/Inputs';
-import mockupPortrait from '../../assets/images/mockupPortrait.jpg';
 import userIcon from '../../assets/images/userIcon.svg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
@@ -26,7 +21,22 @@ import userIcon from '../../assets/images/userIcon.svg';
 // user can see and edit his information
 
 export const UserProfile = () => {
+  const user = JSON.parse(localStorage.getItem('VERIFY'));
   const [editing, setEditing] = useState(false);
+  const [form, setForm] = useState({ id: user.id });
+  console.log(form);
+
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+  function handleFiles(e) {
+    setForm({
+      ...form,
+      [e.target.name]: URL.createObjectURL(e.target.files[0]),
+    });
+  }
+
+  const userPicture = user.image ? user.image[0] : userIcon;
 
   return (
     <>
@@ -35,8 +45,17 @@ export const UserProfile = () => {
         {editing ? (
           <UserFom action="">
             <ImageInput htmlFor="picture">
-              <img src={userIcon} alt="edit user data" />
-              <input type="file" name="userPicture" id="picture" />
+              {form.image ? (
+                <img src={form.image} alt={user.username} />
+              ) : (
+                <img src={userIcon} alt="edit user data" />
+              )}
+              <input
+                type="file"
+                name="image"
+                id="picture"
+                onChange={handleFiles}
+              />
             </ImageInput>
             <div>
               <UserInputs>
@@ -44,21 +63,21 @@ export const UserProfile = () => {
                   type="text"
                   name="userName"
                   placeholder="User Name"
-                  id="userName"
+                  onChange={handleChange}
                 />
                 <InputText
-                  type="text"
-                  name="location"
-                  placeholder="Location"
-                  id="location"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  onChange={handleChange}
                 />
               </UserInputs>
               <TextArea
-                name="userDescription"
-                id="userDescription"
+                name="description"
                 cols="30"
                 rows="10"
                 placeholder="Tell us about you"
+                onChange={handleChange}
               />
             </div>
             <Button main onClick={() => setEditing(!editing)}>
@@ -67,10 +86,10 @@ export const UserProfile = () => {
           </UserFom>
         ) : (
           <>
-            <Image src={mockupPortrait} alt="" />
+            <Image src={userPicture} alt={user.username} />
             <Description>
               <UserName>
-                <h1>UserName</h1>
+                <h1>{user.username}</h1>
                 <Button main onClick={() => setEditing(!editing)}>
                   {editing ? 'done' : 'edit'}
                 </Button>
@@ -84,12 +103,6 @@ export const UserProfile = () => {
           </>
         )}
       </ProfileContainer>
-      <LocationReviews>
-        <Icon type="location" />
-        <p> Location</p>
-        <Icon type="star" />
-        <p> Reviews</p>
-      </LocationReviews>
     </>
   );
 };

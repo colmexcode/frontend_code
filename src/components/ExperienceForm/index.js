@@ -79,11 +79,9 @@ export const ExperienceForm = () => {
               <option value="Medellin">Medellin</option>
             </Dropdown>
             <Dropdown name="tags" onChange={handleChange}>
-              <option value="City">City</option>
-              <option value="Adventure Travel">
-                Adventure Travel
-              </option>
-              <option value="Nature">Nature</option>
+              <option value="5f9b54e3217dd209f45ecc55">Comida</option>
+              <option value="Adventure Travel">Naturaleza</option>
+              <option value="Nature">Ciduad</option>
             </Dropdown>
             <Dropdown name="duration" onChange={handleChange}>
               <option value="30 Min">30 Min</option>
