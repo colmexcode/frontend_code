@@ -18,14 +18,6 @@ export const UserExperiences = () => {
 
   return (
     <ExperienceGrid>
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
       <AddExperienceCard />
     </ExperienceGrid>
   );

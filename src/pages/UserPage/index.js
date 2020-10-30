@@ -17,7 +17,7 @@ export default () => {
       <Hero />
       <UserProfile />
       <SectionSelector />
-      {/* <UserExperiences /> */}
+      <UserExperiences />
       <Footer />
     </>
   );

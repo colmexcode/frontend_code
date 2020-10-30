@@ -3,7 +3,7 @@ const initialState = {
   userData: localStorage.getItem('TOKEN')
     ? localStorage.getItem('TOKEN')
     : {},
-  selection: '',
+  selection: 'my experiences',
 };
 
 export const userReducer = (state = initialState, action) => {
