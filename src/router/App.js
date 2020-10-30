@@ -23,7 +23,10 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 
 export const App = () => {
   const token = useSelector((state) => state.userReducer.userData);
-  const validToken = Object.keys(token).length > 0;
+  const validToken = token ? Object.keys(token).length > 0 : null;
+  // {
+  //   validToken ? HomePage : LandingPage;
+  // }
 
   return (
     <Suspense fallback={<div />}>

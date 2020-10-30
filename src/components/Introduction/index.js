@@ -15,7 +15,7 @@ import { openSign } from '../../actions/userActions';
 export const Introduction = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.userReducer.userData);
-  const validToken = Object.keys(token).length > 0;
+  const validToken = token ? Object.keys(token).length > 0 : null;
 
   // this function open the sign in modal
   const openSignModal = () => dispatch(openSign());
