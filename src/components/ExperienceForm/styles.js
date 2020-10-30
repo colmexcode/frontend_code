@@ -77,6 +77,13 @@ export const Pics = styled.div`
   height: 300px;
   border-radius: ${border.borderRadiusSmall};
   box-shadow: ${shadows.innerSoftShadow};
+  overflow: hidden;
+
+  img[pic] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   input {
     display: none;
@@ -92,9 +99,16 @@ export const Dropdown = styled.select`
   border: ${border.border};
   box-shadow: ${shadows.outsideShadow};
   background: ${colors.secondaryBackgroundColor};
+  outline: none;
+  transition: box-shadow 0.3s;
 
-  option:focus {
-    background: ${colors.titleColor};
+  &:focus {
+    font-weight: ${fonts.bold};
+    box-shadow: ${shadows.innerShadow};
+  }
+
+  option {
+    background: ${colors.backgroundColor};
   }
 `;
 
