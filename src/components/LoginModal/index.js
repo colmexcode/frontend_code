@@ -9,6 +9,7 @@ import { TOKEN, VERIFY } from '../../constants/itemsLocalStorage';
 
 // ------------------------------ import components
 import { Icon } from '../Icons';
+import { ErrorModal } from '../ErrorModal';
 
 // ------------------------------ import styles and images
 import { Modal, Form } from './styles';
@@ -17,7 +18,11 @@ import { Button } from '../../global-styles/Buttons';
 import lightLogo from '../../assets/images/logo-light.svg';
 
 // -------- import redux actions
-import { closeModal, getToken } from '../../actions/userActions';
+import {
+  closeModal,
+  getToken,
+  errorModal,
+} from '../../actions/userActions';
 
 import createUser from '../../utils/Register';
 import loginUser from '../../utils/Login';
@@ -37,6 +42,8 @@ export const LoginModal = forwardRef(() => {
   // this function close the modal
   const closeModalCard = () => dispatch(closeModal());
 
+  const errorModalCard = () => dispatch(errorModal());
+
   // set the inputs in the form.
   const [form, setForm] = useState();
   function handleInput(e) {
@@ -48,19 +55,24 @@ export const LoginModal = forwardRef(() => {
 
     if (displayModal.login) {
       /* Login */
-      const login = await loginUser(form);
-      if (login.data.Message === 'Auth success') {
-        /*manejo del token*/
-        const { id, email, username, iat } = JwtDecode(
-          login.data.token,
-        );
-        localStorage.setItem(TOKEN, login.data.token);
-        localStorage.setItem(
-          VERIFY,
-          JSON.stringify({ id, email, username, iat }),
-        );
-        dispatch(getToken(login.data.token));
-        closeModalCard();
+      try {
+        const login = await loginUser(form);
+
+        if (login.data.Message === 'Auth success') {
+          /*manejo del token*/
+          const { id, email, username, iat } = JwtDecode(
+            login.data.token,
+          );
+          localStorage.setItem(TOKEN, login.data.token);
+          localStorage.setItem(
+            VERIFY,
+            JSON.stringify({ id, email, username, iat }),
+          );
+          dispatch(getToken(login.data.token));
+          closeModalCard();
+        }
+      } catch {
+        errorModalCard();
       }
     } else if (displayModal.sign) {
       /* Register */
@@ -125,6 +137,8 @@ export const LoginModal = forwardRef(() => {
 
       document.getElementById('modal'),
     );
+  } else if (displayModal.error) {
+    return <ErrorModal />;
   }
   return null;
 });
