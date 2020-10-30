@@ -17,6 +17,7 @@ export const Map = () => {
   const topLocations = useFetchData(
     'https://cozyplace.herokuapp.com/api/show/topLocations',
   );
+  console.log(topLocations);
 
   return (
     <>

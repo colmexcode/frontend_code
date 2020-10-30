@@ -16,9 +16,9 @@ import { setCurrentExperience } from '../../actions/experiencesActions';
 export default () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  // const current = useSelector(
-  //   (state) => state.experiencesReducer.current,
-  // );
+  const current = useSelector(
+    (state) => state.experiencesReducer.current,
+  );
 
   useLayoutEffect(() => {
     dispatch(setCurrentExperience(id));
@@ -26,7 +26,7 @@ export default () => {
 
   return (
     <>
-      <Hero />
+      <Hero image={current.image ? current.image[0] : null} />
       <ExperienceHost />
       <Footer />
     </>

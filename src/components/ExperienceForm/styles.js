@@ -80,9 +80,11 @@ export const Pics = styled.div`
   overflow: hidden;
 
   img[pic] {
-    width: 100%;
-    height: 100%;
+    margin-left: 5%;
+    width: 90%;
+    height: 95%;
     object-fit: cover;
+    border-radius: ${border.borderRadiusSmall};
   }
 
   input {

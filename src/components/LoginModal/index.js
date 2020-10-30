@@ -70,7 +70,7 @@ export const LoginModal = forwardRef(() => {
         closeModalCard();
       }
     }
-    history.push('/');
+    history.push('/form');
   };
 
   // this validate if the display Modal state is true to display it.

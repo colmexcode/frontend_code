@@ -16,7 +16,7 @@ export const MainStyled = styled.section`
   margin-top: ${spacing.space4};
 
   ${media.tablet} {
-    width: 90%;
+    width: 80%;
     height: 1200px;
     grid-template-columns: 1.2fr 1fr 1fr;
     grid-template-rows: repeat(7, 1fr);

@@ -45,7 +45,7 @@ export const ExperienceHost = () => {
           <HostTravel
             location={location}
             duration={duration}
-            tag={tags ? tags[0] : null}
+            tag={tags ? tags[0].tagname : null}
           />
         </article>
       </DescriptionExp>

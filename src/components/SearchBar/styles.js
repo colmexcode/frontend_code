@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------ import variables
 import {
@@ -24,6 +25,10 @@ export const Title = styled.p`
   text-transform: uppercase;
   text-shadow: ${shadows.textShadow};
 
+  ${media.mobile} {
+    color: ${colors.backgroundColor};
+  }
+
   ::after {
     content: '';
     position: absolute;
@@ -33,6 +38,9 @@ export const Title = styled.p`
     left: 50%;
     transform: translateX(-50%);
     background: ${colors.titleColor};
+    ${media.mobile} {
+      background: ${colors.backgroundColor};
+    }
   }
 `;
 

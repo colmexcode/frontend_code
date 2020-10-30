@@ -1,5 +1,6 @@
 // ------------------------------ import libraries
 import styled from 'styled-components';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------ import variables
 import {
@@ -16,6 +17,12 @@ export const Selector = styled.div`
   justify-content: center;
   margin-top: ${spacing.space3};
 
+  ${media.mobile} {
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+  }
+
   h3 {
     position: relative;
     margin: 0 ${spacing.space3};
@@ -23,6 +30,10 @@ export const Selector = styled.div`
     font-weight: ${fonts.bold};
     cursor: pointer;
     outline: none;
+
+    ${media.mobile} {
+      margin-bottom: ${spacing.space2};
+    }
 
     &:hover {
       text-shadow: ${shadows.textShadow};
@@ -41,6 +52,10 @@ export const Selector = styled.div`
       height: 1px;
       transform: translateX(-50%);
       background: ${colors.titleColor};
+
+      ${media.mobile} {
+        width: 50%;
+      }
     }
   }
 `;

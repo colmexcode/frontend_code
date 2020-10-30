@@ -1,7 +1,7 @@
 // ------------------------------ import libraries
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // ------------------------------ import styles and images
 import {
@@ -12,9 +12,8 @@ import {
   Image,
 } from './styles';
 import { Button } from '../../global-styles/Buttons';
-import { LinkStyled } from '../../global-styles/Links';
 import logo from '../../assets/images/logo.svg';
-import mockupPortrait from '../../assets/images/mockupPortrait.jpg';
+import userIcon from '../../assets/images/userIcon.svg';
 
 // -------- import redux actions
 import { openLogin, openSign } from '../../actions/userActions';
@@ -26,6 +25,7 @@ import { openLogin, openSign } from '../../actions/userActions';
 
 export const Header = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const token = useSelector((state) => state.userReducer.userData);
   const validToken = token ? Object.keys(token).length > 0 : null;
 
@@ -39,17 +39,13 @@ export const Header = () => {
         <LinkedLogo to="/">
           <Logo src={logo} alt="Cozy place logo" />
         </LinkedLogo>
-        <LinkStyled nav="true" to="/">
-          about us
-        </LinkStyled>
-        <LinkStyled nav="true" to="/">
-          destinations
-        </LinkStyled>
       </Brand>
       {validToken ? (
-        <Link to="/user">
-          <Image src={mockupPortrait} alt="" />
-        </Link>
+        history.location.pathname === '/user' ? null : (
+          <Link to="/user">
+            <Image src={userIcon} alt="" />
+          </Link>
+        )
       ) : (
         <div>
           <Button onClick={openLoginModal}>login</Button>
