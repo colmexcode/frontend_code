@@ -1,5 +1,5 @@
 const initialState = {
-  displayModal: { sign: false, login: false, error: false },
+  displayModal: { sign: false, login: false, error: 'hola' },
   userData: localStorage.getItem('VERIFY')
     ? JSON.parse(localStorage.getItem('VERIFY'))
     : {},
@@ -15,24 +15,23 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         displayModal: { ...state.displayModal, sign: payload },
       };
+
     case 'OPEN_LOGIN':
       return {
         ...state,
         displayModal: {
           ...state.displayModal,
           login: payload,
-          error: false,
         },
       };
+
     case 'CLOSE_MODAL':
       return {
         ...state,
-        displayModal: { sign: payload, login: payload },
+        displayModal: { sign: payload, login: payload, error: null },
       };
 
     case 'GET_USER_DATA':
-      localStorage.setItem('VERIFY', JSON.stringify(payload));
-
       return {
         ...state,
         userData: payload,
@@ -43,6 +42,7 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         userData: { ...state.userData, ...payload },
       };
+
     case 'SET_SELECTION':
       return {
         ...state,
@@ -54,12 +54,12 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         experiencesDisplayed: payload,
       };
-    case 'ERROR_MODAL':
+
+    case 'SHOW_ERROR':
       return {
         ...state,
         displayModal: {
           ...state.displayModal,
-          login: false,
           error: payload,
         },
       };

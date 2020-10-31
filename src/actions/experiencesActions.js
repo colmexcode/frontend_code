@@ -3,7 +3,7 @@ export const setTrending = () => async (dispatch) => {
     'https://cozyplace.herokuapp.com/api/post/',
   );
   const data = await response.json();
-  return dispatch({
+  dispatch({
     type: 'SET_TRENDING_EXPERIENCES',
     payload: data.data.slice(0, 4),
   });
@@ -25,7 +25,7 @@ export const searchExperiences = (city) => async (dispatch) => {
   );
   const data = await response.json();
 
-  return dispatch({
+  dispatch({
     type: 'SET_TRENDING_EXPERIENCES',
     payload: data.data.slice(0, 4),
   });
@@ -36,7 +36,7 @@ export const setCurrentExperience = (id) => async (dispatch) => {
     `https://cozyplace.herokuapp.com/api/post/${id}`,
   );
   const data = await response.json();
-  return dispatch({
+  dispatch({
     type: 'SET_CURRENT_EXPERIENCE',
     payload: data.data,
   });
@@ -47,15 +47,34 @@ export const getAllExperiences = () => async (dispatch) => {
     'https://cozyplace.herokuapp.com/api/post/',
   );
   const data = await response.json();
-  return dispatch({
+  dispatch({
     type: 'GET_ALL_EXPERIENCE',
     payload: data.data.slice(0, 10),
   });
 };
 
 export const createExperience = (form) => async (dispatch) => {
-  return dispatch({
+  dispatch({
     type: 'CREATE_EXPERIENCE',
     payload: form,
   });
 };
+
+export const showIndicator = (indicator) => (dispatch) => {
+  dispatch({ type: 'SHOW_INDICATOR', payload: indicator });
+
+  setTimeout(() => {
+    dispatch({
+      type: 'SHOW_INDICATOR',
+      payload: {
+        status: false,
+        message: '',
+      },
+    });
+  }, 2000);
+};
+
+export const setIndicatorPosition = (payload) => ({
+  type: 'SET_INDICATOR_POSITION',
+  payload,
+});

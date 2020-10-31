@@ -1,6 +1,6 @@
 // ------------------------------ import libraries
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { Icon } from '../Icons';
@@ -19,15 +19,21 @@ import { searchExperiences } from '../../actions/experiencesActions';
 // ------------------------------------ COMPONENT ------------------------------------//
 // this component is the search bar to get the experiences
 export const SearchBar = ({ focus }) => {
+  const { token } = useSelector(
+    (state) => state.userReducer.userData,
+  );
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
 
   function handleInput(e) {
     setSearch(e.target.value);
   }
+
   function handleSearch() {
     dispatch(searchExperiences(search));
-    focus();
+    if (!token) {
+      focus();
+    }
   }
 
   return (

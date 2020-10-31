@@ -42,9 +42,6 @@ export const LoginModal = forwardRef(() => {
   // this function close the modal
   const closeModalCard = () => dispatch(closeModal());
 
-  const errorModalCard = () => dispatch(errorModal());
-
-  // set the inputs in the form.
   const [form, setForm] = useState();
   function handleInput(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -54,25 +51,18 @@ export const LoginModal = forwardRef(() => {
     e.preventDefault();
 
     if (displayModal.login) {
-      /* Login */
       try {
         const login = await loginUser(form);
 
         if (login.data.Message === 'Auth success') {
           const { id } = JwtDecode(login.data.token);
-          const userData = await getUser(id, login.data.token);
-          localStorage.setItem(
-            VERIFY,
-            JSON.stringify({ token: login.data.token, ...userData }),
-          );
           dispatch(getUserData(id, login.data.token));
-          history.push('/form');
+          history.push('/');
         }
       } catch (error) {
-        errorModalCard();
+        dispatch(errorModal(error.message));
       }
     } else if (displayModal.sign) {
-      /* Register */
       const register = await createUser(form);
       if (register.data.email === form.email) {
         closeModalCard();

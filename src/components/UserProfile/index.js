@@ -38,12 +38,10 @@ export const UserProfile = () => {
     username,
     description = 'tell us about you',
     image = userIcon,
-    favorite,
   } = useSelector((state) => state.userReducer.userData);
 
   const [editing, setEditing] = useState(false);
   const [form, setForm] = useState({ _id });
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -57,6 +55,7 @@ export const UserProfile = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     await UpdateUser(form, token, _id);
+    dispatch(getUserData(_id, token));
     setEditing(false);
   }
 
