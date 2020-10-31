@@ -5,8 +5,7 @@ import React from 'react';
 import { Hero } from '../../components/Hero';
 import { ExperiencesLayout } from '../../components/ExperiencesLayout';
 import { Footer } from '../../components/Footer';
-
-// -------------------Redux actions
+import { ResulIndicator } from '../../components/ResultIndicator';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this pages is the home.
@@ -16,6 +15,7 @@ import { Footer } from '../../components/Footer';
 export default () => {
   return (
     <>
+      <ResulIndicator />
       <Hero />
       <ExperiencesLayout />
       <Footer />

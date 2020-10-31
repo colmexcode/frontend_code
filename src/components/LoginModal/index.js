@@ -5,27 +5,29 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import JwtDecode from 'jwt-decode';
-import { VERIFY } from '../../constants/itemsLocalStorage';
 
 // ------------------------------ import components
 import { Icon } from '../Icons';
-import { getUser } from '../../utils/getUserData';
 
 // ------------------------------ import styles and images
 import { Modal, Form } from './styles';
 import { InputText } from '../../global-styles/Inputs';
 import { Button } from '../../global-styles/Buttons';
 import lightLogo from '../../assets/images/logo-light.svg';
+import createUser from '../../utils/Register';
+import loginUser from '../../utils/Login';
+import { useGetMousePosition } from '../../hooks/useGetMousePosition';
 
 // -------- import redux actions
 import {
+  openLogin,
   closeModal,
-  errorModal,
   getUserData,
 } from '../../actions/userActions';
-
-import createUser from '../../utils/Register';
-import loginUser from '../../utils/Login';
+import {
+  showIndicator,
+  setIndicatorPosition,
+} from '../../actions/experiencesActions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the modal to login or sign up. It change according to the displayModal state
@@ -33,6 +35,7 @@ import loginUser from '../../utils/Login';
 // if the state sign is true, show the sign up modal.
 
 export const LoginModal = forwardRef(() => {
+  const mousePosition = useGetMousePosition();
   const displayModal = useSelector(
     (state) => state.userReducer.displayModal,
   );
@@ -42,9 +45,6 @@ export const LoginModal = forwardRef(() => {
   // this function close the modal
   const closeModalCard = () => dispatch(closeModal());
 
-  const errorModalCard = () => dispatch(errorModal());
-
-  // set the inputs in the form.
   const [form, setForm] = useState();
   function handleInput(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -54,28 +54,43 @@ export const LoginModal = forwardRef(() => {
     e.preventDefault();
 
     if (displayModal.login) {
-      /* Login */
       try {
         const login = await loginUser(form);
 
         if (login.data.Message === 'Auth success') {
           const { id } = JwtDecode(login.data.token);
-          const userData = await getUser(id, login.data.token);
-          localStorage.setItem(
-            VERIFY,
-            JSON.stringify({ token: login.data.token, ...userData }),
-          );
           dispatch(getUserData(id, login.data.token));
-          history.push('/form');
+          history.push('/');
         }
       } catch (error) {
-        errorModalCard();
+        dispatch(
+          showIndicator({
+            status: true,
+            message: 'Invalid email or password ❌',
+          }),
+        );
+        dispatch(setIndicatorPosition(mousePosition));
       }
     } else if (displayModal.sign) {
-      /* Register */
       const register = await createUser(form);
       if (register.data.email === form.email) {
+        dispatch(
+          showIndicator({
+            status: true,
+            message: 'Thanks for join us!! 🎉',
+          }),
+        );
+        dispatch(setIndicatorPosition(mousePosition));
         closeModalCard();
+        dispatch(openLogin());
+      } else {
+        dispatch(
+          showIndicator({
+            status: true,
+            message: 'This user could not register, try again ❌',
+          }),
+        );
+        dispatch(setIndicatorPosition(mousePosition));
       }
     }
   };
@@ -96,15 +111,17 @@ export const LoginModal = forwardRef(() => {
                 type="text"
                 placeholder="Name"
                 name="fullname"
+                required
                 onChange={handleInput}
               />
             </>
           )}
           <InputText
             aria-label="email"
-            type="text"
+            type="email"
             placeholder="email"
             name="email"
+            required
             onChange={handleInput}
           />
           {displayModal.sign && (
@@ -113,6 +130,7 @@ export const LoginModal = forwardRef(() => {
               type="text"
               placeholder="Username"
               name="username"
+              required
               onChange={handleInput}
             />
           )}
@@ -121,6 +139,7 @@ export const LoginModal = forwardRef(() => {
             type="password"
             placeholder="Password"
             name="password"
+            required
             onChange={handleInput}
           />
           <Button type="submit" submit>

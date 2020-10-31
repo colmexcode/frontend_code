@@ -1,11 +1,11 @@
 // ------------------------------ import libraries
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 // ------------------------------ import components
 import { UpdateUser } from '../../utils/UpdateUser';
-// import { Button } from '../../global-styles/Buttons';
+
 // ------------------------------ import styles and images
 import {
   StyledHeader,
@@ -30,9 +30,10 @@ import { openLogin, openSign } from '../../actions/userActions';
 export const Header = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { token, image = userIcon } = useSelector(
+  const { token, image, username } = useSelector(
     (state) => state.userReducer.userData,
   );
+  const userImage = image === '' ? userIcon : image;
 
   // this functions open the modal
   const openLoginModal = () => dispatch(openLogin());

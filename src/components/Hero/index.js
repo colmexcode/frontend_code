@@ -21,10 +21,7 @@ export const Hero = ({ focus, image = heroPicture }) => {
 
   return (
     <StyledHero>
-      <HeroImage
-        src={image}
-        alt="A woman is pointing to a map planning a roadtrip"
-      />
+      <HeroImage src={image} alt="main image of the page" />
       <Header />
       {history.location.pathname === '/' ? (
         <>

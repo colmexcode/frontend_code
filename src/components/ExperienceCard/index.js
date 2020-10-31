@@ -12,9 +12,14 @@ import { deleteFavorite } from '../../utils/deleteFavorite';
 // ------------------------------ import styles and images
 import { CardStyled, CardImg, TitleCard } from './styles';
 import mockupPicture from '../../assets/images/mockupPicture.jpg';
+import { useGetMousePosition } from '../../hooks/useGetMousePosition';
 
 // -----------------Redux actions
 import { getUserData } from '../../actions/userActions';
+import {
+  showIndicator,
+  setIndicatorPosition,
+} from '../../actions/experiencesActions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this card shows the experiences, their rating and name.
@@ -32,40 +37,43 @@ export const ExperienceCard = ({
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.userReducer.userData);
   const { token, favorite } = userData;
+  const mousePosition = useGetMousePosition();
 
   const findInFavList = favorite?.find(
     (experience) => experience._id === _id,
   );
   const isFav = favorite?.includes(findInFavList);
-
   const [liked, setLiked] = useState(isFav);
-
   const displayHeartBroken = token && isFav && inUser;
   const displayHeart = token && !inUser;
 
   async function addFav() {
-    if (!isFav) {
-      const response = await addFavorite(_id, token);
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-      if (response.status === 200) {
-        setLiked(true);
-        dispatch(getUserData(userData._id, token));
-      }
-    } else {
-      console.log('esta repetido');
+    const response = await addFavorite(_id, token);
+    if (response.status === 200) {
+      setLiked(true);
+      dispatch(getUserData(userData._id, token));
+      dispatch(
+        showIndicator({
+          status: true,
+          message: 'Experience added to favorite! 🎉',
+        }),
+      );
+      dispatch(setIndicatorPosition(mousePosition));
     }
   }
 
   async function deleteFav() {
     const response = await deleteFavorite(_id, token);
-    console.log(response);
-    const data = await response.json();
-    console.log(data);
     if (response.status === 200) {
       setLiked(false);
       dispatch(getUserData(userData._id, token));
+      dispatch(
+        showIndicator({
+          status: true,
+          message: 'Experience deleted from favorite ❌',
+        }),
+      );
+      dispatch(setIndicatorPosition(mousePosition));
     }
   }
 
@@ -74,7 +82,7 @@ export const ExperienceCard = ({
       <Link to={`/experience/${_id}`}>
         <Rate rate={rating[0]} />
         <div>
-          <CardImg src={mockupPicture} alt="travel image #1" />
+          <CardImg src={mockupPicture} alt={title} />
           <TitleCard>{title}</TitleCard>
         </div>
       </Link>

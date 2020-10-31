@@ -9,6 +9,7 @@ import { Footer } from '../../components/Footer';
 import { TestimonialSection } from '../../components/TestimonialSection';
 import { LoginModal } from '../../components/LoginModal';
 import { TrendingSection } from '../../components/TrendingSection';
+import { ResulIndicator } from '../../components/ResultIndicator';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the landing page.
@@ -24,6 +25,7 @@ export const LandingPage = () => {
 
   return (
     <>
+      <ResulIndicator />
       <Hero focus={searchFocus} />
       <Map />
       <LocationCard />

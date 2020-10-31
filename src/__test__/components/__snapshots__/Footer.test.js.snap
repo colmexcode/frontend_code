@@ -2,7 +2,7 @@
 
 exports[`<Footer /> Footer Snapshot 1`] = `
 <footer
-  className="styles__StyledFooter-sc-1569jkl-0 kYrkiB"
+  className="styles__StyledFooter-sc-1569jkl-0 ZOThD"
 >
   <div
     className="styles__Description-sc-1569jkl-1 buvuhc"
@@ -62,28 +62,32 @@ exports[`<Footer /> Footer Snapshot 1`] = `
     </div>
   </div>
   <div>
-    <input
+    <img
       alt="facebook"
-      className="styles__StyledIcon-urxmhz-0 CSovD"
+      className="styles__StyledIcon-urxmhz-0 bOQGgD"
       src={Object {}}
+      tabIndex="0"
       type="image"
     />
-    <input
+    <img
       alt="instagram"
-      className="styles__StyledIcon-urxmhz-0 CSovD"
+      className="styles__StyledIcon-urxmhz-0 bOQGgD"
       src={Object {}}
+      tabIndex="0"
       type="image"
     />
-    <input
+    <img
       alt="youtube"
-      className="styles__StyledIcon-urxmhz-0 CSovD"
+      className="styles__StyledIcon-urxmhz-0 bOQGgD"
       src={Object {}}
+      tabIndex="0"
       type="image"
     />
-    <input
+    <img
       alt="twitter"
-      className="styles__StyledIcon-urxmhz-0 CSovD"
+      className="styles__StyledIcon-urxmhz-0 bOQGgD"
       src={Object {}}
+      tabIndex="0"
       type="image"
     />
   </div>

@@ -1,4 +1,3 @@
-// var base64 = require('base-64');
 const API = 'https://cozyplace.herokuapp.com/';
 
 export const UpdateUser = async (form, token, id) => {
@@ -14,8 +13,7 @@ export const UpdateUser = async (form, token, id) => {
       }),
       body: JSON.stringify(form),
     });
-    const data = await response.json();
-    return data.data;
+    return response;
   } catch (error) {
     console.log('Fetch Error', error);
   }
