@@ -102,4 +102,20 @@ export const StyledIcon = styled.img`
         bottom: 10px;
       }
     `};
+
+  ${(props) =>
+    props.alt === 'heartBroken' &&
+    css`
+      position: absolute;
+      margin: ${spacing.space2};
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      ${media.mobile} {
+        margin: 0;
+        right: 10px;
+        bottom: 10px;
+      }
+    `};
 `;

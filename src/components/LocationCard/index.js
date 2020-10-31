@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 // ------------------------------ import styles and images
 import { Card, Description } from './styles';
+import mockupPic from '../../assets/images/mockupPicture.jpg';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // this card display a ditail of the location in the section feature destinations at landing page
@@ -20,7 +21,7 @@ export const LocationCard = () => {
       left={`${mouseCoordinates.x}px`}
       top={`${mouseCoordinates.y}px`}
     >
-      <img src={data.image[0]} alt="location" />
+      <img src={mockupPic} alt="location" />
       <Description>
         <p>{data.location}</p>
         <small>{data.country}</small>

@@ -1,20 +1,17 @@
-const API = 'https://cozyplace.herokuapp.com/';
-
-const loginUser = async (form) => {
-  const apiURL = `${API}${'api/user/login'}`;
+export const getUser = async (userId, token) => {
+  const apiURL = `https://cozyplace.herokuapp.com/api/user/favorites/${userId}`;
   try {
     const response = await fetch(apiURL, {
-      method: 'POST',
+      method: 'GET',
       mode: 'cors',
       headers: new Headers({
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       }),
-      body: JSON.stringify(form),
     });
     const data = await response.json();
-    return data;
+    return data.data;
   } catch (error) {
     console.log('Fetch Error', error);
   }
 };
-export default loginUser;

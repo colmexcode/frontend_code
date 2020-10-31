@@ -277,7 +277,7 @@ export const TitleCard = styled.p`
   z-index: 1;
   bottom: ${spacing.space1};
   color: ${colors.backgroundColor};
-  font-size: ${fonts.h2};
+  font-size: ${fonts.h3};
   font-weight: ${fonts.bold};
   -webkit-text-stroke: 0.8px ${colors.titleColor};
 
