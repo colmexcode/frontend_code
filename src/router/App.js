@@ -22,7 +22,9 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 // This component has all the pages components
 
 export const App = () => {
-  const token = useSelector((state) => state.userReducer.userData);
+  const token = useSelector(
+    (state) => state.userReducer.userData.token,
+  );
   const validToken = token ? Object.keys(token).length > 0 : null;
   // {
   //   validToken ? HomePage : LandingPage;

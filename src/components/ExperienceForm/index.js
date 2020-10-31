@@ -1,7 +1,7 @@
 // ------------------------------ import libraries
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { Rate } from '../Rate';
@@ -21,18 +21,20 @@ import {
 } from './styles';
 
 // -------- import redux actions
-import { createExperience } from '../../actions/experiencesActions';
 import { createPost } from '../../utils/createPost';
+import { useFetchData } from '../../hooks/useFetchData';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-
 export const ExperienceForm = () => {
+  const tags = useFetchData(
+    'https://cozyplace.herokuapp.com/api/tag/',
+  );
   const [rating, setrating] = useState(1);
-  const user = JSON.parse(localStorage.getItem('VERIFY'));
-  const [form, setForm] = useState({ user: user.id });
-  const dispatch = useDispatch();
+  const { token, _id } = useSelector(
+    (state) => state.userReducer.userData,
+  );
+  const [form, setForm] = useState({ user: _id });
   const history = useHistory();
-  const token = useSelector((state) => state.userReducer.userData);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -47,7 +49,6 @@ export const ExperienceForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // dispatch(createExperience(form));
     await createPost(form, token);
     // history.push('/user');
   };
@@ -79,9 +80,11 @@ export const ExperienceForm = () => {
               <option value="Medellin">Medellin</option>
             </Dropdown>
             <Dropdown name="tags" onChange={handleChange}>
-              <option value="5f9b54e3217dd209f45ecc55">Comida</option>
-              <option value="Adventure Travel">Naturaleza</option>
-              <option value="Nature">Ciduad</option>
+              {tags.map((tag) => (
+                <option key={tag._id} value={tag._id}>
+                  {tag.tagname}
+                </option>
+              ))}
             </Dropdown>
             <Dropdown name="duration" onChange={handleChange}>
               <option value="30 Min">30 Min</option>

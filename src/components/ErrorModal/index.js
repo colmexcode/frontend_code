@@ -6,13 +6,13 @@ import { useHistory } from 'react-router-dom';
 
 // ------------------------------ import components
 import { Icon } from '../Icons';
-import { LoginModal } from '../LoginModal'
+import { LoginModal } from '../LoginModal';
 
 // ------------------------------ import styles and images
 import { Modal, Form } from './styles';
 import { Button } from '../../global-styles/Buttons';
 import lightLogo from '../../assets/images/logo-light.svg';
-import error from '../../assets/images/Error-logo.svg'
+import error from '../../assets/images/Error-logo.svg';
 
 // -------- import redux actions
 import { closeModal, openLogin } from '../../actions/userActions';
@@ -23,26 +23,24 @@ import { closeModal, openLogin } from '../../actions/userActions';
 // if the state login is true, show the login modal.
 
 export const ErrorModal = forwardRef(() => {
-
-  const modalRef = useRef()
+  const modalRef = useRef();
 
   const displayModal = useSelector(
     (state) => state.userReducer.displayModal,
   );
-  
+
   const dispatch = useDispatch();
 
   // this function close the modal
   const closeModalCard = () => dispatch(closeModal());
-  
+
   // this function open the modal
-  const toLoginAgain = () => dispatch(openLogin())
+  const toLoginAgain = () => dispatch(openLogin());
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    toLoginAgain()
-    
+    toLoginAgain();
   };
 
   // this validate if the display Modal state is true to display it.
@@ -62,8 +60,8 @@ export const ErrorModal = forwardRef(() => {
 
       document.getElementById('modal'),
     );
-  } else if(displayModal.login) {
-    <LoginModal ref={modalRef} />
+  } else if (displayModal.login) {
+    <LoginModal ref={modalRef} />;
   }
   return null;
 });
