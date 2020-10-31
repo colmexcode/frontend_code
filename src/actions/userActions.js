@@ -1,6 +1,7 @@
 import { getUserPosts } from '../utils/PostUser';
 import { getFavoritePosts } from '../utils/getFavoritePosts';
-import { getUser } from '../utils/getUserData';
+
+const URL = 'https://cozyplace.herokuapp.com/api/';
 
 export const openLogin = (payload) => ({
   type: 'OPEN_LOGIN',
@@ -18,12 +19,27 @@ export const closeModal = (payload) => ({
 });
 
 export const getUserData = (id, token) => async (dispatch) => {
-  const data = await getUser(id, token);
-
-  return dispatch({
-    type: 'GET_USER_DATA',
-    payload: { ...data, token },
-  });
+  try {
+    const response = await fetch(`${URL}user/favorites/${id}`, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    localStorage.setItem(
+      'VERIFY',
+      JSON.stringify({ ...data.data, token }),
+    );
+    dispatch({
+      type: 'GET_USER_DATA',
+      payload: { ...data.data, token },
+    });
+  } catch (error) {
+    console.log('Fetch Error', error);
+  }
 };
 
 export const updateUserState = (payload) => ({
@@ -37,15 +53,15 @@ export const setSelection = (payload) => ({
 });
 
 export const errorModal = (payload) => ({
-  type: 'ERROR_MODAL',
-  payload: true,
+  type: 'SHOW_ERROR',
+  payload,
 });
 
 export const getFavoriteExperiences = (id, token) => async (
   dispatch,
 ) => {
   const data = await getFavoritePosts(id, token);
-  return dispatch({
+  dispatch({
     type: 'GET_DISPLAYED_EXPERIENCES',
     payload: data,
   });
@@ -53,7 +69,7 @@ export const getFavoriteExperiences = (id, token) => async (
 
 export const getUserExperiences = (id, token) => async (dispatch) => {
   const data = await getUserPosts(id, token);
-  return dispatch({
+  dispatch({
     type: 'GET_DISPLAYED_EXPERIENCES',
     payload: data,
   });

@@ -23,7 +23,7 @@ export const Modal = styled.section`
   background: rgba(0, 0, 0, 0.5);
 `;
 
-export const Form = styled.form`
+export const Container = styled.div`
   position: relative;
   width: 400px;
   display: flex;

@@ -3,6 +3,11 @@ const initialState = {
   current: {},
   allExperiences: [],
   creatingExperience: {},
+  showIndicator: {
+    status: false,
+    message: '',
+  },
+  mouseCoordinates: { x: 0, y: 0 },
 };
 
 export const experiencesReducer = (state = initialState, action) => {
@@ -19,6 +24,12 @@ export const experiencesReducer = (state = initialState, action) => {
 
     case 'CREATE_EXPERIENCE':
       return { ...state, creatingExperience: payload };
+
+    case 'SHOW_INDICATOR':
+      return { ...state, showIndicator: payload };
+
+    case 'SET_INDICATOR_POSITION':
+      return { ...state, mouseCoordinates: payload };
 
     default:
       return state;
