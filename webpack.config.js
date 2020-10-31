@@ -74,7 +74,7 @@ module.exports = {
     new WorkboxWebpackPlugin.GenerateSW({
       runtimeCaching: [
         {
-          urlPattern: new RegExp('cozy-place.vercel.app'),
+          urlPattern: new RegExp('https://cozy-place.vercel.app/'),
           handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'images',
