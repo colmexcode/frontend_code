@@ -1,6 +1,7 @@
 // ------------------------------ import libraries
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { LandingPage } from '../pages/Landing';
@@ -21,23 +22,42 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 // This component has all the pages components
 
 export const App = () => {
+  const token = useSelector(
+    (state) => state.userReducer.userData.token,
+  );
+  const validToken = token ? Object.keys(token).length > 0 : null;
+  // {
+  //   validToken ? HomePage : LandingPage;
+  // }
+
   return (
     <Suspense fallback={<div />}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/form" component={InterestForm} />
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/user" component={UserPage} />
           <Route
             exact
-            path="/experience"
+            path="/"
+            component={validToken ? HomePage : LandingPage}
+          />
+          <Route
+            exact
+            path="/form"
+            component={validToken ? InterestForm : NotFound}
+          />
+          <Route
+            exact
+            path="/user"
+            component={validToken ? UserPage : NotFound}
+          />
+          <Route
+            exact
+            path="/experience/:id"
             component={ExperienceDetails}
           />
           <Route
             exact
             path="/create-experience"
-            component={ExperienceCreation}
+            component={validToken ? ExperienceCreation : NotFound}
           />
           <Route component={NotFound} />
         </Switch>

@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // ------------------------------ import variables
-import { spacing } from '../../global-styles/Variables';
+import {
+  spacing,
+  shadows,
+  colors,
+} from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const StyledHeader = styled.header`
@@ -12,6 +17,10 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: ${spacing.space1} ${spacing.space3};
+
+  ${media.mobile} {
+    padding: ${spacing.space3};
+  }
 `;
 
 export const Brand = styled.div`
@@ -30,4 +39,14 @@ export const LinkedLogo = styled(Link)`
   &:focus {
     transform: scale(0.8);
   }
+`;
+
+export const Image = styled.img`
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: ${colors.backgroundColor};
+  box-shadow: ${shadows.outsideShadow};
+  cursor: pointer;
 `;

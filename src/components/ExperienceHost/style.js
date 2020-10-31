@@ -22,6 +22,9 @@ export const BlockExp = styled.section`
 
   h2 {
     font-size: ${fonts.h1};
+    ${media.mobile} {
+      text-align: center;
+    }
   }
 `;
 
@@ -33,6 +36,7 @@ export const DescriptionExp = styled.div`
 
 export const DetailsHost = styled.article`
   max-width: 600px;
+  min-height: 800px;
   padding: ${spacing.space3};
   border: ${border.border};
   border-radius: ${border.borderRadiusBig};
@@ -50,5 +54,9 @@ export const DetailsHost = styled.article`
   h3 {
     font-size: ${fonts.h2};
     font-weight: ${fonts.bold};
+  }
+
+  p {
+    line-height: 25px;
   }
 `;

@@ -12,21 +12,16 @@ import { ExperienceGrid } from './styles';
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
 export const UserExperiences = () => {
-  const selection = useSelector(
-    (state) => state.userReducer.selection,
+  const { experiencesDisplayed, selection } = useSelector(
+    (state) => state.userReducer,
   );
 
   return (
     <ExperienceGrid>
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <ExperienceCard />
-      <AddExperienceCard />
+      {experiencesDisplayed?.map((experience) => (
+        <ExperienceCard inUser key={experience._id} {...experience} />
+      ))}
+      {selection === 'my experiences' ? <AddExperienceCard /> : null}
     </ExperienceGrid>
   );
 };

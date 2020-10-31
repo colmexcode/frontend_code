@@ -74,14 +74,16 @@ module.exports = {
     new WorkboxWebpackPlugin.GenerateSW({
       runtimeCaching: [
         {
-          urlPattern: new RegExp('https://cozy-place.vercel.app/'),
-          handler: 'CacheFirst',
+          urlPattern: new RegExp('cozy-place.vercel.app'),
+          handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'images',
           },
         },
         {
-          urlPattern: new RegExp('https://cozy-place.vercel.app/'),
+          urlPattern: new RegExp(
+            'https://cozyplace.herokuapp.com/api/',
+          ),
           handler: 'NetworkFirst',
           options: {
             cacheName: 'api',

@@ -11,240 +11,110 @@ import {
 
 import { media } from '../../global-styles/MediaQueries';
 
-
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const ExpCreationContainer = styled.section`
-  padding: ${spacing.space3} ${spacing.space4};
-  
-  h2 {
-    font-size: ${fonts.h1};
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: 0 auto;
+`;
 
-    ${media.mobile} {
-      text-align:center;
-      font-size: ${fonts.h2};
-    }
+export const Inputs = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
+export const MainInputs = styled.div`
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    font-size: ${fonts.h3};
+    width: 100%;
+    align-self: flex-start;
   }
-
-  ${media.mobile} {
-    padding: ${spacing.space1} ${spacing.space2};
-  }
-
 `;
 
 export const ExpForm = styled.form`
-  display: grid;
-  grid-template-columns: 48% 48%;
-
-  gap: 40px;
-
-  [type='text'] {
-    width: 495px;
-    height: 50px;
-    padding-left: 35px;
-    font-family: ${fonts.family};
-    font-size: ${fonts.h3};
-    border: none;
-    border-radius: ${border.borderRadiusSmall};
-    box-shadow: ${shadows.innerSoftShadow};
-    outline: none;
-
-    ${media.mobile} {
-      width: 230px;
-      padding: ${spacing.space2};
-      font-size: ${fonts.small};
-    }
-  }
-
-  [type='button'] {
-    grid-column: 1 / span 1;
-    grid-row: 3 / span 1;
-    width: 230px;
-    height: 50px;
-    padding-left: 20px;
-    font-size: ${fonts.h3};
-    text-align: left;
-    border: none;
-    border-radius: ${border.borderRadiusSmall};
-    box-shadow: ${shadows.outsideSoftShadow};
-    outline: none;
-    position: relative;
-
-    ${media.mobile} {
-      font-size: ${fonts.p};
-    }
-  }
-
-  [type='button'] ~ div {
-    display: none;
-    width: 230px;
-    background: white;
-    text-align: center;
-    border-radius: ${border.borderRadiusSmall};
-    box-shadow: ${shadows.outsideSoftShadow};
-    position: absolute;
-  }
-
-  div:hover [type='button'] ~ div {
-    display: block;
-  }
-
-  /* div:hover ${CityButton} ~ div {
-    display: block;
-  } */
-
-  [type='button'] ~ div p:hover {
-    margin: 0;
-    padding: 8px 0;
-    color: white;
-    background-color: ${colors.titleColor};
-    border-radius: ${border.borderRadiusSmall};
-    box-shadow: ${shadows.outsideSoftShadow};
-    cursor: pointer;
-  }
-
   textarea {
-    grid-column: 2 / 3;
-    grid-row: 5 / 7;
-    width: 540px;
-    height: 538px;
-    padding: ${spacing.space3};
+    width: 100%;
+    height: 300px;
+    margin-top: ${spacing.space2};
+    padding: ${spacing.space2};
     font-family: ${fonts.family};
-    font-size: ${fonts.h3};
-    border: none;
+    font-size: ${fonts.p};
+    border: ${border.border};
     border-radius: ${border.borderRadiusSmall};
     box-shadow: ${shadows.innerSoftShadow};
     outline: none;
-
-    ${media.tablet} {
-      height: 300px;
-    }
-
-    ${media.mobile} {
-      width: 230px;
-      height: 100px;
-      padding: ${spacing.space2};
-      font-size: ${fonts.p};
-      overflow-y: scroll;
-    }
-  }
-
-  ${media.tablet} {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 `;
 
 export const Rating = styled.div`
-  grid-column: 1 / 2;
-  grid-row: 6 / 7;
-  width: 495px;
-  height: 80px;
-  padding: 0 25px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  align-self: flex-end;
+  padding: 0 ${spacing.space2};
   background-color: ${colors.titleColor};
   border-radius: ${border.borderRadiusSmall};
   box-shadow: ${shadows.outsideSoftShadow};
-  z-index: -1;
 
-  ${media.mobile} {
-    padding: 0 8px;
-    width: 230px;
-  }
-  
   p {
-    font-family: ${fonts.family};
-    font-size: ${fonts.h1};
-    color: #f6f6f6;
-
-    ${media.mobile} {
-      font-size: ${fonts.p};
-    }
+    font-size: ${fonts.h2};
+    color: ${colors.backgroundColor};
+    margin-right: ${spacing.space2};
   }
-`
+`;
 
 export const Pics = styled.div`
-  grid-column: 2 / 3;
-  grid-row: 1 / 5;
-  width: 540px;
-  height: 308px;
-  display: flex;
-  align-items: center;
-  justify-content:space-evenly;
+  display: grid;
+  place-items: center;
+  width: 400px;
+  height: 300px;
   border-radius: ${border.borderRadiusSmall};
   box-shadow: ${shadows.innerSoftShadow};
+  overflow: hidden;
 
-  ${media.mobile} {
-    width: 230px;
-    height:200px;
-  }
-`
-export const CancelButton = styled.button`
-  justify-self: end;
-  width: 150px;
-  height: 40px;
-  border: none;
-  font-size: ${fonts.h3};
-  background: linear-gradient(
-      136.99deg,
-      rgba(255, 255, 255, 0.4) 8.62%,
-      rgba(0, 0, 0, 0.4) 91.32%
-    ),
-    #fb8f1d;
-  background-blend-mode: soft-light, normal;
-  border-radius: ${border.borderRadiusSmall};
-  box-shadow: ${shadows.outsideSoftShadow};
-  outline: none;
-`;
-
-export const SubmitButton = styled.button`
-/* justify-self:end; */
-  width: 150px;
-  height: 40px;
-  border: none;
-  font-size: ${fonts.h3};
-  background: linear-gradient(
-      136.99deg,
-      rgba(255, 255, 255, 0.4) 8.62%,
-      rgba(0, 0, 0, 0.4) 91.32%
-    ),
-    #fb8f1d;
-  background-blend-mode: soft-light, normal;
-  border-radius: ${border.borderRadiusSmall};
-  box-shadow: ${shadows.outsideSoftShadow};
-  outline: none;
-`;
-
-export const CityButton = styled.input.attrs({
-  type: 'button',
-  value: 'City',
-})`
-  grid-column: 1 / 2;
-  grid-row: 5 / 6;
-  width: 230px;
-  height: 50px;
-  padding-left: 20px;
-  text-align: left;
-  border: none;
-  border-radius: ${border.borderRadiusSmall};
-  box-shadow: ${shadows.outsideSoftShadow};
-  outline: none;
-  position: relative;
-
-  div {
-    display: none;
-    width: 230px;
-    background: white;
-    text-align: center;
+  img[pic] {
+    margin-left: 5%;
+    width: 90%;
+    height: 95%;
+    object-fit: cover;
     border-radius: ${border.borderRadiusSmall};
-    box-shadow: ${shadows.outsideSoftShadow};
-    position: absolute;
   }
 
-  div:hover {
-    display: block;
+  input {
+    display: none;
   }
+`;
+
+export const Dropdown = styled.select`
+  width: 30%;
+  padding: ${spacing.space1};
+  padding-left: ${spacing.space1};
+  font-size: ${fonts.p};
+  border-radius: ${border.borderRadiusSmall};
+  border: ${border.border};
+  box-shadow: ${shadows.outsideShadow};
+  background: ${colors.secondaryBackgroundColor};
+  outline: none;
+  transition: box-shadow 0.3s;
+
+  &:focus {
+    font-weight: ${fonts.bold};
+    box-shadow: ${shadows.innerShadow};
+  }
+
+  option {
+    background: ${colors.backgroundColor};
+  }
+`;
+
+export const SubmitButtons = styled.div`
+  text-align: center;
+  margin-top: ${spacing.space2};
 `;

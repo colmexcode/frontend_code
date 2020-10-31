@@ -19,10 +19,10 @@ export const Card = styled.section`
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.outsideShadow};
   ${colors.mainBackgroundColor};
+  text-align: center;
 
   ${media.mobile} {
     width: 320px;
-    text-align: center;
   }
 
   div {

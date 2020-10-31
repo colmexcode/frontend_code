@@ -9,6 +9,7 @@ import {
   fonts,
   border,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const ProfileContainer = styled.section`
@@ -19,6 +20,15 @@ export const ProfileContainer = styled.section`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+
+  ${media.tablet} {
+    max-width: 90%;
+  }
+
+  ${media.mobile} {
+    transform: translateY(-25%);
+    flex-direction: column;
+  }
 `;
 
 export const Image = styled.img`
@@ -26,15 +36,24 @@ export const Image = styled.img`
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  background: ${colors.backgroundColor};
   box-shadow: ${shadows.outsideShadow};
 `;
 
 export const Description = styled.div`
   margin-left: ${spacing.space3};
 
+  ${media.mobile} {
+    margin: 0;
+    margin-top: ${spacing.space2};
+  }
+
   p {
     margin: 0;
     margin-top: ${spacing.space3};
+    ${media.mobile} {
+      text-align: center;
+    }
   }
 `;
 
@@ -44,28 +63,27 @@ export const UserName = styled.div`
   align-items: center;
   color: ${colors.backgroundColor};
 
+  ${media.mobile} {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
   h1 {
     font-size: ${fonts.bigTitle};
     margin: 0;
     text-shadow: ${shadows.textShadow};
+
+    ${media.mobile} {
+      font-size: ${fonts.h1};
+      margin: ${spacing.space1} 0;
+    }
   }
 
-  /* input {
-    height: 80px;
-  } */
-`;
-
-export const LocationReviews = styled.div`
-  position: relative;
-  transform: translateY(-100%);
-  max-width: 1024px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  p {
-    margin: 0;
+  button {
+    ${media.mobile} {
+      margin: 0;
+    }
   }
 `;
 
@@ -75,28 +93,29 @@ export const UserFom = styled.form`
   justify-content: space-between;
   width: 100%;
 
+  ${media.mobile} {
+    margin-top: ${spacing.space2};
+    flex-direction: column;
+  }
+
   div {
     position: relative;
     width: 80%;
+
+    ${media.mobile} {
+      width: 100%;
+    }
   }
 
   button {
     position: absolute;
     right: 0;
     top: 15%;
-  }
-  ul {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-  li {
-    display: flex;
-    width: 20%;
-    justify-content: center;
-    list-style: none;
-    margin: 0 2.5em;
-    border-bottom: 1px solid black;
+
+    ${media.mobile} {
+      position: relative;
+      margin: 0;
+    }
   }
 `;
 
@@ -104,9 +123,19 @@ export const UserInputs = styled.div`
   display: flex;
   justify-content: space-between;
 
+  ${media.mobile} {
+    margin: 0 auto;
+    margin-top: ${spacing.space2};
+    flex-direction: column;
+  }
+
   input {
     margin-right: ${spacing.space2};
     flex-grow: 1;
+
+    ${media.mobile} {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -120,6 +149,11 @@ export const TextArea = styled.textarea`
   box-shadow: ${shadows.innerShadow};
   outline: none;
   font-family: ${fonts.family};
+
+  ${media.mobile} {
+    margin-top: ${spacing.space1};
+    margin-bottom: ${spacing.space2};
+  }
 `;
 
 export const ImageInput = styled.label`
@@ -132,10 +166,12 @@ export const ImageInput = styled.label`
   overflow: hidden;
 
   img {
-    width: 120px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: relative;
     left: 50%;
-    top: 55%;
+    top: 50%;
     transform: translate(-50%, -50%);
   }
 

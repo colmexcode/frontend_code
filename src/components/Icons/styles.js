@@ -11,7 +11,7 @@ import {
 import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
-export const StyledIcon = styled.input`
+export const StyledIcon = styled.img`
   width: 40px;
   height: 40px;
   margin: 0 ${spacing.space2};
@@ -46,6 +46,10 @@ export const StyledIcon = styled.input`
       right: 0;
       padding: 15px;
       ${colors.mainBackgroundColor};
+
+      ${media.mobile} {
+        margin: 0;
+      }
     `};
 
   ${(props) =>
@@ -65,5 +69,53 @@ export const StyledIcon = styled.input`
       padding: ${spacing.space2};
       width: 80px;
       height: 80px;
+    `};
+
+  ${(props) =>
+    props.alt === 'emptyHeart' &&
+    css`
+      position: absolute;
+      margin: ${spacing.space2};
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      ${media.mobile} {
+        margin: 0;
+        right: 10px;
+        bottom: 10px;
+      }
+    `};
+
+  ${(props) =>
+    props.alt === 'favoriteHeart' &&
+    css`
+      position: absolute;
+      margin: ${spacing.space2};
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      ${media.mobile} {
+        margin: 0;
+        right: 10px;
+        bottom: 10px;
+      }
+    `};
+
+  ${(props) =>
+    props.alt === 'heartBroken' &&
+    css`
+      position: absolute;
+      margin: ${spacing.space2};
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+
+      ${media.mobile} {
+        margin: 0;
+        right: 10px;
+        bottom: 10px;
+      }
     `};
 `;

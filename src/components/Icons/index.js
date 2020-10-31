@@ -15,6 +15,9 @@ import youtube from '../../assets/images/youtubeIcon.svg';
 import addPicture from '../../assets/images/Add-picture.svg';
 import arrowLeft from '../../assets/images/Arrow-left.svg';
 import arrowRight from '../../assets/images/Arrow-right.svg';
+import emptyHeart from '../../assets/images/emptyHeart.svg';
+import favoriteHeart from '../../assets/images/favoriteHeart.svg';
+import heartBroken from '../../assets/images/heartBrokenIcon.svg';
 
 import { StyledIcon } from './styles';
 
@@ -36,6 +39,9 @@ const icons = {
   arrowRight,
   star: Star,
   plus,
+  emptyHeart,
+  favoriteHeart,
+  heartBroken,
 };
 
 // to use the icons set the prop type with one of the keys of icons object
@@ -43,6 +49,7 @@ export const Icon = ({ type, click }) => {
   return (
     <StyledIcon
       type="image"
+      tabIndex="0"
       src={icons[type]}
       alt={type}
       onClick={click}

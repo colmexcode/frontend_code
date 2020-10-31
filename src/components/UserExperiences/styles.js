@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // ------------------------------ import variables
 import { spacing } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 
@@ -12,4 +13,12 @@ export const ExperienceGrid = styled.div`
   max-width: 800px;
   grid-template-columns: repeat(3, 1fr);
   gap: ${spacing.space3};
+
+  ${media.tablet} {
+    max-width: 90%;
+  }
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+  }
 `;

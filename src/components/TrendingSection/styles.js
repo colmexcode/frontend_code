@@ -16,6 +16,7 @@ export const Container = styled.section`
   border: ${border.border};
   border-radius: ${border.borderRadiusBig};
   box-shadow: ${shadows.innerShadow};
+  outline: none;
   ${colors.mainBackgroundColor};
 
   ${media.tablet} {
@@ -38,6 +39,8 @@ export const Layout = styled.div`
   gap: ${spacing.space2};
 
   ${media.tablet} {
-    display: flex;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(1, 300px);
+    /* display: flex; */
   }
 `;

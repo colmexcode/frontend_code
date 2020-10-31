@@ -1,10 +1,12 @@
 // ------------------------------ import libraries
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { HostCard } from '../HostCard';
 import { HostTravel } from '../HostTravel';
 import { Reviews } from '../Reviews';
+import userIcon from '../../assets/images/userIcon.svg';
 
 // ------------------------------ import styles and images
 import { BlockExp, DescriptionExp, DetailsHost } from './style';
@@ -12,42 +14,56 @@ import { BlockExp, DescriptionExp, DetailsHost } from './style';
 // ------------------------------------ COMPONENT ------------------------------------//
 
 export const ExperienceHost = () => {
+  const current = useSelector(
+    (state) => state.experiencesReducer.current,
+  );
+
+  const {
+    title,
+    description,
+    location,
+    duration,
+    tags,
+    rating,
+    user,
+  } = current;
+  const experienceUser =
+    user?.length > 0 ? user[0]?.fullname : 'Jon Doe';
+
+  function validatePostUserImage() {
+    let image;
+    if (user?.length === 0) {
+      image = userIcon;
+    } else if (user && user[0]?.image === '') {
+      image = userIcon;
+    } else {
+      image = user && user[0]?.image;
+    }
+    return image;
+  }
+  const userImage = validatePostUserImage();
+
   return (
     <BlockExp>
-      <h2>Name of the experiencie</h2>
+      <h2>{title}</h2>
       <DescriptionExp>
         <DetailsHost>
-          <HostCard />
+          <HostCard
+            userImg={userImage}
+            name={experienceUser}
+            rating={rating ? rating[0] : null}
+          />
           <div>
             <h3>What you will do</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing
-              elit. Velit facilis a perspiciatis, optio ratione
-              repudiandae perferendis corporis ipsam soluta nihil nam
-              possimus dolorem, odio blanditiis aperiam beatae nulla
-              aspernatur culpa. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit.
-              <br />
-              <br />
-              Lorem, ipsum dolor sit amet consectetur adipisicing
-              elit. Velit facilis a perspiciatis, optio ratione
-              repudiandae perferendis corporis ipsam soluta nihil nam
-              possimus dolorem, odio blanditiis aperiam beatae nulla
-              aspernatur culpa. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit.
-              <br />
-              <br />
-              Lorem, ipsum dolor sit amet consectetur adipisicing
-              elit. Velit facilis a perspiciatis, optio ratione
-              repudiandae perferendis corporis ipsam soluta nihil nam
-              possimus dolorem, odio blanditiis aperiam beatae nulla
-              aspernatur culpa. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit.
-            </p>
+            <p>{description}</p>
           </div>
         </DetailsHost>
         <article>
-          <HostTravel />
+          <HostTravel
+            location={location}
+            duration={duration}
+            tag={tags ? tags[0].tagname : null}
+          />
         </article>
       </DescriptionExp>
       <Reviews />

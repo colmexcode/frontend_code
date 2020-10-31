@@ -1,5 +1,5 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { useState } from 'react';
 
 // ------------------------------ import styles and images
 import starIcon from '../../assets/images/Star.svg';
@@ -9,7 +9,7 @@ import { Star, Input, StyledRating } from './styles';
 // ------------------------------------ COMPONENT ------------------------------------//
 // this is the rating component.
 // This are the starts that rate places and experiences.
-export const Rate = ({ rate }) => {
+export const Rate = ({ rate, setrating }) => {
   return (
     <StyledRating>
       {[...Array(5)].map((star, i) => {

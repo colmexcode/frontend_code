@@ -8,7 +8,6 @@ import { Rate } from '../Rate';
 
 // ------------------------------ import styles and images
 import { Card, Image, Description } from './styles';
-import mockupPortrait from '../../assets/images/mockupPortrait.jpg';
 
 // -------- import redux actions
 import { hideTestimonial } from '../../actions/testimonialActions';

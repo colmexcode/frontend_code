@@ -20,7 +20,7 @@ export const StyledFooter = styled.footer`
   box-shadow: ${shadows.innerShadow};
 
   ${media.mobile} {
-    margin-top: ${spacing.space3};
+    margin: ${spacing.space2};
     padding: ${spacing.space2};
   }
 `;

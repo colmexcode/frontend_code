@@ -11,11 +11,13 @@ import thunk from 'redux-thunk';
 import { userReducer } from '../reducers/userReducer';
 import { mapReducer } from '../reducers/mapReducer';
 import { testimonialReducer } from '../reducers/testimonialReducer';
+import { experiencesReducer } from '../reducers/experiencesReducer';
 
 const rootReducer = combineReducers({
   userReducer,
   mapReducer,
   testimonialReducer,
+  experiencesReducer,
 });
 
 // Get the enhancer to redux devtools
