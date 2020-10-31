@@ -3,6 +3,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
+// ------------------------------ import components
+import { UpdateUser } from '../../utils/UpdateUser';
+
 // ------------------------------ import styles and images
 import {
   StyledHeader,
@@ -10,6 +13,7 @@ import {
   Logo,
   LinkedLogo,
   Image,
+  MenuProfile,
 } from './styles';
 import { Button } from '../../global-styles/Buttons';
 import logo from '../../assets/images/logo.svg';
@@ -34,6 +38,10 @@ export const Header = () => {
   // this functions open the modal
   const openLoginModal = () => dispatch(openLogin());
   const openSignModal = () => dispatch(openSign());
+  const logout = () => {
+    localStorage.clear();
+    history.push('/');
+  };
 
   return (
     <StyledHeader>
@@ -44,9 +52,14 @@ export const Header = () => {
       </Brand>
       {token ? (
         history.location.pathname === '/user' ? null : (
-          <Link to="/user">
-            <Image src={userImage} alt={username} />
-          </Link>
+          <MenuProfile>
+            <Link to="/user">
+              <Image src={image} alt="" />
+            </Link>
+            <ul>
+              <Button onClick={logout}>logout</Button>
+            </ul>
+          </MenuProfile>
         )
       ) : (
         <div>
