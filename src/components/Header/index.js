@@ -37,7 +37,10 @@ export const Header = () => {
   // this functions open the modal
   const openLoginModal = () => dispatch(openLogin());
   const openSignModal = () => dispatch(openSign());
-  const logout = () => {};
+  const logout = () => {
+    localStorage.clear();
+    history.push('/home');
+  };
 
   return (
     <StyledHeader>
