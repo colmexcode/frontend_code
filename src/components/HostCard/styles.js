@@ -32,6 +32,7 @@ export const Image = styled.img`
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  background: ${colors.backgroundColor};
   box-shadow: ${shadows.outsideShadow};
 `;
 

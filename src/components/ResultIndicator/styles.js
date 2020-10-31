@@ -16,18 +16,25 @@ export const Indicator = styled.div`
   left: ${(props) => props.left};
   z-index: 3;
   padding: ${spacing.space1} ${spacing.space2};
-  color: ${colors.backgroundColor};
+  color: ${colors.titleColor};
   box-shadow: ${shadows.outsideShadow};
   border-radius: ${border.borderRadiusSmall};
   pointer-events: none;
   transform: translateY(-150%);
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  ${colors.mainBackgroundColor}
+  transition: opacity 0.3s ease-in-out;
+  background: ${colors.secondaryBackgroundColor};
 
   ${(props) =>
     props.show === true &&
     css`
       opacity: 1;
+    `}
+
+  ${(props) =>
+    props.actionType === false &&
+    css`
+      color: ${colors.backgroundColor};
+      ${colors.mainBackgroundColor}
     `}
 `;

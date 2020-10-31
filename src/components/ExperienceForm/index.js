@@ -1,13 +1,15 @@
 // ------------------------------ import libraries
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // ------------------------------ import components
 import { Rate } from '../Rate';
 import { Icon } from '../Icons';
 import { Button } from '../../global-styles/Buttons';
 import { InputText, InputDate } from '../../global-styles/Inputs';
+import { useGetMousePosition } from '../../hooks/useGetMousePosition';
+
 // ------------------------------ import styles and images
 import {
   ExpCreationContainer,
@@ -23,9 +25,17 @@ import {
 // -------- import redux actions
 import { createPost } from '../../utils/createPost';
 import { useFetchData } from '../../hooks/useFetchData';
+import {
+  showIndicator,
+  setIndicatorPosition,
+} from '../../actions/experiencesActions';
+import { setSelection } from '../../actions/userActions';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 export const ExperienceForm = () => {
+  const dispatch = useDispatch();
+  const mousePosition = useGetMousePosition();
+
   const tags = useFetchData(
     'https://cozyplace.herokuapp.com/api/tag/',
   );
@@ -49,8 +59,27 @@ export const ExperienceForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createPost(form, token);
-    // history.push('/user');
+    const response = await createPost(form, token);
+    if (response.status === 200) {
+      dispatch(
+        showIndicator({
+          status: true,
+          message: 'Experience Successfully Created 🎉',
+        }),
+      );
+      dispatch(setIndicatorPosition(mousePosition));
+      dispatch(setSelection('favorites'));
+
+      history.push('/user');
+    } else if (response.status === 400) {
+      dispatch(
+        showIndicator({
+          status: true,
+          message: 'Missing data, fill in all the fields ❌',
+        }),
+      );
+      dispatch(setIndicatorPosition(mousePosition));
+    }
   };
 
   useEffect(() => {

@@ -42,11 +42,6 @@ export const getUserData = (id, token) => async (dispatch) => {
   }
 };
 
-export const updateUserState = (payload) => ({
-  type: 'UPDATE_USER',
-  payload,
-});
-
 export const setSelection = (payload) => ({
   type: 'SET_SELECTION',
   payload,

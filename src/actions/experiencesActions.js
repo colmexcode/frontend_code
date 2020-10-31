@@ -5,7 +5,7 @@ export const setTrending = () => async (dispatch) => {
   const data = await response.json();
   dispatch({
     type: 'SET_TRENDING_EXPERIENCES',
-    payload: data.data.slice(0, 4),
+    payload: data.data,
   });
 };
 
@@ -27,7 +27,7 @@ export const searchExperiences = (city) => async (dispatch) => {
 
   dispatch({
     type: 'SET_TRENDING_EXPERIENCES',
-    payload: data.data.slice(0, 4),
+    payload: data.data,
   });
 };
 
@@ -67,11 +67,11 @@ export const showIndicator = (indicator) => (dispatch) => {
     dispatch({
       type: 'SHOW_INDICATOR',
       payload: {
+        ...indicator,
         status: false,
-        message: '',
       },
     });
-  }, 2000);
+  }, 1500);
 };
 
 export const setIndicatorPosition = (payload) => ({

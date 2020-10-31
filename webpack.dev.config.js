@@ -71,7 +71,7 @@ module.exports = {
       runtimeCaching: [
         {
           urlPattern: new RegExp('http://localhost:3000/'),
-          handler: 'CacheFirst',
+          handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'images',
           },

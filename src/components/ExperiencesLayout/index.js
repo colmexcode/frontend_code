@@ -17,7 +17,7 @@ import { getAllExperiences } from '../../actions/experiencesActions';
 export const ExperiencesLayout = () => {
   const dispatch = useDispatch();
   const experiences = useSelector(
-    (state) => state.experiencesReducer.allExperiences,
+    (state) => state.experiencesReducer.searchExperiences,
   );
 
   useLayoutEffect(() => {
@@ -26,7 +26,7 @@ export const ExperiencesLayout = () => {
 
   return (
     <MainStyled>
-      {experiences.map((experience, i = 0) => {
+      {experiences.slice(0, 10).map((experience, i = 0) => {
         i++;
         return (
           <ExperienceCard

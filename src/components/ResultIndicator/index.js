@@ -1,26 +1,29 @@
 // ------------------------------ import libraries
-import React from 'react';
+import React, { forwardRef } from 'react';
+import ReactDom from 'react-dom';
 import { useSelector } from 'react-redux';
-// ------------------------------ import components
-// import { ImportedComponent } from '../components/ImportedComponent ';
 
 // ------------------------------ import styles and images
 import { Indicator } from './styles';
 
 // ------------------------------------ COMPONENT ------------------------------------//
 // description of the component.
-export const ResulIndicator = () => {
+export const ResulIndicator = forwardRef((props, ref) => {
   const { showIndicator, mouseCoordinates } = useSelector(
     (state) => state.experiencesReducer,
   );
+  const actionType = showIndicator.message.includes('❌');
 
-  return (
+  return ReactDom.createPortal(
     <Indicator
+      ref={ref}
+      actionType={actionType}
       show={showIndicator.status}
       left={`${mouseCoordinates.x}px`}
       top={`${mouseCoordinates.y}px`}
     >
       <div> {showIndicator.message} </div>
-    </Indicator>
+    </Indicator>,
+    document.getElementById('alert'),
   );
-};
+});
