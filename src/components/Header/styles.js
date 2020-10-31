@@ -28,6 +28,40 @@ export const Brand = styled.div`
   align-items: center;
 `;
 
+export const MenuProfile = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  &:hover ul {
+    display: flex;
+    flex-direction: column;
+  }
+  ul:hover {
+    display: flex;
+  }
+  ul:hover {
+    display: flex;
+  }
+  ul Button:hover, ul {
+    display: flex;
+  }
+  ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    padding-top: 16px;
+    margin-top: 0;
+    position: absolute;
+    transform: translateY(200%);
+    
+  }
+  ul Button {
+    padding: .3em 1.25em;
+    margin-left: 0;
+    ${colors.mainBackgroundColor};
+  }
+`;
+
 export const Logo = styled.img`
   width: 80px;
 `;
@@ -49,4 +83,5 @@ export const Image = styled.img`
   background: ${colors.backgroundColor};
   box-shadow: ${shadows.outsideShadow};
   cursor: pointer;
+  /* margin-bottom: 100px */
 `;
