@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { HostCard } from '../HostCard';
 import { HostTravel } from '../HostTravel';
 import { Reviews } from '../Reviews';
+import userIcon from '../../assets/images/userIcon.svg';
 
 // ------------------------------ import styles and images
 import { BlockExp, DescriptionExp, DetailsHost } from './style';
@@ -26,6 +27,21 @@ export const ExperienceHost = () => {
     rating,
     user,
   } = current;
+  const experienceUser =
+    user?.length > 0 ? user[0]?.fullname : 'Jon Doe';
+
+  function validatePostUserImage() {
+    let image;
+    if (user?.length === 0) {
+      image = userIcon;
+    } else if (user && user[0]?.image === '') {
+      image = userIcon;
+    } else {
+      image = user && user[0]?.image;
+    }
+    return image;
+  }
+  const userImage = validatePostUserImage();
 
   return (
     <BlockExp>
@@ -33,7 +49,8 @@ export const ExperienceHost = () => {
       <DescriptionExp>
         <DetailsHost>
           <HostCard
-            name={user ? user[0].fullname : null}
+            userImg={userImage}
+            name={experienceUser}
             rating={rating ? rating[0] : null}
           />
           <div>

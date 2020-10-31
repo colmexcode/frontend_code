@@ -52,11 +52,10 @@ export const ExperienceCard = ({
     if (response.status === 200) {
       setLiked(true);
       dispatch(getUserData(userData._id, token));
-      console.log('experience added to favorite');
       dispatch(
         showIndicator({
           status: true,
-          message: 'Experience added to favorite!',
+          message: 'Experience added to favorite! 🎉',
         }),
       );
       dispatch(setIndicatorPosition(mousePosition));
@@ -68,11 +67,10 @@ export const ExperienceCard = ({
     if (response.status === 200) {
       setLiked(false);
       dispatch(getUserData(userData._id, token));
-      console.log('experience deleted from favorite');
       dispatch(
         showIndicator({
           status: true,
-          message: 'Experience deleted from favorite!',
+          message: 'Experience deleted from favorite ❌',
         }),
       );
       dispatch(setIndicatorPosition(mousePosition));

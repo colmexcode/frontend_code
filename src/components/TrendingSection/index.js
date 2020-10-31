@@ -22,8 +22,8 @@ import { setTrending } from '../../actions/experiencesActions';
 
 export const TrendingSection = forwardRef((props, ref) => {
   const dispatch = useDispatch();
-  const trending = useSelector(
-    (state) => state.experiencesReducer.trending,
+  const searchExperiences = useSelector(
+    (state) => state.experiencesReducer.searchExperiences,
   );
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export const TrendingSection = forwardRef((props, ref) => {
     <Container tabIndex="0" ref={ref}>
       <h1> Trending stories </h1>
       <Layout>
-        {trending.map((experience, i = 0) => {
+        {searchExperiences.slice(0, 4).map((experience, i = 0) => {
           i++;
           return (
             <ExperienceCard
