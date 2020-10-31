@@ -40,7 +40,7 @@ export const Header = () => {
   const openSignModal = () => dispatch(openSign());
   const logout = () => {
     localStorage.clear();
-    history.push('/home');
+    history.push('/');
   };
 
   return (
