@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/colmexcode/frontend_code/issues"
   },
-  "homepage": "https://github.com/colmexcode/frontend_code#readme",
+  "homepage": "https://cozy-place.vercel.app/",
   "dependencies": {
     "@babel/runtime": "^7.12.1",
     "jwt-decode": "^3.0.0",
