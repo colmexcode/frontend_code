@@ -3,6 +3,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
+// ------------------------------ import components
+import { UpdateUser } from '../../utils/UpdateUser';
+
 // ------------------------------ import styles and images
 import {
   StyledHeader,
@@ -10,6 +13,7 @@ import {
   Logo,
   LinkedLogo,
   Image,
+  MenuProfile,
 } from './styles';
 import { Button } from '../../global-styles/Buttons';
 import logo from '../../assets/images/logo.svg';
@@ -26,7 +30,7 @@ import { openLogin, openSign } from '../../actions/userActions';
 export const Header = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { token, image, username } = useSelector(
+  const { token, image } = useSelector(
     (state) => state.userReducer.userData,
   );
   const userImage = image === '' ? userIcon : image;
@@ -34,6 +38,10 @@ export const Header = () => {
   // this functions open the modal
   const openLoginModal = () => dispatch(openLogin());
   const openSignModal = () => dispatch(openSign());
+  const logout = () => {
+    localStorage.clear();
+    location.reload();
+  };
 
   return (
     <StyledHeader>
@@ -44,14 +52,19 @@ export const Header = () => {
       </Brand>
       {token ? (
         history.location.pathname === '/user' ? null : (
-          <Link to="/user">
-            <Image src={userImage} alt={username} />
-          </Link>
+          <MenuProfile>
+            <Link to="/user">
+              <Image src={userImage} alt="" />
+            </Link>
+            <ul>
+              <Button onClick={logout}>logout</Button>
+            </ul>
+          </MenuProfile>
         )
       ) : (
         <div>
           <Button onClick={openLoginModal}>login</Button>
-          {window.innerWidth <= 320 ? null : (
+          {window.innerWidth <= 400 ? null : (
             <Button main onClick={openSignModal}>
               Sign up
             </Button>

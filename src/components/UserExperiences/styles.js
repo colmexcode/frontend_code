@@ -19,6 +19,7 @@ export const ExperienceGrid = styled.div`
   }
 
   ${media.mobile} {
+    max-width: 80%;
     grid-template-columns: 1fr;
   }
 `;

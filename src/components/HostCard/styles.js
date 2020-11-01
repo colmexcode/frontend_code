@@ -34,10 +34,19 @@ export const Image = styled.img`
   object-fit: cover;
   background: ${colors.backgroundColor};
   box-shadow: ${shadows.outsideShadow};
+
+  ${media.mobile} {
+    width: 70px;
+    height: 70px;
+  }
 `;
 
 export const HostName = styled.div`
   margin-left: ${spacing.space3};
+
+  ${media.mobile} {
+    margin-left: ${spacing.space2};
+  }
 
   h2 {
     margin: 0;

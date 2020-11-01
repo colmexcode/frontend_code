@@ -22,6 +22,10 @@ export const CardStyled = styled.section`
   box-shadow: ${shadows.outsideShadow};
   outline: none;
 
+  ${media.tablet} {
+    height: 300px;
+  }
+
   ${media.mobile} {
     height: 200px;
   }

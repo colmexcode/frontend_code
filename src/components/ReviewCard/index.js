@@ -17,7 +17,7 @@ export const ReviewCard = () => {
         <Image src={pic} alt="Image Review" />
         <div>
           <h3>Name LastName</h3>
-          <Rate />
+          <Rate rate={Math.floor(Math.random() * 4 + 1)} />
         </div>
       </article>
       <p>

@@ -20,9 +20,9 @@ export const BlockExp = styled.section`
     padding: 0;
   }
 
-  h2 {
-    font-size: ${fonts.h1};
+  h1 {
     ${media.mobile} {
+      margin: ${spacing.space3} 0;
       text-align: center;
     }
   }
@@ -32,6 +32,15 @@ export const DescriptionExp = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0 auto;
+
+  ${media.tablet} {
+    width: 90%;
+  }
+
+  ${media.mobile} {
+    width: 80%;
+  }
 `;
 
 export const DetailsHost = styled.article`
@@ -44,11 +53,13 @@ export const DetailsHost = styled.article`
 
   ${media.tablet} {
     max-width: 100%;
+    min-height: 600px;
     margin-bottom: ${spacing.space2};
   }
 
   ${media.mobile} {
     padding: ${spacing.space1};
+    min-height: 500px;
   }
 
   h3 {

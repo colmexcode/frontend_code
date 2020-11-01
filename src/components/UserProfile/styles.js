@@ -51,6 +51,7 @@ export const Description = styled.div`
   p {
     margin: 0;
     margin-top: ${spacing.space3};
+
     ${media.mobile} {
       text-align: center;
     }
@@ -73,6 +74,10 @@ export const UserName = styled.div`
     font-size: ${fonts.bigTitle};
     margin: 0;
     text-shadow: ${shadows.textShadow};
+
+    ${media.tablet} {
+      font-size: 35px;
+    }
 
     ${media.mobile} {
       font-size: ${fonts.h1};

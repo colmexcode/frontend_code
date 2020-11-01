@@ -45,7 +45,7 @@ export const ExperienceHost = () => {
 
   return (
     <BlockExp>
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       <DescriptionExp>
         <DetailsHost>
           <HostCard
