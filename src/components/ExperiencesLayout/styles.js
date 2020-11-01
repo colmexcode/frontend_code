@@ -23,8 +23,9 @@ export const MainStyled = styled.section`
   }
 
   ${media.mobile} {
-    height: 2000px;
+    height: 2500px;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(10, 1fr);
+    gap: ${spacing.space3};
   }
 `;

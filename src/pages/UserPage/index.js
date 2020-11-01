@@ -10,7 +10,9 @@ import { SectionSelector } from '../../components/SectionSelector';
 import { ResulIndicator } from '../../components/ResultIndicator';
 
 // ------------------------------------ COMPONENT ------------------------------------//
-// this page has the user data and the experiences created and favorites.
+// this page has the user data
+// it has two sections, fvorites and created experiences
+//user can create experiences from the created experiences section
 
 export default () => {
   return (

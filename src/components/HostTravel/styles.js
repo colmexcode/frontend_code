@@ -22,7 +22,7 @@ export const Card = styled.section`
   text-align: center;
 
   ${media.mobile} {
-    width: 320px;
+    width: 100%;
   }
 
   div {

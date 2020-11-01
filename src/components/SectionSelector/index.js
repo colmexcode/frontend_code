@@ -22,6 +22,7 @@ export const SectionSelector = () => {
   );
 
   useEffect(() => {
+    dispatch(setSelection('favorites'));
     dispatch(getFavoriteExperiences(_id, token));
   }, [favorite]);
 

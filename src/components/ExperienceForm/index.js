@@ -104,9 +104,21 @@ export const ExperienceForm = () => {
               <option value="Colombia">Colombia</option>
             </Dropdown>
             <Dropdown name="location" onChange={handleChange}>
-              <option value="Mexico">CDMX</option>
+              <option value="Mexico">Cancun</option>
+              <option value="Mexico">Guadalajara</option>
+              <option value="Mexico">Mexico City</option>
+              <option value="Mexico">Monterrey</option>
+              <option value="Mexico">Merida</option>
+              <option value="Mexico">Oaxaca</option>
+              <option value="Mexico">Puebla</option>
+              <option value="Mexico">Queretaro</option>
+              <option value="Medellin">Barranquilla</option>
               <option value="Bogota">Bogota</option>
+              <option value="Medellin">Bucaramanga</option>
+              <option value="Medellin">Cali</option>
+              <option value="Medellin">Cartagena</option>
               <option value="Medellin">Medellin</option>
+              <option value="Medellin">Santa Marta</option>
             </Dropdown>
             <Dropdown name="tags" onChange={handleChange}>
               {tags.map((tag) => (
@@ -125,6 +137,10 @@ export const ExperienceForm = () => {
               <option value="3.5 Hour">3.5 Hour</option>
               <option value="4 Hour">4 Hour</option>
               <option value="4.5 Hour">4.5 Hour</option>
+              <option value="4.5 Hour">1 Day</option>
+              <option value="4.5 Hour">2 Days</option>
+              <option value="4.5 Hour">3 Days</option>
+              <option value="4.5 Hour">4 Days</option>
             </Dropdown>
             <InputDate
               type="date"
