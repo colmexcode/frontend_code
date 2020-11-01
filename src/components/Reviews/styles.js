@@ -16,6 +16,8 @@ export const ReviewContainer = styled.section`
   }
 
   ${media.mobile} {
+    width: 80%;
+    margin: 0 auto;
     display: block;
   }
 `;

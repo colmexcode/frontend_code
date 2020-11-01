@@ -15,7 +15,7 @@ export const Star = styled.label`
 
   img {
     ${media.mobile} {
-      width: 20px;
+      width: 25px;
     }
   }
 `;

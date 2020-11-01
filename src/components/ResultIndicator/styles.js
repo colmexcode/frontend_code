@@ -8,6 +8,7 @@ import {
   shadows,
   spacing,
 } from '../../global-styles/Variables';
+import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
 export const Indicator = styled.div`
@@ -24,6 +25,11 @@ export const Indicator = styled.div`
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   background: ${colors.secondaryBackgroundColor};
+
+  ${media.mobile} {
+    width: 200px;
+    transform: translateX(-100%);
+  }
 
   ${(props) =>
     props.show === true &&

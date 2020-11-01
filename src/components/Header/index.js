@@ -30,7 +30,7 @@ import { openLogin, openSign } from '../../actions/userActions';
 export const Header = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { token, image, username } = useSelector(
+  const { token, image } = useSelector(
     (state) => state.userReducer.userData,
   );
   const userImage = image === '' ? userIcon : image;
@@ -54,7 +54,7 @@ export const Header = () => {
         history.location.pathname === '/user' ? null : (
           <MenuProfile>
             <Link to="/user">
-              <Image src={image} alt="" />
+              <Image src={userImage} alt="" />
             </Link>
             <ul>
               <Button onClick={logout}>logout</Button>
@@ -64,7 +64,7 @@ export const Header = () => {
       ) : (
         <div>
           <Button onClick={openLoginModal}>login</Button>
-          {window.innerWidth <= 320 ? null : (
+          {window.innerWidth <= 400 ? null : (
             <Button main onClick={openSignModal}>
               Sign up
             </Button>

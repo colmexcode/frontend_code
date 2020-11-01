@@ -49,6 +49,14 @@ export const CardStyled = styled.div`
     props.position === 'undefinedundefined' &&
     css`
       height: 400px;
+
+      ${media.tablet} {
+        height: 300px;
+      }
+
+      ${media.mobile} {
+        height: 200px;
+      }
     `}
 
   /* grid styles for the home grid  */
