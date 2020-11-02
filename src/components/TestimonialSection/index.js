@@ -25,7 +25,7 @@ export const TestimonialSection = () => {
       {window.innerWidth > 400 ? (
         <>
           <Testimonial data={data[4]} left={88} top={65} />
-          <Testimonial data={data[5]} left={35} top={20} />
+          {/* <Testimonial data={data[5]} left={35} top={20} /> */}
         </>
       ) : null}
       <TestimonialCard />

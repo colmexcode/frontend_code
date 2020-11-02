@@ -82,7 +82,7 @@ export const ExperienceCard = ({
       <Link to={`/experience/${_id}`}>
         <Rate rate={rating[0]} />
         <div>
-          <CardImg src={mockupPicture} alt={title} />
+          <CardImg src={image} alt={title} />
           <TitleCard>{title}</TitleCard>
         </div>
       </Link>

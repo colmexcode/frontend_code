@@ -24,6 +24,7 @@ export const searchExperiences = (city) => async (dispatch) => {
     },
   );
   const data = await response.json();
+  console.log(data);
 
   dispatch({
     type: 'SET_TRENDING_EXPERIENCES',
@@ -36,6 +37,7 @@ export const setCurrentExperience = (id) => async (dispatch) => {
     `https://cozyplace.herokuapp.com/api/post/${id}`,
   );
   const data = await response.json();
+  console.log(data);
   dispatch({
     type: 'SET_CURRENT_EXPERIENCE',
     payload: data.data,

@@ -24,6 +24,7 @@
   "homepage": "https://cozy-place.vercel.app/",
   "dependencies": {
     "@babel/runtime": "^7.12.1",
+    "form-data": "^3.0.0",
     "jwt-decode": "^3.0.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",

@@ -59,7 +59,37 @@ export const ExperienceForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await createPost(form, token);
+    // console.log(form);
+    /** */
+    console.log('Aqui va el form');
+    console.log(form);
+    console.log('Aqui va el form.country');
+    console.log(form.country);
+    // const formData = new FormData(JSON.stringify(form));
+    let form_data = new FormData();
+    for (let key in form) {
+      console.log(form[key]);
+      form_data.append(key, form[key]);
+    }
+    for (var p of form_data) {
+      console.log(p);
+    }
+    // formData.append('country', form.country);
+    // formData.append('date', form.date);
+    // formData.append('description', form.description);
+    // formData.append('duration', form.duration);
+    // formData.append('image', form.image);
+    // formData.append('location', form.location);
+    // formData.append('rating', form.rating);
+    // formData.append('tags', form.tags);
+    // formData.append('title', form.title);
+    // formData.append('user', form.user);
+
+    console.log('Aqui va el formData');
+    console.log(form_data);
+    /** */
+    const response = await createPost(form_data, token);
+    console.log(response);
     if (response.status === 200) {
       dispatch(
         showIndicator({
