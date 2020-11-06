@@ -1,3 +1,9 @@
+///// START CODE REVIEW COMMENT
+
+// Excellent code!
+
+///// END CODE REVIEW COMMENT
+
 // ------------------------------ import libraries
 import React from 'react';
 import ReactDom from 'react-dom';
