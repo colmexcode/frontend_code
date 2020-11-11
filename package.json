@@ -1,4 +1,5 @@
 {
+  "homepage": "https://colmexcode.github.io/frontend_code",
   "name": "frontend_code",
   "version": "1.0.0",
   "description": "",
@@ -23,7 +24,6 @@
   "bugs": {
     "url": "https://github.com/colmexcode/frontend_code/issues"
   },
-  "homepage": "https://colmexcode.github.io/frontend_code/index.html",
   "dependencies": {
     "@babel/runtime": "^7.12.1",
     "jwt-decode": "^3.0.0",
