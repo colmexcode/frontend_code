@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
     chunkFilename: 'js/[id].[chunkhash].js',
-    publicPath: 'https://cozy-place.vercel.app/',
+    publicPath: 'https://colmexcode.github.io/frontend_code/',
   },
   resolve: {
     extensions: ['.js'],
@@ -61,7 +61,7 @@ module.exports = {
       description:
         'For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect trip, but now, they can also let Lonely Planet Experiences lead the way.',
       background_color: '#F8F8F8',
-      theme_color: '#b1a',
+      theme_color: '#FB8F1D',
       start_url: '.',
       icons: [
         {
