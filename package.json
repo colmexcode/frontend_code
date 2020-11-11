@@ -11,7 +11,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/colmexcode/frontend_code/issues"
   },
-  "homepage": "https://colmexcode.github.io/frontend_code/",
+  "homepage": "https://colmexcode.github.io/frontend_code/index.html",
   "dependencies": {
     "@babel/runtime": "^7.12.1",
     "jwt-decode": "^3.0.0",
