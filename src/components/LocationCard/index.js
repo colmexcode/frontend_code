@@ -11,7 +11,7 @@ import mockupPic from '../../assets/images/mockupPicture.jpg';
 // It is hidden and is shown when user hover the location mark in the map.
 
 export const LocationCard = () => {
-  const { show, data, mouseCoordinates } = useSelector(
+  const { show, mouseCoordinates } = useSelector(
     (state) => state.mapReducer,
   );
 
@@ -23,8 +23,8 @@ export const LocationCard = () => {
     >
       <img src={mockupPic} alt="location" />
       <Description>
-        <p>{data.location}</p>
-        <small>{data.country}</small>
+        <p>Location</p>
+        <small>Country</small>
       </Description>
     </Card>
   );

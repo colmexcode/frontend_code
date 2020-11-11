@@ -14,7 +14,6 @@ import {
 export const StyledIntroduction = styled.section`
   text-align: center;
   color: ${colors.titleColor};
-  text-shadow: ${shadows.textShadow};
 `;
 
 export const Title = styled.h1`

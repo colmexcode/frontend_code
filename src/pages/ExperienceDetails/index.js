@@ -1,6 +1,6 @@
 // ------------------------------ import libraries
 import React, { useLayoutEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 // ------------------------------ import components
@@ -20,13 +20,20 @@ export default () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
+  const current = useSelector(
+    (state) => state.experiencesReducer.current,
+  );
+  console.log(current);
+
+  const experienceImg = current ? current.image : heroPic;
+
   useLayoutEffect(() => {
     dispatch(setCurrentExperience(id));
   }, []);
 
   return (
     <>
-      <Hero image={heroPic} />
+      <Hero image={experienceImg} />
       <ExperienceHost />
       <Footer />
     </>

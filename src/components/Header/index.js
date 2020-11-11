@@ -3,9 +3,6 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
-// ------------------------------ import components
-import { UpdateUser } from '../../utils/UpdateUser';
-
 // ------------------------------ import styles and images
 import {
   StyledHeader,

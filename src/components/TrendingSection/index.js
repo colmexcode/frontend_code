@@ -1,13 +1,11 @@
 // ------------------------------ import libraries
-import React, {
-  useEffect,
-  forwardRef,
-  useImperativeHandle,
-} from 'react';
+import React, { useEffect, forwardRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { ExperienceCard } from '../ExperienceCard';
+import { LoadingCard } from '../LoadingCard';
+import { NotFoundSearch } from '../NotFoundSearch';
 
 // ------------------------------ import styles and images
 import { Container, Layout } from './styles';
@@ -22,29 +20,38 @@ import { setTrending } from '../../actions/experiencesActions';
 
 export const TrendingSection = forwardRef((props, ref) => {
   const dispatch = useDispatch();
-  const searchExperiences = useSelector(
-    (state) => state.experiencesReducer.searchExperiences,
+  const { searchExperiences, loading } = useSelector(
+    (state) => state.experiencesReducer,
   );
 
   useEffect(() => {
     dispatch(setTrending());
   }, []);
 
+  const notFound =
+    loading === false && searchExperiences.length === 0;
+
   return (
     <Container tabIndex="0" ref={ref}>
       <h1> Trending stories </h1>
       <Layout>
-        {searchExperiences.slice(0, 4).map((experience, i = 0) => {
-          i++;
-          return (
-            <ExperienceCard
-              position={i}
-              page="landing"
-              key={experience._id}
-              {...experience}
-            />
-          );
-        })}
+        {loading
+          ? [...Array(4)].map((card, i = 0) => {
+              i++;
+              return <LoadingCard position={i} page="landing" />;
+            })
+          : searchExperiences.slice(0, 4).map((experience, i = 0) => {
+              i++;
+              return (
+                <ExperienceCard
+                  position={i}
+                  page="landing"
+                  key={experience._id}
+                  {...experience}
+                />
+              );
+            })}
+        {notFound ? <NotFoundSearch /> : null}
       </Layout>
     </Container>
   );

@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // ------------------------------ import components
 import { ExperienceCard } from '../ExperienceCard';
+import { LoadingCard } from '../LoadingCard';
+import { NotFoundSearch } from '../NotFoundSearch';
 
 // ------------------------------ import styles and images
 import { MainStyled } from './styles';
@@ -16,27 +18,36 @@ import { getAllExperiences } from '../../actions/experiencesActions';
 
 export const ExperiencesLayout = () => {
   const dispatch = useDispatch();
-  const experiences = useSelector(
-    (state) => state.experiencesReducer.searchExperiences,
+  const { searchExperiences, loading } = useSelector(
+    (state) => state.experiencesReducer,
   );
 
   useLayoutEffect(() => {
     dispatch(getAllExperiences());
   }, []);
 
+  const notFound =
+    loading === false && searchExperiences.length === 0;
+
   return (
     <MainStyled>
-      {experiences.slice(0, 10).map((experience, i = 0) => {
-        i++;
-        return (
-          <ExperienceCard
-            position={i}
-            page="home"
-            key={experience._id}
-            {...experience}
-          />
-        );
-      })}
+      {loading
+        ? [...Array(10)].map((card, i = 0) => {
+            i++;
+            return <LoadingCard key={i} position={i} page="home" />;
+          })
+        : searchExperiences.slice(0, 10).map((experience, i = 0) => {
+            i++;
+            return (
+              <ExperienceCard
+                position={i}
+                page="home"
+                key={experience._id}
+                {...experience}
+              />
+            );
+          })}
+      {notFound ? <NotFoundSearch page="home" /> : null}
     </MainStyled>
   );
 };

@@ -1,45 +1,24 @@
 // ------------------------------ import libraries
-import styled, { css } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 // ------------------------------ import variables
-import {
-  border,
-  shadows,
-  colors,
-  fonts,
-  spacing,
-} from '../../global-styles/Variables';
+import { border, colors } from '../../global-styles/Variables';
 import { media } from '../../global-styles/MediaQueries';
 
 // ------------------------------------ COMPONENTS ------------------------------------//
-export const CardStyled = styled.div`
-  position: relative;
-  border: ${border.border};
-  border-radius: ${border.borderRadiusBig};
-  box-shadow: ${shadows.outsideShadow};
-  overflow: hidden;
-  outline: none;
-
-  ${media.tablet} {
-    width: 100%;
-    height: 100%;
-    grid-column: auto / auto;
-    grid-row: auto / auto;
+const breath = keyframes`
+  0%, 100% {
+    opacity: 1;
   }
-
-  div {
-    padding: ${spacing.space2};
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+  50%{
+    opacity: .5;
   }
+`;
+
+export const Loading = styled.div`
+  background-color: #c4c4c4;
+  border-radius: ${border.borderRadiusSmall};
+  animation: ${breath} 2s infinite linear;
 
   ${(props) =>
     props.position === 'undefinedundefined' &&
@@ -262,31 +241,4 @@ export const CardStyled = styled.div`
       grid-column: 2 / span 2;
       grid-row: 2 / span 1;
     `};
-`;
-
-export const CardImg = styled.img`
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  object-fit: cover;
-`;
-
-export const TitleCard = styled.p`
-  position: absolute;
-  margin: 0;
-  margin-right: ${spacing.space3};
-  z-index: 1;
-  bottom: ${spacing.space1};
-  color: ${colors.backgroundColor};
-  font-size: ${fonts.h3};
-  font-weight: ${fonts.bold};
-  -webkit-text-stroke: 0.8px ${colors.titleColor};
-
-  ${media.tablet} {
-    font-size: ${fonts.p};
-    margin-right: ${spacing.space4};
-  }
 `;

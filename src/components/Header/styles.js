@@ -42,7 +42,8 @@ export const MenuProfile = styled.div`
   ul:hover {
     display: flex;
   }
-  ul Button:hover, ul {
+  ul Button:hover,
+  ul {
     display: flex;
   }
   ul {
@@ -53,10 +54,9 @@ export const MenuProfile = styled.div`
     margin-top: 0;
     position: absolute;
     transform: translateY(200%);
-    
   }
   ul Button {
-    padding: .3em 1.25em;
+    padding: 0.3em 1.25em;
     margin-left: 0;
     ${colors.mainBackgroundColor};
   }
@@ -70,8 +70,8 @@ export const LinkedLogo = styled(Link)`
   outline: none;
   transition: 0.3s;
 
-  &:focus {
-    transform: scale(0.8);
+  &:hover {
+    transform: scale(0.95);
   }
 `;
 
