@@ -1,37 +1,37 @@
 {
   "icons": [
     {
-      "src": "/dist/icon_512x512.a9ab90cb9c8bf3fe906c8775dcf8c195.png",
+      "src": "https://colmexcode.github.io/icon_512x512.a9ab90cb9c8bf3fe906c8775dcf8c195.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/dist/icon_384x384.4e433bbd9d5f47b70db4d657e91d4efb.png",
+      "src": "https://colmexcode.github.io/icon_384x384.4e433bbd9d5f47b70db4d657e91d4efb.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/dist/icon_256x256.d74512acaccbf74aba55417c4223c9b9.png",
+      "src": "https://colmexcode.github.io/icon_256x256.d74512acaccbf74aba55417c4223c9b9.png",
       "sizes": "256x256",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/dist/icon_192x192.902151f62d6e6b5850b7093e8390e1e6.png",
+      "src": "https://colmexcode.github.io/icon_192x192.902151f62d6e6b5850b7093e8390e1e6.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/dist/icon_128x128.ee082751b8ad14b39d68e40fb286a534.png",
+      "src": "https://colmexcode.github.io/icon_128x128.ee082751b8ad14b39d68e40fb286a534.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/dist/icon_96x96.b82576ae85612451afda8fbc0f4640b1.png",
+      "src": "https://colmexcode.github.io/icon_96x96.b82576ae85612451afda8fbc0f4640b1.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any maskable"
