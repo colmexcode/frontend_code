@@ -32,7 +32,7 @@ export const App = () => {
 
   return (
     <Suspense fallback={<div />}>
-      <BrowserRouter>
+      <BrowserRouter basename="/fronted_code">
         <Switch>
           <Route
             exact

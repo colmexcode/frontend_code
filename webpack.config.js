@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
     chunkFilename: 'js/[id].[chunkhash].js',
-    publicPath: 'https://colmexcode.github.io/frontend_code/',
+    publicPath: '/dist',
   },
   resolve: {
     extensions: ['.js'],
