@@ -21,6 +21,8 @@ export const StyledIcon = styled.img`
   box-shadow: ${shadows.outsideShadow};
   background: ${colors.secondaryBackgroundColor};
   outline: none;
+  cursor: pointer;
+  transition: 0.3s;
 
   ${media.mobile} {
     margin: 0 ${spacing.space1};
@@ -31,8 +33,9 @@ export const StyledIcon = styled.img`
     box-shadow: ${shadows.innerShadow};
   }
 
-  &:focus {
-    box-shadow: ${shadows.innerShadow};
+  &:hover {
+    border: 1px solid #fb8f1d;
+    box-shadow: none;
   }
 
   /* this lines validate if type is search to display a diferente background an size */

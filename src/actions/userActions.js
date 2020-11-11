@@ -55,6 +55,10 @@ export const errorModal = (payload) => ({
 export const getFavoriteExperiences = (id, token) => async (
   dispatch,
 ) => {
+  dispatch({
+    type: 'LOADING',
+  });
+
   const data = await getFavoritePosts(id, token);
   dispatch({
     type: 'GET_DISPLAYED_EXPERIENCES',
@@ -63,6 +67,10 @@ export const getFavoriteExperiences = (id, token) => async (
 };
 
 export const getUserExperiences = (id, token) => async (dispatch) => {
+  dispatch({
+    type: 'LOADING',
+  });
+
   const data = await getUserPosts(id, token);
   dispatch({
     type: 'GET_DISPLAYED_EXPERIENCES',

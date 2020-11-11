@@ -26,7 +26,10 @@ export const SearchBar = ({ focus }) => {
   const [search, setSearch] = useState('');
 
   function handleInput(e) {
-    setSearch(e.target.value);
+    setSearch(
+      e.target.value[0].toUpperCase() +
+        e.target.value.slice(1).toLowerCase(),
+    );
   }
 
   function handleSearch() {
@@ -44,7 +47,7 @@ export const SearchBar = ({ focus }) => {
           aria-label="location"
           type="text"
           name="location"
-          placeholder="Location"
+          placeholder="Search a city"
           onChange={handleInput}
         />
         <Icon type="search" click={handleSearch} />

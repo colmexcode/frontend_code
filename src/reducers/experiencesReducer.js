@@ -1,4 +1,5 @@
 const initialState = {
+  loading: false,
   searchExperiences: [],
   current: {},
   showIndicator: {
@@ -12,14 +13,17 @@ const initialState = {
 export const experiencesReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
+    case 'LOADING':
+      return { ...state, loading: true };
+
     case 'SET_TRENDING_EXPERIENCES':
-      return { ...state, searchExperiences: payload };
+      return { ...state, searchExperiences: payload, loading: false };
 
     case 'SET_CURRENT_EXPERIENCE':
       return { ...state, current: payload };
 
     case 'GET_ALL_EXPERIENCE':
-      return { ...state, searchExperiences: payload };
+      return { ...state, searchExperiences: payload, loading: false };
 
     case 'SHOW_INDICATOR':
       return { ...state, showIndicator: payload };

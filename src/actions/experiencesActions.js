@@ -1,4 +1,8 @@
 export const setTrending = () => async (dispatch) => {
+  dispatch({
+    type: 'LOADING',
+  });
+
   const response = await fetch(
     'https://cozyplace.herokuapp.com/api/post/',
   );
@@ -10,6 +14,10 @@ export const setTrending = () => async (dispatch) => {
 };
 
 export const searchExperiences = (city) => async (dispatch) => {
+  dispatch({
+    type: 'LOADING',
+  });
+
   const response = await fetch(
     'https://cozyplace.herokuapp.com/api/show/home',
     {
@@ -43,6 +51,10 @@ export const setCurrentExperience = (id) => async (dispatch) => {
 };
 
 export const getAllExperiences = () => async (dispatch) => {
+  dispatch({
+    type: 'LOADING',
+  });
+
   const response = await fetch(
     'https://cozyplace.herokuapp.com/api/post/',
   );

@@ -43,7 +43,13 @@ export const ExperienceForm = () => {
   const { token, _id } = useSelector(
     (state) => state.userReducer.userData,
   );
-  const [form, setForm] = useState({ user: _id });
+  const [form, setForm] = useState({
+    user: _id,
+    country: 'Mexico',
+    location: 'Cancun',
+    duration: '30 Min',
+    tags: '5f9b54d3217dd209f45ecc55',
+  });
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -146,6 +152,7 @@ export const ExperienceForm = () => {
               type="date"
               name="date"
               onChange={handleChange}
+              required="required"
             />
             <Rating>
               <p>Rating Stars</p>
@@ -155,7 +162,11 @@ export const ExperienceForm = () => {
           <Pics>
             <label htmlFor="image">
               {form.image ? (
-                <img src={form.image} alt="" pic="true" />
+                <img
+                  src={form.image}
+                  alt="this is your experience"
+                  pic="true"
+                />
               ) : (
                 <Icon type="plus" />
               )}
@@ -174,6 +185,7 @@ export const ExperienceForm = () => {
           maxLength="1500"
           placeholder="Create you description"
           onChange={handleChange}
+          required="required"
         />
         <SubmitButtons>
           <Button name="cancel" onClick={() => history.push('/user')}>

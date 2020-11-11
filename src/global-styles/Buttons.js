@@ -19,7 +19,7 @@ export const Button = styled.button`
   background: ${colors.secondaryBackgroundColor};
   transition: 0.3s;
 
-  &:focus {
+  &:hover {
     box-shadow: none;
   }
 
@@ -37,6 +37,7 @@ export const Button = styled.button`
   ${(props) =>
     props.big &&
     css`
+      margin: none;
       padding: ${spacing.space2} ${spacing.space4};
       ${colors.mainBackgroundColor};
     `};

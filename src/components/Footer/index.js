@@ -49,12 +49,6 @@ export const Footer = () => {
           </List>
         </ListsGroup>
       </Description>
-      <div>
-        <Icon type="facebook" />
-        <Icon type="instagram" />
-        <Icon type="youtube" />
-        <Icon type="twitter" />
-      </div>
     </StyledFooter>
   );
 };

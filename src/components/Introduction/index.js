@@ -22,7 +22,7 @@ export const Introduction = () => {
 
   return (
     <StyledIntroduction>
-      <Title tabIndex="0">Cozy Place</Title>
+      <Title>Cozy Place</Title>
       {validToken ? null : (
         <>
           <Description>

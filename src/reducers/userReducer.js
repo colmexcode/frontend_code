@@ -1,4 +1,5 @@
 const initialState = {
+  loading: false,
   displayModal: { sign: false, login: false, error: 'hola' },
   userData: localStorage.getItem('VERIFY')
     ? JSON.parse(localStorage.getItem('VERIFY'))
@@ -10,6 +11,9 @@ const initialState = {
 export const userReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
+    case 'LOADING':
+      return { ...state, loading: true };
+
     case 'OPEN_SIGNIN':
       return {
         ...state,
@@ -53,6 +57,7 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
         experiencesDisplayed: payload,
+        loading: false,
       };
 
     case 'SHOW_ERROR':

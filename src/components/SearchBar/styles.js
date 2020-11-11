@@ -23,7 +23,6 @@ export const Title = styled.p`
   color: ${colors.titleColor};
   font-weight: ${fonts.bold};
   text-transform: uppercase;
-  text-shadow: ${shadows.textShadow};
 
   ${media.mobile} {
     color: ${colors.backgroundColor};

@@ -73,7 +73,6 @@ export const UserName = styled.div`
   h1 {
     font-size: ${fonts.bigTitle};
     margin: 0;
-    text-shadow: ${shadows.textShadow};
 
     ${media.tablet} {
       font-size: 35px;
