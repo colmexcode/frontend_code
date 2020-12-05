@@ -35,6 +35,7 @@ import { setSelection } from '../../actions/userActions';
 export const ExperienceForm = () => {
   const dispatch = useDispatch();
   const mousePosition = useGetMousePosition();
+  const [experienceImage, setExperienceImage] = useState('');
 
   const tags = useFetchData(
     'https://cozyplace.herokuapp.com/api/tag/',
@@ -57,10 +58,16 @@ export const ExperienceForm = () => {
   };
 
   const handleFile = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: URL.createObjectURL(e.target.files[0]),
-    });
+    setExperienceImage(URL.createObjectURL(e.target.files[0]));
+    const imageFile = e?.target?.files[0];
+    const reader = new FileReader();
+    reader.readAsText(imageFile);
+    reader.onload = () => {
+      setForm({
+        ...form,
+        image: JSON.stringify(reader.result),
+      });
+    };
   };
 
   const handleSubmit = async (e) => {
@@ -163,7 +170,7 @@ export const ExperienceForm = () => {
             <label htmlFor="image">
               {form.image ? (
                 <img
-                  src={form.image}
+                  src={experienceImage}
                   alt="this is your experience"
                   pic="true"
                 />

@@ -66,7 +66,6 @@ export const ExperienceHost = () => {
           />
         </article>
       </DescriptionExp>
-      <Reviews />
     </BlockExp>
   );
 };

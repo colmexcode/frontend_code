@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
     chunkFilename: 'js/[id].[chunkhash].js',
-    publicPath: '/dist',
+    publicPath: 'https://colmexcode.github.io/frontend_code/',
   },
   resolve: {
     extensions: ['.js'],
@@ -53,7 +53,7 @@ module.exports = {
     new AddAssetHtmlWebpackPlugin({
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
-      publicPath: 'https://cozy-place.vercel.app/js',
+      publicPath: 'https://colmexcode.github.io/frontend_code/js',
     }),
     new WebpackPwaManifestPlugin({
       name: 'Cozy Place - Explore and Travel',
