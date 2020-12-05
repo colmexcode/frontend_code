@@ -1,4 +1,4 @@
-# Cozy Place Frontend Proyect
+# Cozy Place Frontend Project
 
 We work with React, React-router, React-redux and Styled-components
 

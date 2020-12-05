@@ -55,10 +55,15 @@ export const UserProfile = () => {
 
   function handleFiles(e) {
     setuserimage(URL.createObjectURL(e.target.files[0]));
-    setForm({
-      ...form,
-      [e.target.name]: e.target.files[0],
-    });
+    const imageFile = e?.target?.files[0];
+    const reader = new FileReader();
+    reader.readAsText(imageFile);
+    reader.onload = (e) => {
+      setForm({
+        ...form,
+        image: e.target.result,
+      });
+    };
   }
 
   async function handleSubmit(e) {
@@ -95,6 +100,7 @@ export const UserProfile = () => {
               <input
                 type="file"
                 name="image"
+                accept="image/*"
                 id="picture"
                 onChange={handleFiles}
               />

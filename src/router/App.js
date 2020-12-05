@@ -26,13 +26,10 @@ export const App = () => {
     (state) => state.userReducer.userData.token,
   );
   const validToken = token ? Object.keys(token).length > 0 : null;
-  // {
-  //   validToken ? HomePage : LandingPage;
-  // }
 
   return (
     <Suspense fallback={<div />}>
-      <BrowserRouter>
+      <BrowserRouter basename="/frontend_code">
         <Switch>
           <Route
             exact
